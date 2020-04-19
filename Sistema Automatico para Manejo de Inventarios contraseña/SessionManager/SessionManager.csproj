@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLS\Class1.cs" />
     <Compile Include="CLS\Datos.cs" />
     <Compile Include="CLS\Sesion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
