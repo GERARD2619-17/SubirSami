@@ -38,6 +38,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónInNueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgInformacion)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -151,14 +152,24 @@
             // gestiónInNueToolStripMenuItem
             // 
             this.gestiónInNueToolStripMenuItem.Name = "gestiónInNueToolStripMenuItem";
-            this.gestiónInNueToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.gestiónInNueToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
             this.gestiónInNueToolStripMenuItem.Text = "GestiónInNue";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(968, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 423);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnRoles);
@@ -190,5 +201,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem generalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestiónInNueToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
