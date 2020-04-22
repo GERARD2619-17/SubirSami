@@ -9,7 +9,7 @@ namespace DataManager.CLS
     public class DBConexion
     {
         protected MySqlConnection _CONEXION;
-        String _Cadena = "Server=localhost;Port=3306;Database=samibd;Uid=root;Pwd=admin123;SslMode=None;";
+        String _Cadena = "Server=localhost;Port=3306;Database=samibd;Uid=root;Pwd=admin;SslMode=None;";
         protected Boolean Conectar()
         {
             Boolean _Conectado = false;

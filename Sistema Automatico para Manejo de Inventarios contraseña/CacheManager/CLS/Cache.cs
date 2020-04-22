@@ -44,8 +44,6 @@ namespace CacheManager.CLS
                 Consulta = @"SELECT
                 IDEmpleado as ID,
                 CONCAT(Nombres,' ',Apellidos) as Nombre,
-                DUI,
-                NIT,
                 Genero
                 FROM
                 EMPLEADOS;";
