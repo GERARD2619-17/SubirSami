@@ -35,7 +35,11 @@
             this.btnRoles = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestiónInNueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dtgInformacion)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgInformacion
@@ -119,11 +123,36 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.Green;
-            this.lblUsuario.Location = new System.Drawing.Point(30, 9);
+            this.lblUsuario.Location = new System.Drawing.Point(-4, 28);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(72, 20);
             this.lblUsuario.TabIndex = 5;
             this.lblUsuario.Text = "Usuario:";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generalToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1068, 28);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // generalToolStripMenuItem
+            // 
+            this.generalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestiónInNueToolStripMenuItem});
+            this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
+            this.generalToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
+            this.generalToolStripMenuItem.Text = "General";
+            // 
+            // gestiónInNueToolStripMenuItem
+            // 
+            this.gestiónInNueToolStripMenuItem.Name = "gestiónInNueToolStripMenuItem";
+            this.gestiónInNueToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.gestiónInNueToolStripMenuItem.Text = "GestiónInNue";
             // 
             // Principal
             // 
@@ -136,11 +165,15 @@
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.texto);
             this.Controls.Add(this.dtgInformacion);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Principal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgInformacion)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,5 +187,8 @@
         private System.Windows.Forms.Button btnRoles;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem generalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestiónInNueToolStripMenuItem;
     }
 }
