@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1082
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAMI", "SAMI\SAMI.csproj", "{4703F735-922D-4CAC-8654-7ABDE92E9177}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManager", "DataManager\DataManager.csproj", "{E3C3C84F-E8D5-4F1D-9CEA-87BD0BBCB983}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheManager", "CacheManager\CacheManager.csproj", "{C5A67DB5-6151-430D-B107-01257164449E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "General", "General\General.csproj", "{50DDD76F-EFC5-4133-9810-4B3C39C47E66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{C5A67DB5-6151-430D-B107-01257164449E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5A67DB5-6151-430D-B107-01257164449E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5A67DB5-6151-430D-B107-01257164449E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50DDD76F-EFC5-4133-9810-4B3C39C47E66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50DDD76F-EFC5-4133-9810-4B3C39C47E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50DDD76F-EFC5-4133-9810-4B3C39C47E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50DDD76F-EFC5-4133-9810-4B3C39C47E66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AFD566F7-7814-467B-B449-E945030F358A}
 	EndGlobalSection
 EndGlobal
