@@ -77,5 +77,19 @@
   <ItemGroup>
     <Folder Include="CLS\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CacheManager\CacheManager.csproj">
+      <Project>{c5a67db5-6151-430d-b107-01257164449e}</Project>
+      <Name>CacheManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataManager\DataManager.csproj">
+      <Project>{e3c3c84f-e8d5-4f1d-9cea-87bd0bbcb983}</Project>
+      <Name>DataManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SessionManager\SessionManager.csproj">
+      <Project>{70e1720d-bc03-411f-8c11-459cc44ae419}</Project>
+      <Name>SessionManager</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

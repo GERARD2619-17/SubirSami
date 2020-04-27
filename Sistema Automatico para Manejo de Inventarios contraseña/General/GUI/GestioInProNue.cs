@@ -15,11 +15,18 @@ namespace General.GUI
         public GestioInProNue()
         {
             InitializeComponent();
+            
         }
 
         private void btnEliminar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        private void hora_Tick(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToLongTimeString();
+        }
+
     }
 }
