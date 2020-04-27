@@ -27,6 +27,7 @@ namespace General.GUI
         {
             lblhora.Text = DateTime.Now.ToLongTimeString();
             //hola 2
+            //hola 3
         }
 
     }
