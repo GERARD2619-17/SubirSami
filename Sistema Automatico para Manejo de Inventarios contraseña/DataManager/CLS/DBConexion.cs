@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 namespace DataManager.CLS
 {
     public class DBConexion
-    {/**/
+    {/*Otro*/
         protected MySqlConnection _CONEXION;
         String _Cadena = "Server=localhost;Port=3306;Database=samibd;Uid=root;Pwd=admin;SslMode=None;";
         protected Boolean Conectar()
