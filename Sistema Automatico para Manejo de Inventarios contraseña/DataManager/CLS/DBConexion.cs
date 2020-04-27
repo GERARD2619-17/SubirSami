@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 namespace DataManager.CLS
-{
+{/**/
     public class DBConexion
     {
         protected MySqlConnection _CONEXION;
