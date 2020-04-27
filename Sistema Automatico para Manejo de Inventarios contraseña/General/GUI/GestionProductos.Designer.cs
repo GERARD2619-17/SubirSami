@@ -45,6 +45,7 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnPrincipal = new System.Windows.Forms.ToolStripButton();
@@ -55,6 +56,12 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.dtgDatos = new System.Windows.Forms.DataGridView();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Clasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LugarAlmacenamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -62,15 +69,8 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.txbBuscar = new System.Windows.Forms.ToolStripTextBox();
-            this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
-            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Clasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LugarAlmacenamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -193,6 +193,12 @@
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // lblRegistros
+            // 
+            this.lblRegistros.Name = "lblRegistros";
+            this.lblRegistros.Size = new System.Drawing.Size(168, 20);
+            this.lblRegistros.Text = "0 Registros Encontrados";
+            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -289,6 +295,7 @@
             this.dtgDatos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.dtgDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgDatos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgDatos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
@@ -318,6 +325,48 @@
             this.dtgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgDatos.Size = new System.Drawing.Size(958, 360);
             this.dtgDatos.TabIndex = 1;
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.DataPropertyName = "NombreProducto";
+            this.NombreProducto.HeaderText = "Producto";
+            this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Clasificacion
+            // 
+            this.Clasificacion.DataPropertyName = "Clasificacion";
+            this.Clasificacion.HeaderText = "Clasificacion";
+            this.Clasificacion.Name = "Clasificacion";
+            this.Clasificacion.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "Cantidad";
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // LugarAlmacenamiento
+            // 
+            this.LugarAlmacenamiento.DataPropertyName = "LugarAlmacenamiento";
+            this.LugarAlmacenamiento.HeaderText = "Almacenamiento";
+            this.LugarAlmacenamiento.Name = "LugarAlmacenamiento";
+            this.LugarAlmacenamiento.ReadOnly = true;
+            // 
+            // Existencia
+            // 
+            this.Existencia.DataPropertyName = "Existencia";
+            this.Existencia.HeaderText = "Existencia";
+            this.Existencia.Name = "Existencia";
+            this.Existencia.ReadOnly = true;
             // 
             // toolStrip2
             // 
@@ -376,14 +425,6 @@
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 37);
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(82, 34);
-            this.toolStripLabel1.Text = "Buscar";
-            // 
             // txbBuscar
             // 
             this.txbBuscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -392,53 +433,13 @@
             this.txbBuscar.Size = new System.Drawing.Size(100, 37);
             this.txbBuscar.TextChanged += new System.EventHandler(this.txbBuscar_TextChanged);
             // 
-            // lblRegistros
+            // toolStripLabel1
             // 
-            this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(168, 20);
-            this.lblRegistros.Text = "0 Registros Encontrados";
-            // 
-            // NombreProducto
-            // 
-            this.NombreProducto.DataPropertyName = "NombreProducto";
-            this.NombreProducto.HeaderText = "Producto";
-            this.NombreProducto.Name = "NombreProducto";
-            this.NombreProducto.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Clasificacion
-            // 
-            this.Clasificacion.DataPropertyName = "Clasificacion";
-            this.Clasificacion.HeaderText = "Clasificacion";
-            this.Clasificacion.Name = "Clasificacion";
-            this.Clasificacion.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "Cantidad";
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // LugarAlmacenamiento
-            // 
-            this.LugarAlmacenamiento.DataPropertyName = "LugarAlmacenamiento";
-            this.LugarAlmacenamiento.HeaderText = "Almacenamiento";
-            this.LugarAlmacenamiento.Name = "LugarAlmacenamiento";
-            this.LugarAlmacenamiento.ReadOnly = true;
-            // 
-            // Existencia
-            // 
-            this.Existencia.DataPropertyName = "Existencia";
-            this.Existencia.HeaderText = "Existencia";
-            this.Existencia.Name = "Existencia";
-            this.Existencia.ReadOnly = true;
+            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(82, 34);
+            this.toolStripLabel1.Text = "Buscar";
             // 
             // GestionProductos
             // 
