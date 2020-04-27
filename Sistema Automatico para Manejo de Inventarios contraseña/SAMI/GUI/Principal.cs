@@ -18,24 +18,52 @@ namespace SAMI.GUI
             InitializeComponent();
         }
 
-        private void btnEmpleados_Click(object sender, EventArgs e)
+        private void gestioInProNueToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_EMPLEADOS();
+            try
+            {
+                General.GUI.GestioInProNue f = new General.GUI.GestioInProNue();
+                f.MdiParent = this;
+                f.Show();
+            }
+            catch
+            {
+
+            }
         }
 
-        private void Principal_Load(object sender, EventArgs e)
-        {
-            lblUsuario.Text = "Usuario: " + _SESION.Informacion.Usuario;
-        }
+        /* private void btnEmpleados_Click(object sender, EventArgs e)
+         {
+             dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_EMPLEADOS();
+         }
 
-        private void btnRoles_Click(object sender, EventArgs e)
-        {
-            dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_ROLES();
-        }
+         private void Principal_Load(object sender, EventArgs e)
+         {
+             lblUsuario.Text = "Usuario: " + _SESION.Informacion.Usuario;
+         }
 
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_USUARIOS();
-        }
+         private void btnRoles_Click(object sender, EventArgs e)
+         {
+             dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_ROLES();
+         }
+
+         private void btnUsuarios_Click(object sender, EventArgs e)
+         {
+             dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_USUARIOS();
+         }
+
+         private void gestioInProNueToolStripMenuItem_Click(object sender, EventArgs e)
+         {
+             try
+             {
+                 General.GUI.GestioInProNue f = new General.GUI.GestioInProNue();
+                 f.MdiParent = this;
+                 f.Show();
+             }
+             catch
+             {
+
+             }
+         }*/
     }
 }
