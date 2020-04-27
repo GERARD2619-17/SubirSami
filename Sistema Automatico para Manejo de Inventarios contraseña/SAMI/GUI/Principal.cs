@@ -18,52 +18,24 @@ namespace SAMI.GUI
             InitializeComponent();
         }
 
-        private void gestioInProNueToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            try
-            {
-                General.GUI.GestioInProNue f = new General.GUI.GestioInProNue();
-                f.MdiParent = this;
-                f.Show();
-            }
-            catch
-            {
-
-            }
+            dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_EMPLEADOS();
         }
 
-        /* private void btnEmpleados_Click(object sender, EventArgs e)
-         {
-             dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_EMPLEADOS();
-         }
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            lblUsuario.Text = "Usuario: " + _SESION.Informacion.Usuario;
+        }
 
-         private void Principal_Load(object sender, EventArgs e)
-         {
-             lblUsuario.Text = "Usuario: " + _SESION.Informacion.Usuario;
-         }
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_ROLES();
+        }
 
-         private void btnRoles_Click(object sender, EventArgs e)
-         {
-             dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_ROLES();
-         }
-
-         private void btnUsuarios_Click(object sender, EventArgs e)
-         {
-             dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_USUARIOS();
-         }
-
-         private void gestioInProNueToolStripMenuItem_Click(object sender, EventArgs e)
-         {
-             try
-             {
-                 General.GUI.GestioInProNue f = new General.GUI.GestioInProNue();
-                 f.MdiParent = this;
-                 f.Show();
-             }
-             catch
-             {
-
-             }
-         }*/
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_USUARIOS();
+        }
     }
 }
