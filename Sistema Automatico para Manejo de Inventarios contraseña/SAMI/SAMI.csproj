@@ -111,6 +111,10 @@
       <Project>{e3c3c84f-e8d5-4f1d-9cea-87bd0bbcb983}</Project>
       <Name>DataManager</Name>
     </ProjectReference>
+    <ProjectReference Include="..\General\General.csproj">
+      <Project>{50ddd76f-efc5-4133-9810-4b3c39c47e66}</Project>
+      <Name>General</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SessionManager\SessionManager.csproj">
       <Project>{70e1720d-bc03-411f-8c11-459cc44ae419}</Project>
       <Name>SessionManager</Name>

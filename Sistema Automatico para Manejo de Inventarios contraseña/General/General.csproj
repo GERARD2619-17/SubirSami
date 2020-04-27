@@ -49,6 +49,12 @@
     <Compile Include="GUI\GestioInProNue.Designer.cs">
       <DependentUpon>GestioInProNue.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GestionProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GestionProductos.Designer.cs">
+      <DependentUpon>GestionProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -59,6 +65,9 @@
   <ItemGroup>
     <EmbeddedResource Include="GUI\GestioInProNue.resx">
       <DependentUpon>GestioInProNue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GestionProductos.resx">
+      <DependentUpon>GestionProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
