@@ -26,7 +26,7 @@ namespace General.GUI
         private void hora_Tick(object sender, EventArgs e)
         {
             lblhora.Text = DateTime.Now.ToLongTimeString();
-            //hola
+            //hola 2
         }
 
     }
