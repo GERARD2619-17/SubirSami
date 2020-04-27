@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestioInProNue));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -36,7 +37,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tbxFiltro = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -48,6 +48,9 @@
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblhora = new System.Windows.Forms.ToolStripStatusLabel();
+            this.hora = new System.Windows.Forms.Timer(this.components);
+            this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -96,14 +99,6 @@
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(87, 24);
-            this.btnAgregar.Text = "Agregar";
             // 
             // toolStripSeparator3
             // 
@@ -195,7 +190,8 @@
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblRegistros});
+            this.lblRegistros,
+            this.lblhora});
             this.statusStrip1.Location = new System.Drawing.Point(0, 425);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(800, 25);
@@ -207,6 +203,26 @@
             this.lblRegistros.Name = "lblRegistros";
             this.lblRegistros.Size = new System.Drawing.Size(168, 20);
             this.lblRegistros.Text = "0 Registros Encontrados";
+            // 
+            // lblhora
+            // 
+            this.lblhora.Name = "lblhora";
+            this.lblhora.Size = new System.Drawing.Size(151, 20);
+            this.lblhora.Text = "toolStripStatusLabel1";
+            this.lblhora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // hora
+            // 
+            this.hora.Enabled = true;
+            this.hora.Tick += new System.EventHandler(this.hora_Tick);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(87, 24);
+            this.btnAgregar.Text = "Agregar";
             // 
             // GestioInProNue
             // 
@@ -236,7 +252,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnEditar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton btnAgregar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripTextBox tbxFiltro;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
@@ -248,5 +263,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.ToolStripStatusLabel lblhora;
+        private System.Windows.Forms.Timer hora;
+        private System.Windows.Forms.ToolStripButton btnAgregar;
     }
 }
