@@ -38,6 +38,9 @@ namespace DataManager.CLS
             {
                 FilasAfectadas = -1;
             }
+            finally {
+                base.Desconectar();
+            }
             return FilasAfectadas;
         }
         public DataTable Consultar(String pConsulta)
@@ -59,7 +62,10 @@ namespace DataManager.CLS
             {
                 Resultado = new DataTable();
             }
-
+            finally
+            {
+                base.Desconectar();
+            }
             return Resultado;
         }
     }

@@ -71,6 +71,29 @@ namespace CacheManager.CLS
             }
             return Resultado;
         }
+        public static DataTable TODOS_LOS_PRODUCTOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta;
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @"SELECT 
+                a.NombreProducto, a.Estado, b.Clasificacion, a.Cantidad, a.LugarAlmacenamiento, a.Existencia 
+                FROM 
+                Productos a, Clasificaciones b 
+                WHERE 
+                a.IdClasificacion = b.IdClasificacion 
+                order by 
+                a.NombreProducto;";
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
 
     }
 }

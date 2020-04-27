@@ -38,6 +38,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónInNueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgInformacion)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -85,7 +86,7 @@
             // btnEmpleados
             // 
             this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(88, 74);
+            this.btnEmpleados.Location = new System.Drawing.Point(34, 74);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnEmpleados.Size = new System.Drawing.Size(204, 50);
@@ -98,7 +99,7 @@
             // 
             this.btnRoles.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnRoles.AutoEllipsis = true;
-            this.btnRoles.Location = new System.Drawing.Point(448, 74);
+            this.btnRoles.Location = new System.Drawing.Point(296, 74);
             this.btnRoles.Name = "btnRoles";
             this.btnRoles.Size = new System.Drawing.Size(204, 50);
             this.btnRoles.TabIndex = 3;
@@ -110,7 +111,7 @@
             // 
             this.btnUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUsuarios.Location = new System.Drawing.Point(774, 74);
+            this.btnUsuarios.Location = new System.Drawing.Point(562, 74);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(204, 50);
             this.btnUsuarios.TabIndex = 4;
@@ -154,11 +155,22 @@
             this.gestiónInNueToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
             this.gestiónInNueToolStripMenuItem.Text = "GestiónInNue";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(825, 74);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(204, 50);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Mostrar lista de Productos";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 423);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnRoles);
@@ -190,5 +202,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem generalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestiónInNueToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }

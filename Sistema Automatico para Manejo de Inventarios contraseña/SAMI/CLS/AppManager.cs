@@ -16,8 +16,8 @@ namespace SAMI.CLS
               
                 if (Login())
                 {
-                    General.GUI.GestionProductos f = new General.GUI.GestionProductos();
-                    //GUI.Principal f = new GUI.Principal();
+                    //General.GUI.GestionProductos f = new General.GUI.GestionProductos();
+                    GUI.Principal f = new GUI.Principal();
                     f.ShowDialog();
                 }
             }

@@ -37,5 +37,15 @@ namespace SAMI.GUI
         {
             dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_USUARIOS();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try {
+                General.GUI.GestionProductos f = new General.GUI.GestionProductos();
+                f.ShowDialog();
+            }
+            catch { }
+            
+        }
     }
 }
