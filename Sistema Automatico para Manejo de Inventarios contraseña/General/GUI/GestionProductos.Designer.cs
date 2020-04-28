@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionProductos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -215,7 +215,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.dtgDatos);
             this.splitContainer1.Panel2.Controls.Add(this.toolStrip2);
             this.splitContainer1.Size = new System.Drawing.Size(1171, 397);
-            this.splitContainer1.SplitterDistance = 209;
+            this.splitContainer1.SplitterDistance = 150;
             this.splitContainer1.TabIndex = 2;
             // 
             // toolStrip1
@@ -232,7 +232,7 @@
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(209, 297);
+            this.toolStrip1.Size = new System.Drawing.Size(150, 297);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -242,49 +242,49 @@
             this.btnPrincipal.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnPrincipal.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrincipal.Name = "btnPrincipal";
-            this.btnPrincipal.Size = new System.Drawing.Size(207, 64);
+            this.btnPrincipal.Size = new System.Drawing.Size(148, 64);
             this.btnPrincipal.Text = "Principal";
             this.btnPrincipal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(207, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(148, 6);
             // 
             // toolStripButton2
             // 
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(207, 64);
+            this.toolStripButton2.Size = new System.Drawing.Size(148, 64);
             this.toolStripButton2.Text = "Productos";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(207, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(148, 6);
             // 
             // toolStripButton1
             // 
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(207, 64);
+            this.toolStripButton1.Size = new System.Drawing.Size(148, 64);
             this.toolStripButton1.Text = "Usuarios";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(207, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(148, 6);
             // 
             // toolStripButton3
             // 
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(207, 64);
+            this.toolStripButton3.Size = new System.Drawing.Size(148, 64);
             this.toolStripButton3.Text = "Historial";
             this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
@@ -293,8 +293,8 @@
             this.dtgDatos.AllowUserToAddRows = false;
             this.dtgDatos.AllowUserToDeleteRows = false;
             this.dtgDatos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.dtgDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.dtgDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dtgDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgDatos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -307,14 +307,14 @@
             this.Cantidad,
             this.LugarAlmacenamiento,
             this.Existencia});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgDatos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgDatos.DefaultCellStyle = dataGridViewCellStyle10;
             this.dtgDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDatos.Location = new System.Drawing.Point(0, 37);
             this.dtgDatos.MultiSelect = false;
@@ -323,7 +323,7 @@
             this.dtgDatos.RowHeadersVisible = false;
             this.dtgDatos.RowTemplate.Height = 24;
             this.dtgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDatos.Size = new System.Drawing.Size(958, 360);
+            this.dtgDatos.Size = new System.Drawing.Size(1017, 360);
             this.dtgDatos.TabIndex = 1;
             // 
             // NombreProducto
@@ -382,7 +382,7 @@
             this.toolStripLabel1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(958, 37);
+            this.toolStrip2.Size = new System.Drawing.Size(1017, 37);
             this.toolStrip2.TabIndex = 0;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -429,12 +429,14 @@
             // 
             this.txbBuscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.txbBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txbBuscar.Margin = new System.Windows.Forms.Padding(1, 0, 10, 0);
             this.txbBuscar.Name = "txbBuscar";
-            this.txbBuscar.Size = new System.Drawing.Size(100, 37);
+            this.txbBuscar.Size = new System.Drawing.Size(150, 37);
             this.txbBuscar.TextChanged += new System.EventHandler(this.txbBuscar_TextChanged);
             // 
             // toolStripLabel1
             // 
+            this.toolStripLabel1.ActiveLinkColor = System.Drawing.Color.Red;
             this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripLabel1.Image")));
             this.toolStripLabel1.Name = "toolStripLabel1";
@@ -449,9 +451,11 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "GestionProductos";
             this.Text = "GestionProductos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);

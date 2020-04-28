@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\EdicionProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EdicionProductos.Designer.cs">
+      <DependentUpon>EdicionProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GestionProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\EdicionProductos.resx">
+      <DependentUpon>EdicionProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GestionProductos.resx">
       <DependentUpon>GestionProductos.cs</DependentUpon>
     </EmbeddedResource>

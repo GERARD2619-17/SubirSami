@@ -78,13 +78,15 @@ namespace CacheManager.CLS
             DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
             try
             {
-                Consulta = @"SELECT 
-                a.NombreProducto, a.Estado, b.Clasificacion, a.Cantidad, a.LugarAlmacenamiento, a.Existencia 
+                Consulta = @"SELECT  
+                a.NombreProducto, a.Estado, b.Clasificacion, a.Cantidad, c.LugarAlmacenamiento, a.Existencia 
                 FROM 
-                Productos a, Clasificaciones b 
+                Productos a, Clasificaciones b, Almacenamientos c 
                 WHERE 
                 a.IdClasificacion = b.IdClasificacion 
-                order by 
+                AND 
+                a.IDAlmacenamiento = c.IDAlmacenamiento 
+                ORDER BY 
                 a.NombreProducto;";
                 Resultado = oConsulta.Consultar(Consulta);
             }

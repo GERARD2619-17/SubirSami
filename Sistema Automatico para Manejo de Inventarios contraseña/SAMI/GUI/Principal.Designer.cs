@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgInformacion = new System.Windows.Forms.DataGridView();
             this.texto = new System.Windows.Forms.Label();
             this.btnEmpleados = new System.Windows.Forms.Button();
@@ -37,8 +37,9 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.gestiónInNueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestiónInNueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgInformacion)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -53,14 +54,14 @@
             this.dtgInformacion.BackgroundColor = System.Drawing.Color.White;
             this.dtgInformacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgInformacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgInformacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgInformacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgInformacion.ColumnHeadersHeight = 30;
             this.dtgInformacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgInformacion.EnableHeadersVisualStyles = false;
@@ -89,7 +90,7 @@
             this.btnEmpleados.Location = new System.Drawing.Point(34, 74);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnEmpleados.Size = new System.Drawing.Size(204, 50);
+            this.btnEmpleados.Size = new System.Drawing.Size(188, 50);
             this.btnEmpleados.TabIndex = 2;
             this.btnEmpleados.Text = "Mostrar lista de empleados";
             this.btnEmpleados.UseVisualStyleBackColor = true;
@@ -99,9 +100,9 @@
             // 
             this.btnRoles.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnRoles.AutoEllipsis = true;
-            this.btnRoles.Location = new System.Drawing.Point(296, 74);
+            this.btnRoles.Location = new System.Drawing.Point(228, 74);
             this.btnRoles.Name = "btnRoles";
-            this.btnRoles.Size = new System.Drawing.Size(204, 50);
+            this.btnRoles.Size = new System.Drawing.Size(168, 50);
             this.btnRoles.TabIndex = 3;
             this.btnRoles.Text = "Mostrar lista de roles";
             this.btnRoles.UseVisualStyleBackColor = true;
@@ -111,9 +112,9 @@
             // 
             this.btnUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUsuarios.Location = new System.Drawing.Point(562, 74);
+            this.btnUsuarios.Location = new System.Drawing.Point(402, 74);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(204, 50);
+            this.btnUsuarios.Size = new System.Drawing.Size(189, 50);
             this.btnUsuarios.TabIndex = 4;
             this.btnUsuarios.Text = "Mostrar lista de usuarios";
             this.btnUsuarios.UseVisualStyleBackColor = true;
@@ -136,7 +137,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(204, 50);
             this.button1.TabIndex = 7;
-            this.button1.Text = "Mostrar lista de Productos";
+            this.button1.Text = "Mostrar Formulario";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -151,12 +152,6 @@
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // gestiónInNueToolStripMenuItem
-            // 
-            this.gestiónInNueToolStripMenuItem.Name = "gestiónInNueToolStripMenuItem";
-            this.gestiónInNueToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.gestiónInNueToolStripMenuItem.Text = "GestiónInNue";
-            // 
             // generalToolStripMenuItem
             // 
             this.generalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -165,11 +160,28 @@
             this.generalToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.generalToolStripMenuItem.Text = "General";
             // 
+            // gestiónInNueToolStripMenuItem
+            // 
+            this.gestiónInNueToolStripMenuItem.Name = "gestiónInNueToolStripMenuItem";
+            this.gestiónInNueToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
+            this.gestiónInNueToolStripMenuItem.Text = "GestiónInNue";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(597, 74);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(222, 50);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Mostrar formulario de Productos";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 423);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnUsuarios);
@@ -203,5 +215,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem generalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestiónInNueToolStripMenuItem;
+        private System.Windows.Forms.Button button2;
     }
 }

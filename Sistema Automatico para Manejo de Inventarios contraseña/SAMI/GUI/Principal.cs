@@ -47,5 +47,15 @@ namespace SAMI.GUI
             catch { }
             
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                General.GUI.EdicionProductos f = new General.GUI.EdicionProductos();
+                f.ShowDialog();
+            }
+            catch { }
+        }
     }
 }
