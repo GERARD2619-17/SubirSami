@@ -52,5 +52,11 @@ namespace General.GUI
         {
             FiltrarLocalmente();
         }
+
+        private void horafecha_Tick(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            lblfecha.Text = DateTime.Now.ToLongDateString();
+        }
     }
 }
