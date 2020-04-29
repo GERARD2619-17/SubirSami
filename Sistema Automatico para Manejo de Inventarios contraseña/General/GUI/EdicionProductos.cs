@@ -12,9 +12,177 @@ namespace General.GUI
 {
     public partial class EdicionProductos : Form
     {
+        //VERIFICA SI EL NOMBRE INGRESADO Y EL ESTADO SELECCIONADO, YA SE ENCUENTRAR REGISTRADOS PARA NO INGRESAR 2 VECES EL MISMO PRODUCTO
+        private Boolean VerificarProducto(String nombre, String estado) {
+            Boolean verificar = false;
+            try {
+                String Consulta = "SELECT NombreProducto from Productos where NombreProducto = '"+nombre+"' AND Estado = '"+estado+"';";
+                DataTable Datos = new DataTable();
+                DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
+                Datos = Consultor.Consultar(Consulta);
+                if (Datos.Rows.Count == 1)
+                {
+                    verificar = true;
+                }
+                }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return verificar;
+        }
+
+        //LLENA LOS COMBOBOX DE CLASIFICACIONES Y LUGAR DE ALMACENAMIENTO
+        private void LlenarComboBox() {
+            //Se llena el ComboBox con una lista de las clasificaciones
+            List<string> listaClasificacion = new List<string>();
+            try
+            {
+                String Consulta1 = "SELECT Clasificacion FROM Clasificaciones;";
+                DataTable Datos = new DataTable();
+                DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
+                Datos = Consultor.Consultar(Consulta1);
+                for (int i = 0; i < Datos.Rows.Count; i++) {
+                    listaClasificacion.Add(Datos.Rows[i]["Clasificacion"].ToString());
+                }
+            }
+            catch {
+                MessageBox.Show("Ha ocurrido un error al llenar la lista de clasificaciones", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            cbClasificacion.DataSource = listaClasificacion;
+
+            //Se llena el ComboBox con una lista de los almacenamientos
+            List<string> listaAlmacenamiento = new List<string>();
+            try
+            {
+                String Consulta2 = "SELECT LugarAlmacenamiento FROM Almacenamientos;";
+                DataTable Datos = new DataTable();
+                DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
+                Datos = Consultor.Consultar(Consulta2);
+                for (int i = 0; i < Datos.Rows.Count; i++)
+                {
+                    listaAlmacenamiento.Add(Datos.Rows[i]["LugarAlmacenamiento"].ToString());
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un error al llenar la lista de almacenamientos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            cbAlmacenamiento.DataSource = listaAlmacenamiento;
+            cbClasificacion.DataSource = listaClasificacion;
+        }
+
+        //RESIVE EL DATO STRING Y SU NUMERO DE TABLA Y DEVUELVE EL SU ID PRETENESIENTE
+        private String ConvertirId(String cadena, int tabla) {
+            String _id="";
+            try {
+                String Cadena = "";
+                if (tabla == 1)
+                {
+                    //tabla de clasificaciones
+                    Cadena = "SELECT IdClasificacion FROM Clasificaciones WHERE Clasificacion = '"+cadena+"';";
+                    DataTable Datos = new DataTable();
+                    DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
+                    Datos = Consultor.Consultar(Cadena);
+                    _id = Datos.Rows[0]["IdClasificacion"].ToString();
+                }
+                else
+                {
+                    //tabla de almacenamientos
+                    Cadena = "SELECT IDAlmacenamiento FROM Almacenamientos WHERE LugarAlmacenamiento = '"+cadena+"';";
+                    DataTable Datos = new DataTable();
+                    DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
+                    Datos = Consultor.Consultar(Cadena);
+                    _id = Datos.Rows[0]["IDAlmacenamiento"].ToString();
+                }
+                
+            }
+            catch {
+                MessageBox.Show("Ha ocurrido un error con los ids", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+            return _id;
+        }
+
+        private Boolean VerificarDatos() {
+            Boolean verificado = true;
+            Notificador.Clear();
+            if (txbNombre.TextLength == 0) {
+                Notificador.SetError(txbNombre, "Este campo no puede quedar vacío");
+                verificado = false;
+            }
+
+            //VALOR DEL ESTADO DEL PRODUCTO
+            String estado;
+            if (rbNuevo.Checked) { estado = "Nuevo"; }
+            else { estado = "Usado"; }
+
+            if (VerificarProducto(txbNombre.Text, estado))
+            {
+                MessageBox.Show("El procuto ya se encuentra registrado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                verificado = false;
+            }
+            return verificado;
+        }
+
+        private void Procesar() {
+            try {
+                if (VerificarDatos())
+                {
+                    CLS.Producto oProducto = new CLS.Producto();
+                    //SINCRONIZAR
+                    oProducto.IDProducto = txbId.Text;
+                    oProducto.NombreProducto = txbNombre.Text;
+                    oProducto.IdClasificacion = ConvertirId(cbClasificacion.Text,1);
+                    oProducto.Cantidad = nudCantidad.Text;
+                    oProducto.IDAlmacenamiento = ConvertirId(cbAlmacenamiento.Text,2);
+                    oProducto.Existencia = cbExistencia.Text;
+                    oProducto.Descripcion = txbDescripcion.Text;
+                    if (rbNuevo.Checked) { oProducto.Estado = "Nuevo"; }
+                    else { oProducto.Estado = "Usado"; }
+                    if (txbId.TextLength > 0)
+                    {
+                        //ACTUALIZAR
+                        if (oProducto.Actualizar())
+                        {
+                            Close();
+                        }
+                    }
+                    else
+                    {
+                        //GUARDAR
+                        if (oProducto.Guardar())
+                        {
+                            Close();
+                        }
+                    }
+                }
+            }
+            catch {
+
+            }
+        }
+
+
+
+
+
+
         public EdicionProductos()
         {
             InitializeComponent();
+            LlenarComboBox();
+            cbExistencia.SelectedIndex = 2;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Procesar();
         }
     }
 }

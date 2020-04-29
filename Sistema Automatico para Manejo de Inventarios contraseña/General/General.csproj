@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLS\Producto.cs" />
     <Compile Include="GUI\EdicionProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,9 +75,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CLS\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\CacheManager\CacheManager.csproj">
       <Project>{c5a67db5-6151-430d-b107-01257164449e}</Project>

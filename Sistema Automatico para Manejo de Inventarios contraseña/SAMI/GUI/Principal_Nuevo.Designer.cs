@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.gestionProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +52,27 @@
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // generalToolStripMenuItem
+            // 
+            this.generalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionProductosToolStripMenuItem});
+            this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
+            this.generalToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
+            this.generalToolStripMenuItem.Text = "General";
+            // 
+            // gestionProductosToolStripMenuItem
+            // 
+            this.gestionProductosToolStripMenuItem.Name = "gestionProductosToolStripMenuItem";
+            this.gestionProductosToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.gestionProductosToolStripMenuItem.Text = "GestionProductos";
+            this.gestionProductosToolStripMenuItem.Click += new System.EventHandler(this.gestionProductosToolStripMenuItem_Click);
+            // 
+            // herramientasToolStripMenuItem
+            // 
+            this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
+            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
+            this.herramientasToolStripMenuItem.Text = "Herramientas";
             // 
             // toolStrip1
             // 
@@ -74,32 +95,11 @@
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // generalToolStripMenuItem
-            // 
-            this.generalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionProductosToolStripMenuItem});
-            this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
-            this.generalToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
-            this.generalToolStripMenuItem.Text = "General";
-            // 
-            // herramientasToolStripMenuItem
-            // 
-            this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
-            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
-            this.herramientasToolStripMenuItem.Text = "Herramientas";
-            // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(59, 20);
             this.toolStripStatusLabel1.Text = "Usuario";
-            // 
-            // gestionProductosToolStripMenuItem
-            // 
-            this.gestionProductosToolStripMenuItem.Name = "gestionProductosToolStripMenuItem";
-            this.gestionProductosToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.gestionProductosToolStripMenuItem.Text = "GestionProductos";
-            this.gestionProductosToolStripMenuItem.Click += new System.EventHandler(this.gestionProductosToolStripMenuItem_Click);
             // 
             // Principal_Nuevo
             // 
@@ -115,6 +115,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Principal_Nuevo";
             this.Text = "Principal_Nuevo";
+            this.Load += new System.EventHandler(this.Principal_Nuevo_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);

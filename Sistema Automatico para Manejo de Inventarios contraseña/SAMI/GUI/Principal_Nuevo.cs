@@ -31,5 +31,10 @@ namespace SAMI.GUI
 
             }
         }
+
+        private void Principal_Nuevo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
