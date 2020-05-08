@@ -72,15 +72,10 @@ namespace General.GUI
             FiltrarLocalmente();
         }
 
-        private void horafecha_Tick(object sender, EventArgs e)
-        {
-            lblhora.Text = DateTime.Now.ToString("hh:mm:ss tt");
-            lblfecha.Text = DateTime.Now.ToLongDateString();
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 EdicionProductos f = new EdicionProductos();
                 f.ShowDialog();
                 Cargar();
@@ -92,17 +87,18 @@ namespace General.GUI
         {
             try
             {
-                if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
                     EdicionProductos f = new EdicionProductos();
                     //SINCRONIZAR
                     String Nombre = dtgDatos.CurrentRow.Cells["NombreProducto"].Value.ToString();
                     String Estado = dtgDatos.CurrentRow.Cells["Estado"].Value.ToString();
                     DataTable Datos = new DataTable();
-                    Datos = ObtenerTabla(Nombre, Estado);                  
-                    f.txbId.Text = Datos.Rows[0]["IDProducto"].ToString();                   
-                    f.txbNombre.Text = Datos.Rows[0]["NombreProducto"].ToString();                   
+                    Datos = ObtenerTabla(Nombre, Estado);
+                    f.txbId.Text = Datos.Rows[0]["IDProducto"].ToString();
+                    f.txbNombre.Text = Datos.Rows[0]["NombreProducto"].ToString();
                     f.cbClasificacion.Text = Datos.Rows[0]["Clasificacion"].ToString();
-                    f.nudCantidad.Text = Datos.Rows[0]["Cantidad"].ToString();                
+                    f.nudCantidad.Text = Datos.Rows[0]["Cantidad"].ToString();
                     f.cbAlmacenamiento.Text = Datos.Rows[0]["LugarAlmacenamiento"].ToString();
                     f.cbExistencia.Text = Datos.Rows[0]["Existencia"].ToString();
                     f.txbDescripcion.Text = Datos.Rows[0]["Descripcion"].ToString();
@@ -111,14 +107,15 @@ namespace General.GUI
                         f.rbNuevo.Checked = true;
                         f.rbUsado.Checked = false;
                     }
-                    else {
+                    else
+                    {
                         f.rbNuevo.Checked = false;
                         f.rbUsado.Checked = true;
                     }
                     f.ShowDialog();
                     Cargar();
                 }
-                
+
             }
             catch { }
         }
@@ -127,7 +124,8 @@ namespace General.GUI
         {
             try
             {
-                if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado? esta accion no se podra deshacer", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado? esta accion no se podra deshacer", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
                     CLS.Producto oProducto = new CLS.Producto();
                     //SINCRONIZAR
                     String Nombre = dtgDatos.CurrentRow.Cells["NombreProducto"].Value.ToString();
@@ -135,12 +133,14 @@ namespace General.GUI
                     DataTable Datos = new DataTable();
                     Datos = ObtenerTabla(Nombre, Estado);
                     oProducto.IDProducto = Datos.Rows[0]["IDProducto"].ToString();
-                    if (oProducto.Eliminar()) {
+                    if (oProducto.Eliminar())
+                    {
                         Cargar();
                     }
                 }
             }
-            catch {
+            catch
+            {
             }
         }
     }

@@ -18,44 +18,29 @@ namespace SAMI.GUI
             InitializeComponent();
         }
 
-        private void btnEmpleados_Click(object sender, EventArgs e)
-        {
-            dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_EMPLEADOS();
-        }
-
         private void Principal_Load(object sender, EventArgs e)
         {
             lblUsuario.Text = "Usuario: " + _SESION.Informacion.Usuario;
+            Cargar_Principal();
         }
-
-        private void btnRoles_Click(object sender, EventArgs e)
-        {
-            dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_ROLES();
-        }
-
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            dtgInformacion.DataSource = CacheManager.CLS.Cache.TODOS_LOS_USUARIOS();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try {
-                General.GUI.GestionProductos f = new General.GUI.GestionProductos();
-                f.ShowDialog();
-            }
-            catch { }
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
+        private void Cargar_Principal() {
             try
             {
-                General.GUI.EdicionProductos f = new General.GUI.EdicionProductos();
-                f.ShowDialog();
+                General.GUI.GestionProductos f = new General.GUI.GestionProductos();
+                f.MdiParent = this;
+                f.Show();
             }
-            catch { }
+            catch
+            {}
+        }
+        private void principalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cargar_Principal();
+        }
+
+        private void btnPrincipal_Click(object sender, EventArgs e)
+        {
+            Cargar_Principal();
         }
     }
 }
