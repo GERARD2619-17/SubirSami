@@ -16,7 +16,7 @@ namespace General.GUI
         private Boolean VerificarProducto(String nombre, String estado) {
             Boolean verificar = false;
             try {
-                String Consulta = "SELECT NombreProducto from Productos where NombreProducto = '"+nombre+"' AND Estado = '"+estado+"';";
+                String Consulta = "SELECT NombreProducto, Estado from Productos where NombreProducto = '" + nombre + "' AND Estado = '" + estado + "';";
                 DataTable Datos = new DataTable();
                 DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
                 Datos = Consultor.Consultar(Consulta);
@@ -24,9 +24,32 @@ namespace General.GUI
                 {
                     verificar = true;
                 }
-                }
+            }
             catch
             {
+                MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return verificar;
+        }
+        private Boolean VerificarProducto2(String nombre, String estado) {
+            Boolean verificar = false;
+            try
+            {
+                String Consulta = "SELECT NombreProducto, Estado from Productos where IDProducto = " + txbId.Text + ";";
+                DataTable Datos = new DataTable();
+                DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
+                Datos = Consultor.Consultar(Consulta);
+                if (Datos.Rows[0]["NombreProducto"].ToString() != nombre)
+                {
+                    verificar = VerificarProducto(nombre, estado);
+                }
+                else {
+                    if (Datos.Rows[0]["Estado"].ToString() != estado) {
+                        verificar = VerificarProducto(nombre, estado);
+                    }
+                }
+            }
+            catch {
                 MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return verificar;
@@ -116,12 +139,24 @@ namespace General.GUI
             String estado;
             if (rbNuevo.Checked) { estado = "Nuevo"; }
             else { estado = "Usado"; }
-
-            if (VerificarProducto(txbNombre.Text, estado))
-            {
-                MessageBox.Show("El procuto ya se encuentra registrado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                verificado = false;
+            //EN CASO DE SER ACTUALIZACION
+            if (txbId.TextLength > 0) {
+                if (VerificarProducto2(txbNombre.Text, estado)) {
+                    MessageBox.Show("El producto no puede actualizarse, ya se encuentra registrado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    verificado = false;
+                }
             }
+            //EN CASO DE SER INSERSION
+            else
+            {
+                if (VerificarProducto(txbNombre.Text, estado))
+                {
+                    MessageBox.Show("El producto ya se encuentra registrado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    verificado = false;
+                }
+            }
+
+            
             return verificado;
         }
 

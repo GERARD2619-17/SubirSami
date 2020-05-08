@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLS\Herramientas.cs" />
     <Compile Include="CLS\Producto.cs" />
     <Compile Include="GUI\EdicionProductos.cs">
       <SubType>Form</SubType>

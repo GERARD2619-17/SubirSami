@@ -80,7 +80,8 @@ namespace General.CLS
                 Sentencia += "Cantidad ="+ _Cantidad + ",";
                 Sentencia += "IDAlmacenamiento =" + _IDAlmacenamiento + ",";
                 Sentencia += "Existencia ='" + _Existencia + "'";
-                Sentencia += "WHERE IDProducto =" + _IDProducto + ");";
+                Sentencia += "WHERE IDProducto =" + _IDProducto + ";";
+                String dato = Sentencia;
                 if (Operacion.Actualizar(Sentencia) > 0)
                 {
                     Actualizado = true;
