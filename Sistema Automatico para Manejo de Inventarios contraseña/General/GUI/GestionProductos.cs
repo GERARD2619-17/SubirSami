@@ -122,5 +122,26 @@ namespace General.GUI
             }
             catch { }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado? esta accion no se podra deshacer", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                    CLS.Producto oProducto = new CLS.Producto();
+                    //SINCRONIZAR
+                    String Nombre = dtgDatos.CurrentRow.Cells["NombreProducto"].Value.ToString();
+                    String Estado = dtgDatos.CurrentRow.Cells["Estado"].Value.ToString();
+                    DataTable Datos = new DataTable();
+                    Datos = ObtenerTabla(Nombre, Estado);
+                    oProducto.IDProducto = Datos.Rows[0]["IDProducto"].ToString();
+                    if (oProducto.Eliminar()) {
+                        Cargar();
+                    }
+                }
+            }
+            catch {
+            }
+        }
     }
 }

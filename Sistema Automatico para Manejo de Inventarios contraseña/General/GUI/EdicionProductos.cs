@@ -199,10 +199,6 @@ namespace General.GUI
         }
 
 
-
-
-
-
         public EdicionProductos()
         {
             InitializeComponent();

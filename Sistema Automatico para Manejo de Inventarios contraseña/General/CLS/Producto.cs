@@ -109,7 +109,7 @@ namespace General.CLS
             try
             {
                 Sentencia = "DELETE FROM Productos ";
-                Sentencia += "WHERE IDProducto =" + _IDProducto + ");";
+                Sentencia += "WHERE IDProducto =" + _IDProducto + ";";
                 if (Operacion.Eliminar(Sentencia) > 0)
                 {
                     Eliminado = true;
