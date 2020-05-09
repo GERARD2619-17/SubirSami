@@ -76,7 +76,7 @@
             // principalToolStripMenuItem
             // 
             this.principalToolStripMenuItem.Name = "principalToolStripMenuItem";
-            this.principalToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.principalToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.principalToolStripMenuItem.Text = "Principal";
             this.principalToolStripMenuItem.Click += new System.EventHandler(this.principalToolStripMenuItem_Click);
             // 

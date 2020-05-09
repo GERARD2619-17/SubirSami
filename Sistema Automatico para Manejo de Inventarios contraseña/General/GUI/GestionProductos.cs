@@ -58,9 +58,6 @@ namespace General.GUI
             catch { }
         }
 
-
-
-
         public GestionProductos()
         {
             InitializeComponent();
@@ -143,5 +140,7 @@ namespace General.GUI
             {
             }
         }
+
+        
     }
 }

@@ -23,6 +23,14 @@ namespace SAMI.GUI
             lblUsuario.Text = "Usuario: " + _SESION.Informacion.Usuario;
             Cargar_Principal();
         }
+
+
+        private void Cerrar_Todo() {
+            foreach (Form childForm in MdiChildren)
+            {
+                childForm.Close();
+            }
+        }
         private void Cargar_Principal() {
             try
             {
@@ -33,14 +41,19 @@ namespace SAMI.GUI
             catch
             {}
         }
+
         private void principalToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Cerrar_Todo();
             Cargar_Principal();
         }
 
         private void btnPrincipal_Click(object sender, EventArgs e)
         {
+            Cerrar_Todo();
             Cargar_Principal();
         }
+
+
     }
 }
