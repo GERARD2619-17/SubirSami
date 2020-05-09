@@ -24,7 +24,7 @@ namespace SAMI.GUI
             Cargar_Principal();
         }
 
-
+        //Cierra todos los formularios abiertos
         private void Cerrar_Todo() {
             foreach (Form childForm in MdiChildren)
             {
