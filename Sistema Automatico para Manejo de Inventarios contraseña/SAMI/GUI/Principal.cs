@@ -23,20 +23,25 @@ namespace SAMI.GUI
 
             lblUsuario.Text = "Usuario: " + _SESION.Informacion.Usuario;
             Cargar_Principal();
+            
         }
 
         //Cierra todos los formularios abiertos
         private void Cerrar_Todo() {
             foreach (Form childForm in MdiChildren)
             {
+                
                 childForm.Close();
+                
             }
         }
         private void Cargar_Principal() {
+
             try
             {
                 General.GUI.GestionProductos f = new General.GUI.GestionProductos();
                 f.MdiParent = this;
+               
                 f.Show();
             }
             catch
@@ -51,12 +56,14 @@ namespace SAMI.GUI
 
         private void btnPrincipal_Click(object sender, EventArgs e)
         {
+
+           
             Cerrar_Todo();
             Cargar_Principal();
            
         }
 
-
+ 
 
 
     }

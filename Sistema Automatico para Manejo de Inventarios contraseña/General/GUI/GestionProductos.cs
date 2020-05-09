@@ -140,7 +140,11 @@ namespace General.GUI
             {
             }
         }
-
-        
+        //en esta parte se toco programar el formulario para que a la hora de llamarlo con el boton principal aparesca maximizado y abarcando toda la pantalla
+        private void GestionProductos_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.Dock = DockStyle.Fill;
+        }
     }
 }
