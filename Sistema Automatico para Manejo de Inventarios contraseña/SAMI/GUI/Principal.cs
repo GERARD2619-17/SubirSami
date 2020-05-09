@@ -1,4 +1,5 @@
-﻿using System;
+﻿using General.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +32,8 @@ namespace SAMI.GUI
                 f.Show();
             }
             catch
-            {}
+            {
+            }
         }
         private void principalToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -40,7 +42,14 @@ namespace SAMI.GUI
 
         private void btnPrincipal_Click(object sender, EventArgs e)
         {
-            Cargar_Principal();
+           /* Form Principal = new GestionProductos();
+            Principal.Show();
+            Close();
+             Cargar_Principal();*/
+
         }
+
+    
+
     }
 }
