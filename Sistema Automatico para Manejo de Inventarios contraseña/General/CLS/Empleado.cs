@@ -84,6 +84,33 @@ namespace General.CLS
             return Actualizado;
         }
 
-
+        public Boolean Eliminar()
+        {
+            Boolean Eliminado = false;
+            String Sentencia;
+            DataManager.CLS.DBOperacion Operacion = new DataManager.CLS.DBOperacion();
+            try
+            {
+               
+                Sentencia = "DELETE FROM empleados ";
+                Sentencia += "WHERE IDEmpleado=" + _IDEmpleado + ";";
+                if (Operacion.Eliminar(Sentencia) > 0)
+                {
+                    Eliminado = true;
+                    MessageBox.Show("Registro eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Eliminado = false;
+                    MessageBox.Show("Registro no fue eliminado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch
+            {
+                Eliminado = false;
+                MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Eliminado;
+        }
     }
 }
