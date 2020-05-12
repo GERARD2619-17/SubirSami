@@ -46,6 +46,7 @@
     <Compile Include="CLS\Empleado.cs" />
     <Compile Include="CLS\Herramientas.cs" />
     <Compile Include="CLS\Producto.cs" />
+    <Compile Include="CLS\Usuarios.cs" />
     <Compile Include="GUI\EdicionProductos.cs">
       <SubType>Form</SubType>
     </Compile>
