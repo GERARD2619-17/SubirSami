@@ -75,9 +75,9 @@ namespace General.CLS
                 Sentencia = "UPDATE Productos SET ";
                 Sentencia += "NombreProducto ='" + _NombreProducto + "',";
                 Sentencia += "Estado ='" + _Estado + "',";
-                Sentencia += "IdClasificacion ="+ _IdClasificacion + ",";
+                Sentencia += "IdClasificacion =" + _IdClasificacion + ",";
                 Sentencia += "Descripcion ='" + _Descripcion + "',";
-                Sentencia += "Cantidad ="+ _Cantidad + ",";
+                Sentencia += "Cantidad =" + _Cantidad + ",";
                 Sentencia += "IDAlmacenamiento =" + _IDAlmacenamiento + ",";
                 Sentencia += "Existencia ='" + _Existencia + "'";
                 Sentencia += "WHERE IDProducto =" + _IDProducto + ";";
