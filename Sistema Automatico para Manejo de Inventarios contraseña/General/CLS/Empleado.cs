@@ -52,6 +52,38 @@ namespace General.CLS
             return Guardado;
         }
 
+        public Boolean Actualizar()
+        {
+            Boolean Actualizado = false;
+            String Sentencia;
+            DataManager.CLS.DBOperacion Operacion = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Sentencia = "UPDATE Empleado SET ";
+                Sentencia += "Nombres ='" + _Nombres + "',";
+                Sentencia += "Apellidos ='" + _Apelllidos + "',";
+                Sentencia += "Genero =" + _Genero + ",";
+                Sentencia += "WHERE IDEmpleado =" + _IDEmpleado + ";";
+
+                if (Operacion.Actualizar(Sentencia) > 0)
+                {
+                    Actualizado = true;
+                    MessageBox.Show("Registro actualizado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Actualizado = false;
+                    MessageBox.Show("Registro no fue actualizado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch
+            {
+                Actualizado = false;
+                MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Actualizado;
+        }
+
 
     }
 }
