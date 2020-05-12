@@ -17,7 +17,7 @@ namespace DataManager.CLS
         {
             return EjecutarSentencia(pSentencia);
         }
-        public Int32 Eliminar(String pSentencia)
+        public Int32 Eliminar(String pSentencia)   
         {
             return EjecutarSentencia(pSentencia);
         }
