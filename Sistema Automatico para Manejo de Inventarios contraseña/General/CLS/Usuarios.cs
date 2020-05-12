@@ -32,8 +32,6 @@ namespace General.CLS
             DataManager.CLS.DBOperacion Operacion = new DataManager.CLS.DBOperacion();
             try
             {
-
-
                 Sentencia = "INSERT INTO Usuarios(Usuario, Credencial, IDRol, IDEmpleado) VALUES(";
                 Sentencia += "'" + _Usuario + "',";
                 Sentencia += "md5(sha1('" + _Credencial + "')),";
@@ -72,9 +70,6 @@ namespace General.CLS
                 Sentencia += "IDRol =" + _IDRol + ",";
                 Sentencia += "IDEmpleado =" + _IDEmpleado;
                 Sentencia += " WHERE IDUsuario =" + IDUsuario + ";";
-
-
-
                 if (Operacion.Actualizar(Sentencia) > 0)
                 {
                     Actualizado = true;
@@ -95,36 +90,32 @@ namespace General.CLS
 
         }
 
-            public Boolean Eliminar()
+        public Boolean Eliminar()
+        {
+            Boolean Eliminado = false;
+            String Sentencia;
+            DataManager.CLS.DBOperacion Operacion = new DataManager.CLS.DBOperacion();
+            try
             {
-                Boolean Eliminado = false;
-                String Sentencia;
-                DataManager.CLS.DBOperacion Operacion = new DataManager.CLS.DBOperacion();
-                try
+                Sentencia = "DELETE FROM Usuario";
+                Sentencia += "WHERE IDUsuario =" + _IDUsuario + ";";
+                if (Operacion.Eliminar(Sentencia) > 0)
                 {
-                    Sentencia = "DELETE FROM Usuario";
-                    Sentencia += "WHERE IDUsuario =" + _IDUsuario + ";";
-                    if (Operacion.Eliminar(Sentencia) > 0)
-                    {
-                        Eliminado = true;
-                        MessageBox.Show("Registro eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        Eliminado = false;
-                        MessageBox.Show("Registro no fue eliminado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    Eliminado = true;
+                    MessageBox.Show("Registro eliminado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch
+                else
                 {
                     Eliminado = false;
-                    MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Registro no fue eliminado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                return Eliminado;
             }
-
-   
-
-
+            catch
+            {
+                Eliminado = false;
+                MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Eliminado;
+        }
     }
 }

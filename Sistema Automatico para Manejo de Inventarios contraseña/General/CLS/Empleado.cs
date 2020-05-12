@@ -12,14 +12,14 @@ namespace General.CLS
         //ATRIBUTOS
         String _IDEmpleado;
         String _Nombres;
-        String _Apelllidos;
+        String _Apellidos;
         String _Genero;
 
         //PROPIEDADES
 
         public string IDEmpleado { get => _IDEmpleado; set => _IDEmpleado = value; }
         public string Nombres { get => _Nombres; set => _Nombres = value; }
-        public string Apelllidos { get => _Apelllidos; set => _Apelllidos = value; }
+        public string Apellidos { get => _Apellidos; set => _Apellidos = value; }
         public string Genero { get => _Genero; set => _Genero = value; }
 
         //ATRIBUTOS
@@ -31,7 +31,7 @@ namespace General.CLS
             try {
                 Sentencia = "INSERT INTO Empleados(Nombres,Apellidos,Genero) VALUES(";
                 Sentencia += "'" + _Nombres + "',";
-                Sentencia += "'"+ _Apelllidos + "',";
+                Sentencia += "'"+ _Apellidos + "',";
                 Sentencia += "'" + _Genero + "');";
                 if (Operacion.Insertar(Sentencia) > 0)
                 {
@@ -59,10 +59,10 @@ namespace General.CLS
             DataManager.CLS.DBOperacion Operacion = new DataManager.CLS.DBOperacion();
             try
             {
-                Sentencia = "UPDATE Empleado SET ";
+                Sentencia = "UPDATE Empleados SET ";
                 Sentencia += "Nombres ='" + _Nombres + "',";
-                Sentencia += "Apellidos ='" + _Apelllidos + "',";
-                Sentencia += "Genero =" + _Genero + ",";
+                Sentencia += "Apellidos ='" + _Apellidos + "',";
+                Sentencia += "Genero = '" + _Genero + "',";
                 Sentencia += "WHERE IDEmpleado =" + _IDEmpleado + ";";
 
                 if (Operacion.Actualizar(Sentencia) > 0)
@@ -92,7 +92,7 @@ namespace General.CLS
             try
             {
                
-                Sentencia = "DELETE FROM empleados ";
+                Sentencia = "DELETE FROM Empleados ";
                 Sentencia += "WHERE IDEmpleado=" + _IDEmpleado + ";";
                 if (Operacion.Eliminar(Sentencia) > 0)
                 {
