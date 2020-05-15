@@ -54,17 +54,10 @@ namespace SAMI.GUI
             Cargar_Principal();
         }
 
-        private void btnPrincipal_Click(object sender, EventArgs e)
+        private void btnProductos_Click(object sender, EventArgs e)
         {
-
-           
             Cerrar_Todo();
             Cargar_Principal();
-           
         }
-
- 
-
-
     }
 }

@@ -41,7 +41,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnPrincipal = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.btnProductos = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -117,7 +117,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnPrincipal,
             this.toolStripSeparator1,
-            this.toolStripButton2,
+            this.btnProductos,
             this.toolStripSeparator2,
             this.toolStripButton1,
             this.toolStripSeparator3,
@@ -140,22 +140,22 @@
             this.btnPrincipal.Text = "Principal";
             this.btnPrincipal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPrincipal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnPrincipal.Click += new System.EventHandler(this.btnPrincipal_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(197, 6);
             // 
-            // toolStripButton2
+            // btnProductos
             // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Padding = new System.Windows.Forms.Padding(60, 0, 60, 0);
-            this.toolStripButton2.Size = new System.Drawing.Size(197, 64);
-            this.toolStripButton2.Text = "Productos";
-            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductos.Image")));
+            this.btnProductos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnProductos.Name = "btnProductos";
+            this.btnProductos.Padding = new System.Windows.Forms.Padding(60, 0, 60, 0);
+            this.btnProductos.Size = new System.Drawing.Size(197, 64);
+            this.btnProductos.Text = "Productos";
+            this.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // toolStripSeparator2
             // 
@@ -226,7 +226,7 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton btnPrincipal;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton btnProductos;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
