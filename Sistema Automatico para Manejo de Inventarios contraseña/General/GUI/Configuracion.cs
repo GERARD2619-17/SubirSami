@@ -116,6 +116,7 @@ namespace General.GUI
                 case 4:
                     AgregarEmpleados();
                     break;
+
             }
         }
         private void AgregarClasificaciones()
