@@ -47,6 +47,12 @@
     <Compile Include="CLS\Herramientas.cs" />
     <Compile Include="CLS\Producto.cs" />
     <Compile Include="CLS\Usuarios.cs" />
+    <Compile Include="GUI\Configuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Configuracion.Designer.cs">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\EdicionProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\Configuracion.resx">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\EdicionProductos.resx">
       <DependentUpon>EdicionProductos.cs</DependentUpon>
     </EmbeddedResource>

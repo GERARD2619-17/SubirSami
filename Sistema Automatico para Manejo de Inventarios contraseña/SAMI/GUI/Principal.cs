@@ -35,6 +35,19 @@ namespace SAMI.GUI
                 
             }
         }
+        private void Cargar_Productos()
+        {
+
+            try
+            {
+                General.GUI.GestionProductos f = new General.GUI.GestionProductos();
+                f.MdiParent = this;
+
+                f.Show();
+            }
+            catch
+            { }
+        }
         private void Cargar_Principal() {
 
             try
@@ -63,8 +76,16 @@ namespace SAMI.GUI
            
         }
 
- 
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            Cerrar_Todo();
+            Cargar_Productos();
+        }
 
-
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            General.GUI.Configuracion f = new General.GUI.Configuracion();
+            f.Show();
+        }
     }
 }

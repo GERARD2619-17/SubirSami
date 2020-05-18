@@ -46,7 +46,7 @@ namespace CacheManager.CLS
                 CONCAT(Nombres,' ',Apellidos) as Nombre,
                 Genero
                 FROM
-                EMPLEADOS;";
+                Empleados;";
                 Resultado = oConsulta.Consultar(Consulta);
             }
             catch
@@ -96,6 +96,53 @@ namespace CacheManager.CLS
             }
             return Resultado;
         }
-
+        public static DataTable TODAS_LAS_CLASIFICACIONES()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta;
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = "SELECT IdClasificacion, Clasificacion FROM Clasificaciones;";
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable TODOS_LOS_ALMACENAMIENTOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta;
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = "SELECT * FROM Almacenamientos";
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+        public static DataTable TODOS_LOS_PROVEEDORES()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta;
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = "SELECT * FROM Proveedores";
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
     }
 }
