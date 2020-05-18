@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLS\Clasificaciones.cs" />
     <Compile Include="CLS\Empleado.cs" />
     <Compile Include="CLS\Herramientas.cs" />
     <Compile Include="CLS\Producto.cs" />
@@ -53,11 +54,35 @@
     <Compile Include="GUI\Configuracion.Designer.cs">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\EdicionAlmacenamientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EdicionAlmacenamientos.Designer.cs">
+      <DependentUpon>EdicionAlmacenamientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EdicionClasificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EdicionClasificaciones.Designer.cs">
+      <DependentUpon>EdicionClasificaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EdicionEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EdicionEmpleados.Designer.cs">
+      <DependentUpon>EdicionEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\EdicionProductos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\EdicionProductos.Designer.cs">
       <DependentUpon>EdicionProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EdicionProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EdicionProveedores.Designer.cs">
+      <DependentUpon>EdicionProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GestionProductos.cs">
       <SubType>Form</SubType>
@@ -75,6 +100,9 @@
   <ItemGroup>
     <EmbeddedResource Include="GUI\Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EdicionClasificaciones.resx">
+      <DependentUpon>EdicionClasificaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EdicionProductos.resx">
       <DependentUpon>EdicionProductos.cs</DependentUpon>

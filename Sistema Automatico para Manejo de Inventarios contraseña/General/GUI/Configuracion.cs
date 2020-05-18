@@ -121,7 +121,13 @@ namespace General.GUI
         }
         private void AgregarClasificaciones()
         {
-            MessageBox.Show("Agregar Clasificaciones", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            try
+            {
+                EdicionClasificaciones f = new EdicionClasificaciones();
+                f.ShowDialog();
+                Cargar();
+            }
+            catch { }
         }
         private void AgregarAlmacenamientos()
         {
