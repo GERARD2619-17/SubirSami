@@ -141,5 +141,80 @@ namespace General.GUI
         {
             MessageBox.Show("Agregar Empleados", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            switch (Opcion)
+            {
+                case 1:
+                    EditarClasificaciones();
+                    break;
+                case 2:
+                    EditarAlmacenamientos();
+                    break;
+                case 3:
+                    EditarProveedores();
+                    break;
+                case 4:
+                    EditarEmpleados();
+                    break;
+            }
+        }
+
+        private void EditarClasificaciones() {
+            if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                try
+                {
+                    EdicionClasificaciones f = new EdicionClasificaciones();
+                    f.txbId.Text = dtgDatos1.CurrentRow.Cells["IdClasificacion"].Value.ToString();
+                    f.txbClasificacion.Text = dtgDatos1.CurrentRow.Cells["Clasificacion"].Value.ToString();
+                    f.ShowDialog();
+                    Cargar();
+                }
+                catch { }
+            }
+        }
+        private void EditarAlmacenamientos() {
+        }
+        private void EditarProveedores() {
+        }
+        private void EditarEmpleados() {
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            switch (Opcion)
+            {
+                case 1:
+                    EliminarClasificaciones();
+                    break;
+                case 2:
+                    EliminarAlmacenamientos();
+                    break;
+                case 3:
+                    EliminarProveedores();
+                    break;
+                case 4:
+                    EliminarEmpleados();
+                    break;
+            }
+        }
+        private void EliminarClasificaciones() {
+            try
+            {
+                if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    CLS.Clasificaciones oClasificaciones = new CLS.Clasificaciones();
+                    oClasificaciones.IdClasificacion = dtgDatos1.CurrentRow.Cells["IdClasificacion"].Value.ToString();
+                    oClasificaciones.Eliminar();
+                }
+            }
+            catch {
+            }
+            Cargar();
+        }
+        private void EliminarAlmacenamientos() { }
+        private void EliminarProveedores() { }
+        private void EliminarEmpleados() { }
     }
 }

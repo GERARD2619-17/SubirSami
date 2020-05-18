@@ -75,7 +75,6 @@ namespace General.CLS
             DataManager.CLS.DBOperacion Operacion = new DataManager.CLS.DBOperacion();
             try
             {
-
                 Sentencia = "DELETE FROM Clasificaciones WHERE IdClasificacion = "+_IdClasificacion+";";
                 if (Operacion.Eliminar(Sentencia) > 0)
                 {
