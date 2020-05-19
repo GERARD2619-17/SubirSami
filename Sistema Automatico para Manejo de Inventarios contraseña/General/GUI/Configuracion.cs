@@ -195,6 +195,7 @@ namespace General.GUI
         }
         private void EditarAlmacenamientos() {
 
+
         }
         private void EditarProveedores() {
             if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

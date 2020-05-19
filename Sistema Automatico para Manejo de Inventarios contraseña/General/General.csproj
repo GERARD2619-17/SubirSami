@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLS\Almacenamientos.cs" />
     <Compile Include="CLS\Clasificaciones.cs" />
     <Compile Include="CLS\Empleado.cs" />
     <Compile Include="CLS\Herramientas.cs" />
@@ -101,6 +102,9 @@
   <ItemGroup>
     <EmbeddedResource Include="GUI\Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EdicionAlmacenamientos.resx">
+      <DependentUpon>EdicionAlmacenamientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EdicionClasificaciones.resx">
       <DependentUpon>EdicionClasificaciones.cs</DependentUpon>
