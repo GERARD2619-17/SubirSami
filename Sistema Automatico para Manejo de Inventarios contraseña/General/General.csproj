@@ -47,6 +47,7 @@
     <Compile Include="CLS\Empleado.cs" />
     <Compile Include="CLS\Herramientas.cs" />
     <Compile Include="CLS\Producto.cs" />
+    <Compile Include="CLS\Proveedores.cs" />
     <Compile Include="CLS\Usuarios.cs" />
     <Compile Include="GUI\Configuracion.cs">
       <SubType>Form</SubType>
@@ -109,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EdicionProductos.resx">
       <DependentUpon>EdicionProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EdicionProveedores.resx">
+      <DependentUpon>EdicionProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GestionProductos.resx">
       <DependentUpon>GestionProductos.cs</DependentUpon>

@@ -197,6 +197,18 @@ namespace General.GUI
 
         }
         private void EditarProveedores() {
+            if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    EdicionProveedores f = new EdicionProveedores();
+                    f.txbId.Text = dtgDatos3.CurrentRow.Cells["IDProveedor"].Value.ToString();
+                    f.txbProveedor.Text = dtgDatos3.CurrentRow.Cells["NombreProveedor"].Value.ToString();
+                    f.ShowDialog();
+                    Cargar();
+                }
+                catch { }
+            }
         }
         private void EditarEmpleados() {
             if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -261,7 +273,21 @@ namespace General.GUI
             Cargar();
         }
         private void EliminarAlmacenamientos() { }
-        private void EliminarProveedores() { }
+        private void EliminarProveedores() {
+            try
+            {
+                if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    CLS.Proveedores oProveedores = new CLS.Proveedores();
+                    oProveedores.IdProveedor = dtgDatos3.CurrentRow.Cells["IdProveedor"].Value.ToString();
+                    oProveedores.Eliminar();
+                }
+            }
+            catch
+            {
+            }
+            Cargar();
+        }
         private void EliminarEmpleados() {
             try
             {

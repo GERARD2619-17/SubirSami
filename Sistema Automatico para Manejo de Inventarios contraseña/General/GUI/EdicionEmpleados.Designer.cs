@@ -185,6 +185,7 @@
             // 
             // Notificador
             // 
+            this.Notificador.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.Notificador.ContainerControl = this;
             // 
             // EdicionEmpleados
