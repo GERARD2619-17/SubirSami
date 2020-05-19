@@ -199,6 +199,33 @@ namespace General.GUI
         private void EditarProveedores() {
         }
         private void EditarEmpleados() {
+            if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    String Consulta = "SELECT * FROM Empleados where IdEmpleado = "+ dtgDatos4.CurrentRow.Cells["ID"].Value.ToString() + ";";
+                    DataTable Datos = new DataTable();
+                    DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
+                    Datos = Consultor.Consultar(Consulta);
+                    EdicionEmpleados f = new EdicionEmpleados();
+                    f.txbId.Text = dtgDatos4.CurrentRow.Cells["ID"].Value.ToString();
+                    f.txbNombres.Text = Datos.Rows[0]["Nombres"].ToString();
+                    f.txbApellidos.Text = Datos.Rows[0]["Apellidos"].ToString();
+                    if (Datos.Rows[0]["Genero"].ToString() == "MASCULINO")
+                    {
+                        f.rbMasculino.Checked = true;
+                        f.rbFemenino.Checked = false;
+                    }
+                    else
+                    {
+                        f.rbMasculino.Checked = false;
+                        f.rbFemenino.Checked = true;
+                    }
+                    f.ShowDialog();
+                    Cargar();
+                }
+                catch { }
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -235,6 +262,20 @@ namespace General.GUI
         }
         private void EliminarAlmacenamientos() { }
         private void EliminarProveedores() { }
-        private void EliminarEmpleados() { }
+        private void EliminarEmpleados() {
+            try
+            {
+                if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    CLS.Empleado oEmpleado = new CLS.Empleado();
+                    oEmpleado.IDEmpleado = dtgDatos4.CurrentRow.Cells["ID"].Value.ToString();
+                    oEmpleado.Eliminar();
+                }
+            }
+            catch
+            {
+            }
+            Cargar();
+        }
     }
 }

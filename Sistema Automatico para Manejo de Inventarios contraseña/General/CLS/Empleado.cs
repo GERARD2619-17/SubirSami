@@ -62,7 +62,7 @@ namespace General.CLS
                 Sentencia = "UPDATE Empleados SET ";
                 Sentencia += "Nombres ='" + _Nombres + "',";
                 Sentencia += "Apellidos ='" + _Apellidos + "',";
-                Sentencia += "Genero = '" + _Genero + "',";
+                Sentencia += "Genero = '" + _Genero + "' ";
                 Sentencia += "WHERE IDEmpleado =" + _IDEmpleado + ";";
 
                 if (Operacion.Actualizar(Sentencia) > 0)

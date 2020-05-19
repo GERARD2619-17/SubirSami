@@ -104,6 +104,9 @@
     <EmbeddedResource Include="GUI\EdicionClasificaciones.resx">
       <DependentUpon>EdicionClasificaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EdicionEmpleados.resx">
+      <DependentUpon>EdicionEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\EdicionProductos.resx">
       <DependentUpon>EdicionProductos.cs</DependentUpon>
     </EmbeddedResource>
