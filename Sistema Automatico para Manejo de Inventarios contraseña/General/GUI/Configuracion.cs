@@ -175,6 +175,7 @@ namespace General.GUI
             }
         }
         private void EditarAlmacenamientos() {
+
         }
         private void EditarProveedores() {
         }
