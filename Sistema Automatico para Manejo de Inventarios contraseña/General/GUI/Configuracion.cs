@@ -131,7 +131,14 @@ namespace General.GUI
         }
         private void AgregarAlmacenamientos()
         {
-            MessageBox.Show("Agregar Bodega", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            try
+            {
+                EdicionAlmacenamientos f = new EdicionAlmacenamientos();
+                f.ShowDialog();
+                Cargar();
+            }
+            catch { }
+           
         }
         private void AgregarProveedores()
         {
@@ -139,7 +146,13 @@ namespace General.GUI
         }
         private void AgregarEmpleados()
         {
-            MessageBox.Show("Agregar Empleados", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            try
+            {
+                EdicionEmpleados f = new EdicionEmpleados();
+                f.ShowDialog();
+                Cargar();
+            }
+            catch { }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
