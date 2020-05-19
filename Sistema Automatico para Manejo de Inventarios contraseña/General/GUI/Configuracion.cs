@@ -194,7 +194,18 @@ namespace General.GUI
             }
         }
         private void EditarAlmacenamientos() {
-
+            if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    EdicionAlmacenamientos f = new EdicionAlmacenamientos();
+                    f.txbId.Text = dtgDatos2.CurrentRow.Cells["IDAlmacenamiento"].Value.ToString();
+                    f.txbAlmacenamientos.Text = dtgDatos2.CurrentRow.Cells["NombreProveedor"].Value.ToString();
+                    f.ShowDialog();
+                    Cargar();
+                }
+                catch { }
+            }
 
         }
         private void EditarProveedores() {
@@ -273,7 +284,21 @@ namespace General.GUI
             }
             Cargar();
         }
-        private void EliminarAlmacenamientos() { }
+        private void EliminarAlmacenamientos() {
+            try
+            {
+                if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    CLS.Almacenamientos oAlmacenamiento = new CLS.Almacenamientos();
+                    oAlmacenamiento.IdAlmacenamiento = dtgDatos2.CurrentRow.Cells["IDAlmacenamiento"].Value.ToString();
+                    oAlmacenamiento.Eliminar();
+                }
+            }
+            catch
+            {
+            }
+            Cargar();
+        }
         private void EliminarProveedores() {
             try
             {

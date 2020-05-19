@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EdicionAlmacenamientos));
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txbId = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -39,19 +38,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Notificador = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Notificador)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 199);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 48);
-            this.label3.TabIndex = 66;
-            this.label3.Text = "Zona de\r\n alamacenamientos:";
             // 
             // label1
             // 
@@ -65,7 +55,7 @@
             // 
             // txbId
             // 
-            this.txbId.Location = new System.Drawing.Point(194, 150);
+            this.txbId.Location = new System.Drawing.Point(94, 150);
             this.txbId.Name = "txbId";
             this.txbId.ReadOnly = true;
             this.txbId.Size = new System.Drawing.Size(222, 22);
@@ -76,7 +66,7 @@
             this.btnCancelar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(248, 351);
+            this.btnCancelar.Location = new System.Drawing.Point(197, 292);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(110, 45);
             this.btnCancelar.TabIndex = 63;
@@ -90,7 +80,7 @@
             this.btnGuardar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(91, 351);
+            this.btnGuardar.Location = new System.Drawing.Point(40, 292);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(110, 45);
             this.btnGuardar.TabIndex = 62;
@@ -101,7 +91,7 @@
             // 
             // txbAlmacenamientos
             // 
-            this.txbAlmacenamientos.Location = new System.Drawing.Point(194, 225);
+            this.txbAlmacenamientos.Location = new System.Drawing.Point(94, 201);
             this.txbAlmacenamientos.Name = "txbAlmacenamientos";
             this.txbAlmacenamientos.Size = new System.Drawing.Size(222, 22);
             this.txbAlmacenamientos.TabIndex = 61;
@@ -109,9 +99,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(19, 39);
+            this.pictureBox1.Location = new System.Drawing.Point(14, 37);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(74, 77);
+            this.pictureBox1.Size = new System.Drawing.Size(51, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 60;
             this.pictureBox1.TabStop = false;
@@ -120,7 +110,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(116, 39);
+            this.label2.Location = new System.Drawing.Point(74, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(242, 32);
             this.label2.TabIndex = 59;
@@ -130,11 +120,21 @@
             // 
             this.Notificador.ContainerControl = this;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(10, 199);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 24);
+            this.label3.TabIndex = 66;
+            this.label3.Text = "Zona:";
+            // 
             // EdicionAlmacenamientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 418);
+            this.ClientSize = new System.Drawing.Size(332, 395);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txbId);
@@ -154,7 +154,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txbId;
         private System.Windows.Forms.Button btnCancelar;
@@ -163,5 +162,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider Notificador;
+        private System.Windows.Forms.Label label3;
     }
 }
