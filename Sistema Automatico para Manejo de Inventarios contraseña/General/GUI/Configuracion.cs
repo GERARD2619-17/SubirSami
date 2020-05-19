@@ -142,7 +142,13 @@ namespace General.GUI
         }
         private void AgregarProveedores()
         {
-            MessageBox.Show("Agregar Proveedores", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            try
+            {
+                EdicionProveedores f = new EdicionProveedores();
+                f.ShowDialog();
+                Cargar();
+            }
+            catch { }
         }
         private void AgregarEmpleados()
         {
