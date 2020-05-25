@@ -86,11 +86,23 @@
     <Compile Include="GUI\EdicionProveedores.Designer.cs">
       <DependentUpon>EdicionProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GestionBodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GestionBodega.Designer.cs">
+      <DependentUpon>GestionBodega.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GestionProductos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\GestionProductos.Designer.cs">
       <DependentUpon>GestionProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\RetirarEnBodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\RetirarEnBodega.Designer.cs">
+      <DependentUpon>RetirarEnBodega.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -118,8 +130,14 @@
     <EmbeddedResource Include="GUI\EdicionProveedores.resx">
       <DependentUpon>EdicionProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GestionBodega.resx">
+      <DependentUpon>GestionBodega.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GestionProductos.resx">
       <DependentUpon>GestionProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\RetirarEnBodega.resx">
+      <DependentUpon>RetirarEnBodega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

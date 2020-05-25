@@ -46,7 +46,6 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnUsuarios = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnBodega = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -95,7 +94,7 @@
             // btnConfiguracion
             // 
             this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(216, 26);
+            this.btnConfiguracion.Size = new System.Drawing.Size(177, 26);
             this.btnConfiguracion.Text = "Configuración";
             this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
@@ -135,7 +134,6 @@
             this.toolStripSeparator2,
             this.btnUsuarios,
             this.toolStripSeparator3,
-            this.toolStripSeparator4,
             this.btnBodega,
             this.toolStripSeparator5,
             this.toolStripButton3});
@@ -194,11 +192,6 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(197, 6);
             // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(197, 6);
-            // 
             // btnBodega
             // 
             this.btnBodega.Image = ((System.Drawing.Image)(resources.GetObject("btnBodega.Image")));
@@ -208,6 +201,7 @@
             this.btnBodega.Size = new System.Drawing.Size(197, 64);
             this.btnBodega.Text = "Bodega";
             this.btnBodega.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBodega.Click += new System.EventHandler(this.btnBodega_Click);
             // 
             // toolStripSeparator5
             // 
@@ -268,7 +262,6 @@
         private System.Windows.Forms.ToolStripButton btnUsuarios;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton btnBodega;
         private System.Windows.Forms.ToolStripMenuItem btnConfiguracion;
