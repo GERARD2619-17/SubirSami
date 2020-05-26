@@ -52,7 +52,7 @@ namespace General.GUI
                 oRegistros.IDProducto = id;
                 oRegistros.Accion = lblProducto.Text;
                 oRegistros.Cantidad = nudCantidad.Text;
-                oRegistros.TiempoAccion = "2020-12-21 12:11:11";
+                oRegistros.TiempoAccion = DateTime.Now.ToString("yyy/MM/dd") + " " + DateTime.Now.ToString("hh:mm:ss");
 
                 oRegistros.Guardar();
             }
