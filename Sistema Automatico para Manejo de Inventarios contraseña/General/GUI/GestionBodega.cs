@@ -138,6 +138,7 @@ namespace General.GUI
         {
             this.WindowState = FormWindowState.Maximized;
             this.Dock = DockStyle.Fill;
+            
         }
     }
 }
