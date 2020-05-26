@@ -133,5 +133,11 @@ namespace General.GUI
         {
             DesFiltrar();
         }
+
+        private void GestionBodega_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.Dock = DockStyle.Fill;
+        }
     }
 }

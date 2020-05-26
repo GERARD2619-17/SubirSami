@@ -29,5 +29,11 @@ namespace General.GUI
             InitializeComponent();
             Cargar();
         }
+
+        private void Historial_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.Dock = DockStyle.Fill;
+        }
     }
 }
