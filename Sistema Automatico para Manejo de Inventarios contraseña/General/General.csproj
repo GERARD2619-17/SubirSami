@@ -47,6 +47,7 @@
     <Compile Include="CLS\Clasificaciones.cs" />
     <Compile Include="CLS\Empleado.cs" />
     <Compile Include="CLS\Herramientas.cs" />
+    <Compile Include="CLS\Pedidos.cs" />
     <Compile Include="CLS\Producto.cs" />
     <Compile Include="CLS\Proveedores.cs" />
     <Compile Include="CLS\Registros.cs" />
