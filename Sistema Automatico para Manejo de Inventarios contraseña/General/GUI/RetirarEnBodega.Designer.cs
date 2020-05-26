@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RetirarEnBodega));
             this.lblProducto = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -39,8 +40,10 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txbEstado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.Notificador = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Notificador)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProducto
@@ -124,6 +127,7 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txbEstado
             // 
@@ -142,6 +146,10 @@
             this.label2.Size = new System.Drawing.Size(66, 20);
             this.label2.TabIndex = 66;
             this.label2.Text = "Estado:";
+            // 
+            // Notificador
+            // 
+            this.Notificador.ContainerControl = this;
             // 
             // RetirarEnBodega
             // 
@@ -163,6 +171,7 @@
             this.Text = "RetirarEnBodega";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Notificador)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,5 +188,6 @@
         public System.Windows.Forms.Label lblProducto;
         public System.Windows.Forms.TextBox txbEstado;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider Notificador;
     }
 }
