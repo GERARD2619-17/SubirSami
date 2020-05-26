@@ -94,6 +94,12 @@
     <Compile Include="GUI\EdicionProveedores.Designer.cs">
       <DependentUpon>EdicionProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\EdicionUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EdicionUsuario.Designer.cs">
+      <DependentUpon>EdicionUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GestionBodega.cs">
       <SubType>Form</SubType>
     </Compile>
