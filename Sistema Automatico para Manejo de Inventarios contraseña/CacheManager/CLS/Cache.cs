@@ -158,7 +158,7 @@ namespace CacheManager.CLS
             try
             {
                 Consulta = @"SELECT 
-                a.IdPedido, b.NombreProducto, b.Estado, c.NombreProveedor, a.Fecha_de_pedido, a.TiempoPromedio 
+                a.IdPedido, b.NombreProducto, a.Estado, c.NombreProveedor, a.Fecha_de_pedido, a.TiempoPromedio 
                 FROM 
                 pedidos a, productos b, proveedores c 
                 WHERE a.IDProducto = b.IDProducto AND a.IDProveedor = c.IDProveedor;";

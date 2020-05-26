@@ -64,7 +64,6 @@ namespace General.CLS
                 Sentencia = "UPDATE pedidos SET ";
                 Sentencia += "IDProducto = " + _IDProducto + ", ";
                 Sentencia += "IDProveedor = " + _IDProveedor + ", ";
-                Sentencia += "Fecha_de_pedido = '" + _Fecha_de_pedido + "', ";
                 Sentencia += "TiempoPromedio = " + _TiempoPromedio + ", ";
                 Sentencia += "Estado = '" + _Estado + "' ";
                 Sentencia += "WHERE IdPedido = "+_IdPedido+";";
