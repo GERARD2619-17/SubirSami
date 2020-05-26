@@ -58,8 +58,6 @@ namespace General.GUI
             }
             catch {
             }
-            
-
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
