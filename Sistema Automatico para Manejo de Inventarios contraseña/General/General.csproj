@@ -98,6 +98,12 @@
     <Compile Include="GUI\GestionProductos.Designer.cs">
       <DependentUpon>GestionProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Historial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Historial.Designer.cs">
+      <DependentUpon>Historial.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\RetirarEnBodega.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GestionProductos.resx">
       <DependentUpon>GestionProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Historial.resx">
+      <DependentUpon>Historial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\RetirarEnBodega.resx">
       <DependentUpon>RetirarEnBodega.cs</DependentUpon>

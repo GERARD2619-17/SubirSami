@@ -71,6 +71,28 @@ namespace CacheManager.CLS
             }
             return Resultado;
         }
+        public static DataTable TODOS_LOS_REGISTROS()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta;
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @"SELECT 
+                a.IdRegistro, b.Usuario, c.NombreProducto, a.Accion, a.Cantidad, a.TiempoAccion 
+                FROM 
+                Registros a, usuarios b, Productos c 
+                WHERE 
+                a.IDUsuario = b.IDUsuario 
+                AND a.IDProducto = c.IDProducto;";
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
         public static DataTable TODOS_LOS_PRODUCTOS()
         {
             DataTable Resultado = new DataTable();

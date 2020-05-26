@@ -73,6 +73,18 @@ namespace SAMI.GUI
             catch
             { }
         }
+        private void Cargar_Historial()
+        {
+
+            try
+            {
+                General.GUI.Historial f = new General.GUI.Historial();
+                f.MdiParent = this;
+                f.Show();
+            }
+            catch
+            { }
+        }
 
         private void principalToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -82,8 +94,6 @@ namespace SAMI.GUI
 
         private void btnPrincipal_Click(object sender, EventArgs e)
         {
-
-           
             Cerrar_Todo();
             Cargar_Principal();
            
@@ -105,6 +115,12 @@ namespace SAMI.GUI
         {
             Cerrar_Todo();
             Cargar_Bodega();
+        }
+
+        private void btnHistorial_Click(object sender, EventArgs e)
+        {
+            Cerrar_Todo();
+            Cargar_Historial();
         }
     }
 }
