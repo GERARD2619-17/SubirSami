@@ -12,6 +12,7 @@ namespace General.GUI
 {
     public partial class RetirarEnBodega : Form
     {
+        SessionManager.CLS.Sesion _SESION = SessionManager.CLS.Sesion.Instancia;
         public RetirarEnBodega()
         {
             InitializeComponent();
@@ -21,12 +22,44 @@ namespace General.GUI
             int id = Int32.Parse(numero);
             Boolean verificado = true;
             Notificador.Clear();
-            if (Int32.Parse(nudCantidad.Text)>id)
+            if (lblProducto.Text == "Retiro")
             {
-                Notificador.SetError(nudCantidad, "No se pueden retirar mas de "+numero+" Productos");
-                verificado = false;
+                if (Int32.Parse(nudCantidad.Text) > id)
+                {
+                    Notificador.SetError(nudCantidad, "No se pueden retirar mas de " + numero + " Productos");
+                    verificado = false;
+                }
             }
             return verificado;
+        }
+        private void Registro() {
+            try
+            {
+                String Consulta = "SELECT * from Productos where NombreProducto = '" + txbNombre.Text + "' AND Estado = '" + txbEstado.Text + "';";
+                DataTable Datos = new DataTable();
+                DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
+                Datos = Consultor.Consultar(Consulta);
+                String id = Datos.Rows[0]["IDProducto"].ToString();
+
+                String Consulta2 = "SELECT * from Usuarios where Usuario = '" + _SESION.Informacion.Usuario +"';";
+                DataTable Datos2 = new DataTable();
+                DataManager.CLS.DBOperacion Consultor2 = new DataManager.CLS.DBOperacion();
+                Datos = Consultor.Consultar(Consulta2);
+                String id2 = Datos.Rows[0]["IDUsuario"].ToString();
+
+                CLS.Registros oRegistros = new CLS.Registros();
+                oRegistros.IDUsuario = id2;
+                oRegistros.IDProducto = id;
+                oRegistros.Accion = lblProducto.Text;
+                oRegistros.Cantidad = nudCantidad.Text;
+                oRegistros.TiempoAccion = "2020-12-21 12:11:11";
+
+                oRegistros.Guardar();
+            }
+            catch {
+            }
+            
+
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -42,7 +75,8 @@ namespace General.GUI
                 DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
                 Datos = Consultor.Consultar(Consulta);
                 String id = Datos.Rows[0]["Cantidad"].ToString();
-                String cant = (Int32.Parse(id) - Int32.Parse(nudCantidad.Text)).ToString();
+                String cant1 = (Int32.Parse(id) - Int32.Parse(nudCantidad.Text)).ToString();
+                String cant2 = (Int32.Parse(id) + Int32.Parse(nudCantidad.Text)).ToString();
                 if (Validar(id))
                 {
                     CLS.Producto oProducto = new CLS.Producto();
@@ -52,9 +86,15 @@ namespace General.GUI
                     oProducto.Estado = Datos.Rows[0]["Estado"].ToString();
                     oProducto.IdClasificacion = Datos.Rows[0]["IdClasificacion"].ToString();
                     oProducto.Descripcion = Datos.Rows[0]["Descripcion"].ToString();
-                    oProducto.Cantidad = cant;
+                    if (lblProducto.Text == "Retiro") {
+                        oProducto.Cantidad = cant1;
+                    }
+                    else {
+                        oProducto.Cantidad = cant2;
+                    }
                     oProducto.IDAlmacenamiento = Datos.Rows[0]["IDAlmacenamiento"].ToString();
                     oProducto.Existencia = Datos.Rows[0]["Existencia"].ToString();
+                    Registro();
                     if (oProducto.Actualizar())
                     {
                         Close();

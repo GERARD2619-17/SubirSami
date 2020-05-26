@@ -49,6 +49,7 @@
     <Compile Include="CLS\Herramientas.cs" />
     <Compile Include="CLS\Producto.cs" />
     <Compile Include="CLS\Proveedores.cs" />
+    <Compile Include="CLS\Registros.cs" />
     <Compile Include="CLS\Usuarios.cs" />
     <Compile Include="GUI\Configuracion.cs">
       <SubType>Form</SubType>
