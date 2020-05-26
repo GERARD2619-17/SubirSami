@@ -94,6 +94,12 @@
     <Compile Include="GUI\GestionBodega.Designer.cs">
       <DependentUpon>GestionBodega.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GestionPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GestionPedidos.Designer.cs">
+      <DependentUpon>GestionPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GestionProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GestionBodega.resx">
       <DependentUpon>GestionBodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GestionPedidos.resx">
+      <DependentUpon>GestionPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GestionProductos.resx">
       <DependentUpon>GestionProductos.cs</DependentUpon>

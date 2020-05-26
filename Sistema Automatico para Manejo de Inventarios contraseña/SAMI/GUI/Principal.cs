@@ -16,28 +16,23 @@ namespace SAMI.GUI
         public Principal()
         {
             InitializeComponent();
-
         }
 
         private void Principal_Load(object sender, EventArgs e)
         {
             lblUsuario.Text = "Usuario: " + _SESION.Informacion.Usuario;
             Cargar_Principal();
-            
         }
 
         //Cierra todos los formularios abiertos
         private void Cerrar_Todo() {
             foreach (Form childForm in MdiChildren)
             {
-                
                 childForm.Close();
-                
             }
         }
         private void Cargar_Productos()
         {
-
             try
             {
                 General.GUI.GestionProductos f = new General.GUI.GestionProductos();
@@ -49,7 +44,6 @@ namespace SAMI.GUI
             { }
         }
         private void Cargar_Principal() {
-
             try
             {
                 General.GUI.GestionProductos f = new General.GUI.GestionProductos();
@@ -62,7 +56,6 @@ namespace SAMI.GUI
         }
         private void Cargar_Bodega()
         {
-
             try
             {
                 General.GUI.GestionBodega f = new General.GUI.GestionBodega();
@@ -75,10 +68,20 @@ namespace SAMI.GUI
         }
         private void Cargar_Historial()
         {
-
             try
             {
                 General.GUI.Historial f = new General.GUI.Historial();
+                f.MdiParent = this;
+                f.Show();
+            }
+            catch
+            { }
+        }
+        private void Cargar_Pedidos()
+        {
+            try
+            {
+                General.GUI.GestionPedidos f = new General.GUI.GestionPedidos();
                 f.MdiParent = this;
                 f.Show();
             }
@@ -127,6 +130,12 @@ namespace SAMI.GUI
         {
             lblhora.Text = DateTime.Now.ToString("hh:mm:ss");
             lblfecha.Text = DateTime.Now.ToShortDateString();
+        }
+
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+            Cerrar_Todo();
+            Cargar_Pedidos();
         }
     }
 }

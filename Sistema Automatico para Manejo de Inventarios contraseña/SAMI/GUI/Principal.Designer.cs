@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,7 +37,7 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnPrincipal = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -49,11 +48,11 @@
             this.btnBodega = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnHistorial = new System.Windows.Forms.ToolStripButton();
-            this.lblhora = new System.Windows.Forms.Label();
-            this.lblfecha = new System.Windows.Forms.Label();
-            this.horafecha = new System.Windows.Forms.Timer(this.components);
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnPedidos = new System.Windows.Forms.ToolStripButton();
+            this.lblhora = new System.Windows.Forms.Label();
+            this.lblfecha = new System.Windows.Forms.Label();
+            this.horafecha = new System.Windows.Forms.Timer();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -69,7 +68,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(1156, 28);
+            this.menuStrip.Size = new System.Drawing.Size(1197, 28);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -117,7 +116,7 @@
             this.statusStrip.Location = new System.Drawing.Point(0, 622);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1156, 25);
+            this.statusStrip.Size = new System.Drawing.Size(1197, 25);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -227,6 +226,22 @@
             this.btnHistorial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(197, 6);
+            // 
+            // btnPedidos
+            // 
+            this.btnPedidos.Image = ((System.Drawing.Image)(resources.GetObject("btnPedidos.Image")));
+            this.btnPedidos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPedidos.Name = "btnPedidos";
+            this.btnPedidos.Padding = new System.Windows.Forms.Padding(60, 0, 60, 0);
+            this.btnPedidos.Size = new System.Drawing.Size(197, 64);
+            this.btnPedidos.Text = "Pedidos";
+            this.btnPedidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
+            // 
             // lblhora
             // 
             this.lblhora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -258,26 +273,11 @@
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
             // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(197, 6);
-            // 
-            // btnPedidos
-            // 
-            this.btnPedidos.Image = ((System.Drawing.Image)(resources.GetObject("btnPedidos.Image")));
-            this.btnPedidos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnPedidos.Name = "btnPedidos";
-            this.btnPedidos.Padding = new System.Windows.Forms.Padding(60, 0, 60, 0);
-            this.btnPedidos.Size = new System.Drawing.Size(197, 64);
-            this.btnPedidos.Text = "Pedidos";
-            this.btnPedidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 647);
+            this.ClientSize = new System.Drawing.Size(1197, 647);
             this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.lblhora);
             this.Controls.Add(this.toolStrip1);
