@@ -206,6 +206,7 @@
             this.Controls.Add(this.txbNombres);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EdicionEmpleados";
             this.Text = "EdicionEmpleados";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

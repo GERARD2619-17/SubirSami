@@ -33,9 +33,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionPedidos));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.dtgDatos = new System.Windows.Forms.DataGridView();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btnRegistrarPedido = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.btnMarcarRecibido = new System.Windows.Forms.ToolStripButton();
             this.IdPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +44,8 @@
             this.TiempoPromedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnProductosPendientes = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -51,14 +53,17 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(30, 30);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
+            this.btnRegistrarPedido,
             this.toolStripSeparator1,
-            this.toolStripButton2});
+            this.btnMarcarRecibido,
+            this.toolStripSeparator2,
+            this.btnProductosPendientes});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(703, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1071, 37);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -90,36 +95,36 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgDatos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgDatos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgDatos.Location = new System.Drawing.Point(0, 27);
+            this.dtgDatos.Location = new System.Drawing.Point(0, 37);
             this.dtgDatos.MultiSelect = false;
             this.dtgDatos.Name = "dtgDatos";
             this.dtgDatos.ReadOnly = true;
             this.dtgDatos.RowHeadersVisible = false;
             this.dtgDatos.RowTemplate.Height = 24;
             this.dtgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDatos.Size = new System.Drawing.Size(703, 494);
+            this.dtgDatos.Size = new System.Drawing.Size(1071, 484);
             this.dtgDatos.TabIndex = 5;
             // 
-            // toolStripButton1
+            // btnRegistrarPedido
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(143, 24);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.btnRegistrarPedido.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarPedido.Image")));
+            this.btnRegistrarPedido.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRegistrarPedido.Name = "btnRegistrarPedido";
+            this.btnRegistrarPedido.Size = new System.Drawing.Size(152, 34);
+            this.btnRegistrarPedido.Text = "Registrar Pedido";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 37);
             // 
-            // toolStripButton2
+            // btnMarcarRecibido
             // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(143, 24);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.btnMarcarRecibido.Image = ((System.Drawing.Image)(resources.GetObject("btnMarcarRecibido.Image")));
+            this.btnMarcarRecibido.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnMarcarRecibido.Name = "btnMarcarRecibido";
+            this.btnMarcarRecibido.Size = new System.Drawing.Size(190, 34);
+            this.btnMarcarRecibido.Text = "Marcar como recibido";
             // 
             // IdPedido
             // 
@@ -170,7 +175,7 @@
             this.lblRegistros});
             this.statusStrip1.Location = new System.Drawing.Point(0, 496);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(703, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(1071, 25);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -180,11 +185,24 @@
             this.lblRegistros.Size = new System.Drawing.Size(168, 20);
             this.lblRegistros.Text = "0 Registros Encontrados";
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 37);
+            // 
+            // btnProductosPendientes
+            // 
+            this.btnProductosPendientes.Image = ((System.Drawing.Image)(resources.GetObject("btnProductosPendientes.Image")));
+            this.btnProductosPendientes.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnProductosPendientes.Name = "btnProductosPendientes";
+            this.btnProductosPendientes.Size = new System.Drawing.Size(186, 34);
+            this.btnProductosPendientes.Text = "Productos pendientes";
+            // 
             // GestionPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 521);
+            this.ClientSize = new System.Drawing.Size(1071, 521);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dtgDatos);
             this.Controls.Add(this.toolStrip1);
@@ -204,9 +222,9 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton btnRegistrarPedido;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton btnMarcarRecibido;
         private System.Windows.Forms.DataGridView dtgDatos;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
@@ -216,5 +234,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TiempoPromedio;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblRegistros;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton btnProductosPendientes;
     }
 }
