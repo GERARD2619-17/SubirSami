@@ -28,22 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EdicionPedidos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nudDias = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbAlmacenamiento = new System.Windows.Forms.ComboBox();
+            this.cbProveedor = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txbEstado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbId = new System.Windows.Forms.TextBox();
+            this.txbProducto = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtgDatos = new System.Windows.Forms.DataGridView();
@@ -53,15 +54,17 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnSeleccionar = new System.Windows.Forms.ToolStripButton();
             this.txbBuscar = new System.Windows.Forms.ToolStripTextBox();
+            this.Notificador = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Notificador)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -75,15 +78,15 @@
             this.splitContainer1.Panel1.Controls.Add(this.btnCancelar);
             this.splitContainer1.Panel1.Controls.Add(this.btnAceptar);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
-            this.splitContainer1.Panel1.Controls.Add(this.numericUpDown1);
-            this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.nudCantidad);
+            this.splitContainer1.Panel1.Controls.Add(this.label5);
+            this.splitContainer1.Panel1.Controls.Add(this.nudDias);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
-            this.splitContainer1.Panel1.Controls.Add(this.cbAlmacenamiento);
+            this.splitContainer1.Panel1.Controls.Add(this.cbProveedor);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.txbEstado);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.txbId);
+            this.splitContainer1.Panel1.Controls.Add(this.txbProducto);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             // 
@@ -121,6 +124,7 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // label6
             // 
@@ -132,12 +136,12 @@
             this.label6.TabIndex = 61;
             this.label6.Text = "Cantidad:";
             // 
-            // numericUpDown1
+            // nudCantidad
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(152, 236);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(231, 22);
-            this.numericUpDown1.TabIndex = 60;
+            this.nudCantidad.Location = new System.Drawing.Point(152, 236);
+            this.nudCantidad.Name = "nudCantidad";
+            this.nudCantidad.Size = new System.Drawing.Size(231, 22);
+            this.nudCantidad.TabIndex = 60;
             // 
             // label5
             // 
@@ -149,12 +153,12 @@
             this.label5.TabIndex = 59;
             this.label5.Text = "Dias estimados de llegada:";
             // 
-            // nudCantidad
+            // nudDias
             // 
-            this.nudCantidad.Location = new System.Drawing.Point(286, 355);
-            this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(97, 22);
-            this.nudCantidad.TabIndex = 58;
+            this.nudDias.Location = new System.Drawing.Point(286, 355);
+            this.nudDias.Name = "nudDias";
+            this.nudDias.Size = new System.Drawing.Size(97, 22);
+            this.nudDias.TabIndex = 58;
             // 
             // label4
             // 
@@ -166,20 +170,14 @@
             this.label4.TabIndex = 57;
             this.label4.Text = "Proveedor:";
             // 
-            // cbAlmacenamiento
+            // cbProveedor
             // 
-            this.cbAlmacenamiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAlmacenamiento.FormattingEnabled = true;
-            this.cbAlmacenamiento.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.cbAlmacenamiento.Location = new System.Drawing.Point(152, 293);
-            this.cbAlmacenamiento.Name = "cbAlmacenamiento";
-            this.cbAlmacenamiento.Size = new System.Drawing.Size(231, 24);
-            this.cbAlmacenamiento.TabIndex = 56;
+            this.cbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProveedor.FormattingEnabled = true;
+            this.cbProveedor.Location = new System.Drawing.Point(152, 293);
+            this.cbProveedor.Name = "cbProveedor";
+            this.cbProveedor.Size = new System.Drawing.Size(231, 24);
+            this.cbProveedor.TabIndex = 56;
             // 
             // label3
             // 
@@ -191,13 +189,13 @@
             this.label3.TabIndex = 55;
             this.label3.Text = "Estado:";
             // 
-            // textBox1
+            // txbEstado
             // 
-            this.textBox1.Location = new System.Drawing.Point(152, 181);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(231, 22);
-            this.textBox1.TabIndex = 54;
+            this.txbEstado.Location = new System.Drawing.Point(152, 181);
+            this.txbEstado.Name = "txbEstado";
+            this.txbEstado.ReadOnly = true;
+            this.txbEstado.Size = new System.Drawing.Size(231, 22);
+            this.txbEstado.TabIndex = 54;
             // 
             // label1
             // 
@@ -209,13 +207,13 @@
             this.label1.TabIndex = 53;
             this.label1.Text = "Producto:";
             // 
-            // txbId
+            // txbProducto
             // 
-            this.txbId.Location = new System.Drawing.Point(152, 124);
-            this.txbId.Name = "txbId";
-            this.txbId.ReadOnly = true;
-            this.txbId.Size = new System.Drawing.Size(231, 22);
-            this.txbId.TabIndex = 52;
+            this.txbProducto.Location = new System.Drawing.Point(152, 124);
+            this.txbProducto.Name = "txbProducto";
+            this.txbProducto.ReadOnly = true;
+            this.txbProducto.Size = new System.Drawing.Size(231, 22);
+            this.txbProducto.TabIndex = 52;
             // 
             // pictureBox1
             // 
@@ -242,8 +240,8 @@
             this.dtgDatos.AllowUserToAddRows = false;
             this.dtgDatos.AllowUserToDeleteRows = false;
             this.dtgDatos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.dtgDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.dtgDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dtgDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgDatos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -253,14 +251,14 @@
             this.NombreProducto,
             this.Estado,
             this.Cantidad});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgDatos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgDatos.DefaultCellStyle = dataGridViewCellStyle12;
             this.dtgDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgDatos.Location = new System.Drawing.Point(0, 27);
             this.dtgDatos.MultiSelect = false;
@@ -312,6 +310,7 @@
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(109, 24);
             this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // txbBuscar
             // 
@@ -320,6 +319,11 @@
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.Size = new System.Drawing.Size(150, 27);
             this.txbBuscar.TextChanged += new System.EventHandler(this.txbBuscar_TextChanged);
+            // 
+            // Notificador
+            // 
+            this.Notificador.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.Notificador.ContainerControl = this;
             // 
             // EdicionPedidos
             // 
@@ -336,12 +340,13 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Notificador)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -358,16 +363,17 @@
         private System.Windows.Forms.ToolStripButton btnSeleccionar;
         private System.Windows.Forms.ToolStripTextBox txbBuscar;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txbEstado;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox txbId;
+        public System.Windows.Forms.TextBox txbProducto;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.ComboBox cbAlmacenamiento;
+        public System.Windows.Forms.ComboBox cbProveedor;
         private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label5;
         public System.Windows.Forms.NumericUpDown nudCantidad;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.NumericUpDown nudDias;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.ErrorProvider Notificador;
     }
 }

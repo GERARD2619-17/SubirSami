@@ -11,6 +11,7 @@ namespace General.CLS
     {
         String _IdPedido;
         String _IDProducto;
+        String _Cantidad;
         String _IDProveedor;
         String _Fecha_de_pedido;
         String _TiempoPromedio;
@@ -22,6 +23,7 @@ namespace General.CLS
         public string Fecha_de_pedido { get => _Fecha_de_pedido; set => _Fecha_de_pedido = value; }
         public string TiempoPromedio { get => _TiempoPromedio; set => _TiempoPromedio = value; }
         public string Estado { get => _Estado; set => _Estado = value; }
+        public string Cantidad { get => _Cantidad; set => _Cantidad = value; }
 
         public Boolean Guardar()
         {
@@ -30,8 +32,9 @@ namespace General.CLS
             DataManager.CLS.DBOperacion Operacion = new DataManager.CLS.DBOperacion();
             try
             {
-                Sentencia = "INSERT INTO pedidos (IDProducto, IDProveedor, Fecha_de_pedido, TiempoPromedio, Estado) VALUES(";
+                Sentencia = "INSERT INTO pedidos (IDProducto, Cantidad, IDProveedor, Fecha_de_pedido, TiempoPromedio, Estado) VALUES(";
                 Sentencia += _IDProducto;
+                Sentencia += "," + _Cantidad;
                 Sentencia += "," + _IDProveedor;
                 Sentencia += ",'" + _Fecha_de_pedido;
                 Sentencia += "'," + TiempoPromedio;
@@ -63,6 +66,7 @@ namespace General.CLS
             {
                 Sentencia = "UPDATE pedidos SET ";
                 Sentencia += "IDProducto = " + _IDProducto + ", ";
+                Sentencia += "Cantidad = " + _Cantidad + ", ";
                 Sentencia += "IDProveedor = " + _IDProveedor + ", ";
                 Sentencia += "TiempoPromedio = " + _TiempoPromedio + ", ";
                 Sentencia += "Estado = '" + _Estado + "' ";
