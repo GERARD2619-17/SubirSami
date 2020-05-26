@@ -16,6 +16,7 @@ namespace SAMI.GUI
         public Principal()
         {
             InitializeComponent();
+
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -120,6 +121,12 @@ namespace SAMI.GUI
         {
             Cerrar_Todo();
             Cargar_Historial();
+        }
+
+        private void horafecha_Tick(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToString("hh:mm:ss");
+            lblfecha.Text = DateTime.Now.ToShortDateString();
         }
     }
 }

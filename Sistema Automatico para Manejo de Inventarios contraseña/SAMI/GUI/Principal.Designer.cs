@@ -49,6 +49,9 @@
             this.btnBodega = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnHistorial = new System.Windows.Forms.ToolStripButton();
+            this.lblhora = new System.Windows.Forms.Label();
+            this.lblfecha = new System.Windows.Forms.Label();
+            this.horafecha = new System.Windows.Forms.Timer(this.components);
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -124,6 +127,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
@@ -219,11 +223,44 @@
             this.btnHistorial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
+            // lblhora
+            // 
+            this.lblhora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblhora.AutoSize = true;
+            this.lblhora.BackColor = System.Drawing.SystemColors.Control;
+            this.lblhora.Font = new System.Drawing.Font("Microsoft Sans Serif", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhora.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblhora.Location = new System.Drawing.Point(11, 428);
+            this.lblhora.Name = "lblhora";
+            this.lblhora.Size = new System.Drawing.Size(143, 52);
+            this.lblhora.TabIndex = 6;
+            this.lblhora.Text = "label1";
+            // 
+            // lblfecha
+            // 
+            this.lblfecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblfecha.AutoSize = true;
+            this.lblfecha.BackColor = System.Drawing.SystemColors.Control;
+            this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblfecha.Location = new System.Drawing.Point(12, 480);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(126, 46);
+            this.lblfecha.TabIndex = 7;
+            this.lblfecha.Text = "label2";
+            // 
+            // horafecha
+            // 
+            this.horafecha.Enabled = true;
+            this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 558);
+            this.Controls.Add(this.lblfecha);
+            this.Controls.Add(this.lblhora);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
@@ -266,6 +303,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton btnBodega;
         private System.Windows.Forms.ToolStripMenuItem btnConfiguracion;
+        private System.Windows.Forms.Label lblhora;
+        private System.Windows.Forms.Label lblfecha;
+        private System.Windows.Forms.Timer horafecha;
     }
 }
 
