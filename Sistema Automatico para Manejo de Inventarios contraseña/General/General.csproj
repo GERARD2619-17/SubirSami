@@ -171,6 +171,9 @@
     <EmbeddedResource Include="GUI\EdicionProveedores.resx">
       <DependentUpon>EdicionProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EdicionUsuario.resx">
+      <DependentUpon>EdicionUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\GestionBodega.resx">
       <DependentUpon>GestionBodega.cs</DependentUpon>
     </EmbeddedResource>

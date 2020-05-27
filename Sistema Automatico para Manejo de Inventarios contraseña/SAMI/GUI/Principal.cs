@@ -43,6 +43,18 @@ namespace SAMI.GUI
             catch
             { }
         }
+        private void Cargar_Usuarios()
+        {
+            try
+            {
+                General.GUI.GestionUsuarios f = new General.GUI.GestionUsuarios();
+                f.MdiParent = this;
+
+                f.Show();
+            }
+            catch
+            { }
+        }
         private void Cargar_Principal() {
             try
             {
@@ -136,6 +148,12 @@ namespace SAMI.GUI
         {
             Cerrar_Todo();
             Cargar_Pedidos();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            Cerrar_Todo();
+            Cargar_Usuarios();
         }
     }
 }

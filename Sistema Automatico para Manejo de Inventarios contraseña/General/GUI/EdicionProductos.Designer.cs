@@ -43,7 +43,6 @@
             this.cbClasificacion = new System.Windows.Forms.ComboBox();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             this.cbAlmacenamiento = new System.Windows.Forms.ComboBox();
-            this.cbExistencia = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txbDescripcion = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.Notificador = new System.Windows.Forms.ErrorProvider(this.components);
             this.labelId = new System.Windows.Forms.Label();
             this.txbId = new System.Windows.Forms.TextBox();
+            this.cbExistencia = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Notificador)).BeginInit();
@@ -197,19 +197,6 @@
             this.cbAlmacenamiento.Size = new System.Drawing.Size(234, 24);
             this.cbAlmacenamiento.TabIndex = 33;
             // 
-            // cbExistencia
-            // 
-            this.cbExistencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbExistencia.FormattingEnabled = true;
-            this.cbExistencia.Items.AddRange(new object[] {
-            "En envio",
-            "Faltante",
-            "Existente"});
-            this.cbExistencia.Location = new System.Drawing.Point(187, 309);
-            this.cbExistencia.Name = "cbExistencia";
-            this.cbExistencia.Size = new System.Drawing.Size(234, 24);
-            this.cbExistencia.TabIndex = 34;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -291,6 +278,19 @@
             this.txbId.Size = new System.Drawing.Size(152, 22);
             this.txbId.TabIndex = 43;
             // 
+            // cbExistencia
+            // 
+            this.cbExistencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbExistencia.FormattingEnabled = true;
+            this.cbExistencia.Items.AddRange(new object[] {
+            "En envio",
+            "Faltante",
+            "Existente"});
+            this.cbExistencia.Location = new System.Drawing.Point(187, 309);
+            this.cbExistencia.Name = "cbExistencia";
+            this.cbExistencia.Size = new System.Drawing.Size(234, 24);
+            this.cbExistencia.TabIndex = 34;
+            // 
             // EdicionProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -352,8 +352,8 @@
         public System.Windows.Forms.ComboBox cbClasificacion;
         public System.Windows.Forms.NumericUpDown nudCantidad;
         public System.Windows.Forms.ComboBox cbAlmacenamiento;
-        public System.Windows.Forms.ComboBox cbExistencia;
         public System.Windows.Forms.TextBox txbDescripcion;
         public System.Windows.Forms.TextBox txbId;
+        public System.Windows.Forms.ComboBox cbExistencia;
     }
 }
