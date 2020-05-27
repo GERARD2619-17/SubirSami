@@ -124,6 +124,12 @@
     <Compile Include="GUI\Historial.Designer.cs">
       <DependentUpon>Historial.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Pendientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Pendientes.Designer.cs">
+      <DependentUpon>Pendientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\RetirarEnBodega.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Historial.resx">
       <DependentUpon>Historial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Pendientes.resx">
+      <DependentUpon>Pendientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\RetirarEnBodega.resx">
       <DependentUpon>RetirarEnBodega.cs</DependentUpon>

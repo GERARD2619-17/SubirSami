@@ -116,5 +116,16 @@ namespace General.GUI
             InitializeComponent();
             Cargar();
         }
+
+        private void btnProductosPendientes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Pendientes f = new Pendientes();
+                f.ShowDialog();
+                Cargar();
+            }
+            catch { }
+        }
     }
 }

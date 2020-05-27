@@ -28,18 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionPedidos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionPedidos));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.dtgDatos = new System.Windows.Forms.DataGridView();
             this.btnRegistrarPedido = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnMarcarRecibido = new System.Windows.Forms.ToolStripButton();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnProductosPendientes = new System.Windows.Forms.ToolStripButton();
+            this.dtgDatos = new System.Windows.Forms.DataGridView();
             this.IdPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +45,8 @@
             this.NombreProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_de_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TiempoPromedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -67,6 +67,43 @@
             this.toolStrip1.Size = new System.Drawing.Size(949, 37);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnRegistrarPedido
+            // 
+            this.btnRegistrarPedido.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarPedido.Image")));
+            this.btnRegistrarPedido.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRegistrarPedido.Name = "btnRegistrarPedido";
+            this.btnRegistrarPedido.Size = new System.Drawing.Size(152, 34);
+            this.btnRegistrarPedido.Text = "Registrar Pedido";
+            this.btnRegistrarPedido.Click += new System.EventHandler(this.btnRegistrarPedido_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 37);
+            // 
+            // btnMarcarRecibido
+            // 
+            this.btnMarcarRecibido.Image = ((System.Drawing.Image)(resources.GetObject("btnMarcarRecibido.Image")));
+            this.btnMarcarRecibido.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnMarcarRecibido.Name = "btnMarcarRecibido";
+            this.btnMarcarRecibido.Size = new System.Drawing.Size(190, 34);
+            this.btnMarcarRecibido.Text = "Marcar como recibido";
+            this.btnMarcarRecibido.Click += new System.EventHandler(this.btnMarcarRecibido_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 37);
+            // 
+            // btnProductosPendientes
+            // 
+            this.btnProductosPendientes.Image = ((System.Drawing.Image)(resources.GetObject("btnProductosPendientes.Image")));
+            this.btnProductosPendientes.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnProductosPendientes.Name = "btnProductosPendientes";
+            this.btnProductosPendientes.Size = new System.Drawing.Size(186, 34);
+            this.btnProductosPendientes.Text = "Productos pendientes";
+            this.btnProductosPendientes.Click += new System.EventHandler(this.btnProductosPendientes_Click);
             // 
             // dtgDatos
             // 
@@ -106,59 +143,6 @@
             this.dtgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgDatos.Size = new System.Drawing.Size(949, 484);
             this.dtgDatos.TabIndex = 5;
-            // 
-            // btnRegistrarPedido
-            // 
-            this.btnRegistrarPedido.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarPedido.Image")));
-            this.btnRegistrarPedido.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnRegistrarPedido.Name = "btnRegistrarPedido";
-            this.btnRegistrarPedido.Size = new System.Drawing.Size(152, 34);
-            this.btnRegistrarPedido.Text = "Registrar Pedido";
-            this.btnRegistrarPedido.Click += new System.EventHandler(this.btnRegistrarPedido_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 37);
-            // 
-            // btnMarcarRecibido
-            // 
-            this.btnMarcarRecibido.Image = ((System.Drawing.Image)(resources.GetObject("btnMarcarRecibido.Image")));
-            this.btnMarcarRecibido.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnMarcarRecibido.Name = "btnMarcarRecibido";
-            this.btnMarcarRecibido.Size = new System.Drawing.Size(190, 34);
-            this.btnMarcarRecibido.Text = "Marcar como recibido";
-            this.btnMarcarRecibido.Click += new System.EventHandler(this.btnMarcarRecibido_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 496);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(949, 25);
-            this.statusStrip1.TabIndex = 6;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // lblRegistros
-            // 
-            this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(168, 20);
-            this.lblRegistros.Text = "0 Registros Encontrados";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 37);
-            // 
-            // btnProductosPendientes
-            // 
-            this.btnProductosPendientes.Image = ((System.Drawing.Image)(resources.GetObject("btnProductosPendientes.Image")));
-            this.btnProductosPendientes.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnProductosPendientes.Name = "btnProductosPendientes";
-            this.btnProductosPendientes.Size = new System.Drawing.Size(186, 34);
-            this.btnProductosPendientes.Text = "Productos pendientes";
             // 
             // IdPedido
             // 
@@ -208,6 +192,23 @@
             this.TiempoPromedio.HeaderText = "Tiempo promedio dias";
             this.TiempoPromedio.Name = "TiempoPromedio";
             this.TiempoPromedio.ReadOnly = true;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblRegistros});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 496);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(949, 25);
+            this.statusStrip1.TabIndex = 6;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblRegistros
+            // 
+            this.lblRegistros.Name = "lblRegistros";
+            this.lblRegistros.Size = new System.Drawing.Size(168, 20);
+            this.lblRegistros.Text = "0 Registros Encontrados";
             // 
             // GestionPedidos
             // 
