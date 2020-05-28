@@ -27,7 +27,7 @@ namespace SAMI.GUI
             a.IDEmpleado, CONCAT(c.Nombres,' ',c.Apellidos) as 'Empleado',
             c.Genero
             FROM 
-            usuarios a, roles b, empleados c
+            Usuarios a, Roles b, Empleados c
             WHERE a.Usuario='" + txbUsuario.Text + @"'
             AND a.Credencial=md5(sha1('" + txbPassword.Text + @"'))
             AND a.IDRol=b.IDRol

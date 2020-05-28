@@ -20,7 +20,8 @@ namespace SAMI.GUI
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            lblUsuario.Text = "Usuario: " + _SESION.Informacion.Usuario;
+            lblUsuario.Text = _SESION.Informacion.Usuario;
+            lblRol.Text = _SESION.Informacion.Rol;
             Cargar_Principal();
         }
 

@@ -38,6 +38,7 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnPrincipal = new System.Windows.Forms.ToolStripButton();
@@ -111,21 +112,36 @@
             // 
             // statusStrip
             // 
-            this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(25, 25);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblUsuario});
-            this.statusStrip.Location = new System.Drawing.Point(0, 622);
+            this.lblUsuario,
+            this.lblRol});
+            this.statusStrip.Location = new System.Drawing.Point(0, 613);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1197, 25);
+            this.statusStrip.Size = new System.Drawing.Size(1197, 34);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
             // lblUsuario
             // 
+            this.lblUsuario.AutoSize = false;
+            this.lblUsuario.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.lblUsuario.Image = ((System.Drawing.Image)(resources.GetObject("lblUsuario.Image")));
+            this.lblUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(62, 20);
+            this.lblUsuario.Size = new System.Drawing.Size(150, 29);
             this.lblUsuario.Text = "Usuario:";
+            // 
+            // lblRol
+            // 
+            this.lblRol.AutoSize = false;
+            this.lblRol.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.lblRol.Image = ((System.Drawing.Image)(resources.GetObject("lblRol.Image")));
+            this.lblRol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(150, 29);
+            this.lblRol.Text = "Rol:";
             // 
             // toolStrip1
             // 
@@ -148,7 +164,7 @@
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(200, 594);
+            this.toolStrip1.Size = new System.Drawing.Size(200, 585);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -329,6 +345,7 @@
         private System.Windows.Forms.Timer horafecha;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton btnPedidos;
+        private System.Windows.Forms.ToolStripStatusLabel lblRol;
     }
 }
 
