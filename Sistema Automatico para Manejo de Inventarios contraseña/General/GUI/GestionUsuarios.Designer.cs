@@ -32,11 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionUsuarios));
             this.dtgDatos = new System.Windows.Forms.DataGridView();
-            this.IDUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CREDENCIAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ROL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMPLEADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAgregar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -44,6 +39,10 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnEliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.IDUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ROL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMPLEADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +62,6 @@
             this.dtgDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDUsuario,
             this.Usuario,
-            this.CREDENCIAL,
             this.ROL,
             this.EMPLEADO});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -85,43 +83,9 @@
             this.dtgDatos.Size = new System.Drawing.Size(800, 413);
             this.dtgDatos.TabIndex = 5;
             // 
-            // IDUsuario
-            // 
-            this.IDUsuario.DataPropertyName = "IDUsuario";
-            this.IDUsuario.HeaderText = "Id";
-            this.IDUsuario.Name = "IDUsuario";
-            this.IDUsuario.ReadOnly = true;
-            // 
-            // Usuario
-            // 
-            this.Usuario.DataPropertyName = "Usuario";
-            this.Usuario.HeaderText = "Usuarios";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            // 
-            // CREDENCIAL
-            // 
-            this.CREDENCIAL.DataPropertyName = "CREDENCIAL";
-            this.CREDENCIAL.HeaderText = "Credencial";
-            this.CREDENCIAL.Name = "CREDENCIAL";
-            this.CREDENCIAL.ReadOnly = true;
-            // 
-            // ROL
-            // 
-            this.ROL.DataPropertyName = "ROL";
-            this.ROL.HeaderText = "Rol";
-            this.ROL.Name = "ROL";
-            this.ROL.ReadOnly = true;
-            // 
-            // EMPLEADO
-            // 
-            this.EMPLEADO.DataPropertyName = "EMPLEADO";
-            this.EMPLEADO.HeaderText = "Empleado";
-            this.EMPLEADO.Name = "EMPLEADO";
-            this.EMPLEADO.ReadOnly = true;
-            // 
             // toolStrip1
             // 
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(30, 30);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAgregar,
@@ -157,6 +121,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(82, 34);
             this.btnEditar.Text = "Editar";
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // toolStripSeparator2
             // 
@@ -175,6 +140,34 @@
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 37);
+            // 
+            // IDUsuario
+            // 
+            this.IDUsuario.DataPropertyName = "IDUsuario";
+            this.IDUsuario.HeaderText = "Id";
+            this.IDUsuario.Name = "IDUsuario";
+            this.IDUsuario.ReadOnly = true;
+            // 
+            // Usuario
+            // 
+            this.Usuario.DataPropertyName = "Usuario";
+            this.Usuario.HeaderText = "Usuarios";
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
+            // 
+            // ROL
+            // 
+            this.ROL.DataPropertyName = "ROL";
+            this.ROL.HeaderText = "Rol";
+            this.ROL.Name = "ROL";
+            this.ROL.ReadOnly = true;
+            // 
+            // EMPLEADO
+            // 
+            this.EMPLEADO.DataPropertyName = "EMPLEADO";
+            this.EMPLEADO.HeaderText = "Empleado";
+            this.EMPLEADO.Name = "EMPLEADO";
+            this.EMPLEADO.ReadOnly = true;
             // 
             // GestionUsuarios
             // 
@@ -204,7 +197,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CREDENCIAL;
         private System.Windows.Forms.DataGridViewTextBoxColumn ROL;
         private System.Windows.Forms.DataGridViewTextBoxColumn EMPLEADO;
     }

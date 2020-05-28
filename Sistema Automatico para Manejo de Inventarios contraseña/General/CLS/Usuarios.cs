@@ -90,7 +90,41 @@ namespace General.CLS
 
         }
 
-        public Boolean Eliminar()
+        public Boolean Actualizar2()
+        {
+            Boolean Actualizado = false;
+            String Sentencia;
+            DataManager.CLS.DBOperacion Operacion = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Sentencia = "UPDATE Usuarios SET ";
+                if (_Credencial.Length > 0 )
+                {
+                    Sentencia += "Credencial = md5(sha1('" + _Credencial + "')), ";
+                }
+                Sentencia += "IDRol =" + _IDRol;
+                Sentencia += " WHERE IDUsuario =" + _IDUsuario + ";";
+                if (Operacion.Actualizar(Sentencia) > 0)
+                {
+                    Actualizado = true;
+                    MessageBox.Show("Registro actualizado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Actualizado = false;
+                    MessageBox.Show("Registro no fue actualizado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch
+            {
+                Actualizado = false;
+                MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Actualizado;
+
+        }
+
+            public Boolean Eliminar()
         {
             Boolean Eliminado = false;
             String Sentencia;

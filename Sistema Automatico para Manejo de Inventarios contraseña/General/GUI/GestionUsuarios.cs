@@ -34,11 +34,21 @@ namespace General.GUI
         {
             try
             {
-                EdicionUsuario f = new EdicionUsuario();
+                InsercionUsuario f = new InsercionUsuario();
                 f.ShowDialog();
                 Cargar();
             }
             catch { }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            EdicionUsuario f = new EdicionUsuario();
+            f.txbID.Text = dtgDatos.CurrentRow.Cells["IDUsuario"].Value.ToString();
+            f.txbUsuarios.Text = dtgDatos.CurrentRow.Cells["Usuario"].Value.ToString();
+            f.cbRol.Text = dtgDatos.CurrentRow.Cells["Rol"].Value.ToString();
+            f.ShowDialog();
+            Cargar();
         }
     }
 

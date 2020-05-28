@@ -100,6 +100,12 @@
     <Compile Include="GUI\EdicionUsuario.Designer.cs">
       <DependentUpon>EdicionUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\InsercionUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\InsercionUsuario.Designer.cs">
+      <DependentUpon>InsercionUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\GestionBodega.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EdicionUsuario.resx">
       <DependentUpon>EdicionUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\InsercionUsuario.resx">
+      <DependentUpon>InsercionUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GestionBodega.resx">
       <DependentUpon>GestionBodega.cs</DependentUpon>

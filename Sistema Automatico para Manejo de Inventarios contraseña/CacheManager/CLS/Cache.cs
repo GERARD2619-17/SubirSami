@@ -17,8 +17,7 @@ namespace CacheManager.CLS
             {
                 Consulta = @"SELECT 
                 a.IDUsuario, 
-                a.Usuario, 
-                a.Credencial, 
+                a.Usuario,  
                 a.IDRol,
                 b.Rol,  
                 a.IDEmpleado,
