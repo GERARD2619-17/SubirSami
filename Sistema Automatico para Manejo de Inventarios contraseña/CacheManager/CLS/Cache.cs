@@ -185,5 +185,21 @@ namespace CacheManager.CLS
             }
             return Resultado;
         }
+        public static DataTable PERMISOS_DE_UN_ROL(String pIDRol)
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta;
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = "select a.IDPermiso, a.IDOpcion, b.Opcion, a.IDRol FROM Permisos a, Opciones b WHERE a.IDOpcion = b.IDOpcion AND IDRol ="+pIDRol+";";
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
     }
 }

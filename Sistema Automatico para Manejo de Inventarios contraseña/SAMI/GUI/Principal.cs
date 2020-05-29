@@ -117,26 +117,37 @@ namespace SAMI.GUI
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            Cerrar_Todo();
-            Cargar_Productos();
+            if (_SESION.Informacion.VerificarPermiso(1))
+            {
+                Cerrar_Todo();
+                Cargar_Productos();
+            }
         }
 
         private void btnConfiguracion_Click(object sender, EventArgs e)
         {
-            General.GUI.Configuracion f = new General.GUI.Configuracion();
-            f.Show();
+            if (_SESION.Informacion.VerificarPermiso(6)) {
+                General.GUI.Configuracion f = new General.GUI.Configuracion();
+                f.Show();
+            }
         }
 
         private void btnBodega_Click(object sender, EventArgs e)
         {
-            Cerrar_Todo();
-            Cargar_Bodega();
+            if (_SESION.Informacion.VerificarPermiso(3))
+            {
+                Cerrar_Todo();
+                Cargar_Bodega();
+            }
         }
 
         private void btnHistorial_Click(object sender, EventArgs e)
         {
-            Cerrar_Todo();
-            Cargar_Historial();
+            if (_SESION.Informacion.VerificarPermiso(4))
+            {
+                Cerrar_Todo();
+                Cargar_Historial();
+            }
         }
 
         private void horafecha_Tick(object sender, EventArgs e)
@@ -147,14 +158,19 @@ namespace SAMI.GUI
 
         private void btnPedidos_Click(object sender, EventArgs e)
         {
-            Cerrar_Todo();
-            Cargar_Pedidos();
+            if (_SESION.Informacion.VerificarPermiso(5)) {
+                Cerrar_Todo();
+                Cargar_Pedidos();
+            }
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            Cerrar_Todo();
-            Cargar_Usuarios();
+            if (_SESION.Informacion.VerificarPermiso(2))
+            {
+                Cerrar_Todo();
+                Cargar_Usuarios();
+            }
         }
     }
 }

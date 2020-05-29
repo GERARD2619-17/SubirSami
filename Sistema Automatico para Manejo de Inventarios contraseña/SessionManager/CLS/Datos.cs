@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 
 namespace SessionManager.CLS
 {
     public class Datos
     {
+        DataTable _PERMISOS = new DataTable();
         String _IDUsuario;
         String _Usuario;
         String _IDRol;
@@ -50,6 +52,7 @@ namespace SessionManager.CLS
             set
             {
                 _IDRol = value;
+                ObtenerPermiso();
             }
         }
 
@@ -64,6 +67,37 @@ namespace SessionManager.CLS
             {
                 _Rol = value;
             }
+        }
+
+        public void ObtenerPermiso() {
+            try
+            {
+                _PERMISOS = CacheManager.CLS.Cache.PERMISOS_DE_UN_ROL(_IDRol);
+            }
+            catch { }
+        }
+
+        public Boolean VerificarPermiso(Int32 pIDOpcion) {
+            Boolean Autorizado = false;
+            DataTable a = _PERMISOS;
+            try
+            {
+                foreach (DataRow fila in _PERMISOS.Rows)
+                {
+                    if (fila["IDOpcion"].ToString().Equals(pIDOpcion.ToString()))
+                    {
+                        Autorizado = true;
+                        break;
+                    }
+                }
+            }
+            catch {
+                Autorizado = false;
+            }
+            if (Autorizado == false) {
+                MessageBox.Show("No tiene los permisos para acceder a esta opción","Aviso", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+            return Autorizado;
         }
     }
 }
