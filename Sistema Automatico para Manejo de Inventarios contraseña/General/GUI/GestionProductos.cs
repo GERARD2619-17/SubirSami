@@ -34,6 +34,7 @@ namespace General.GUI
             return Datos;
         }
 
+
         private void Cargar() {
             try {
                 _DATOS.DataSource = CacheManager.CLS.Cache.TODOS_LOS_PRODUCTOS();
@@ -140,7 +141,7 @@ namespace General.GUI
             {
             }
         }
-        //en esta parte se toco programar el formulario para que a la hora de llamarlo con el boton principal aparesca maximizado y abarcando toda la pantalla
+        //Pantalla Maximizada
         private void GestionProductos_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;

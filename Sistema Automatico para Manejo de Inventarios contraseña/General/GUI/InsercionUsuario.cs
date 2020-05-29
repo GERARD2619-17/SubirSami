@@ -28,16 +28,16 @@ namespace General.GUI
                 verificado = false;
             }
 
-            ////Verificacion para que no se repita un dato
-            //String Consulta = "SELECT NombreProveedor From Proveedores WHERE NombreProveedor = '" + txbNombres.Text + "';";
-            //DataTable Datos = new DataTable();
-            //DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
-            //Datos = Consultor.Consultar(Consulta);
-            //if (Datos.Rows.Count == 1)
-            //{
-            //    verificado = false;
-            //    MessageBox.Show("Este proveedor ya se encuentra registrado", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
+            //Verificacion para que no se repita un dato
+            String Consulta = "SELECT Usuario From Usuarios WHERE usuario = '" + txbUsuarios.Text + "';";
+            DataTable Datos = new DataTable();
+            DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
+            Datos = Consultor.Consultar(Consulta);
+            if (Datos.Rows.Count == 1)
+            {
+                verificado = false;
+               MessageBox.Show("Este Usuario ya se encuentra registrado", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
 
 
