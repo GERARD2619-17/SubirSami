@@ -266,11 +266,12 @@
             this.lblhora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblhora.AutoSize = true;
             this.lblhora.BackColor = System.Drawing.SystemColors.Control;
-            this.lblhora.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhora.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhora.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblhora.Location = new System.Drawing.Point(11, 517);
+            this.lblhora.Image = ((System.Drawing.Image)(resources.GetObject("lblhora.Image")));
+            this.lblhora.Location = new System.Drawing.Point(6, 509);
             this.lblhora.Name = "lblhora";
-            this.lblhora.Size = new System.Drawing.Size(122, 44);
+            this.lblhora.Size = new System.Drawing.Size(138, 51);
             this.lblhora.TabIndex = 6;
             this.lblhora.Text = "label1";
             // 
@@ -279,11 +280,12 @@
             this.lblfecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblfecha.AutoSize = true;
             this.lblfecha.BackColor = System.Drawing.SystemColors.Control;
-            this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfecha.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblfecha.Location = new System.Drawing.Point(12, 569);
+            this.lblfecha.Image = ((System.Drawing.Image)(resources.GetObject("lblfecha.Image")));
+            this.lblfecha.Location = new System.Drawing.Point(7, 561);
             this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(103, 38);
+            this.lblfecha.Size = new System.Drawing.Size(126, 46);
             this.lblfecha.TabIndex = 7;
             this.lblfecha.Text = "label2";
             // 

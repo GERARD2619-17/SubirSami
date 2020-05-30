@@ -1,0 +1,13 @@
+pasos para poder agregar el dll a visual
+1.click derecho a proyecto 2.luego damos agregar y buscamos una parte que diga addrefences.
+3.luego buscamos el archivo de los componentes graficos 4.damos click y listo ya tenemos nuetra dll agregada
+5.despues vamos a cuadros de herrmaientas y buscamos una parte que diga elegir elementos damos clic ahi y se nos desplegara
+una ventana que esta buscando informacion luego damos examinar y volvemos a añadir el dll.
+6.despues vamos a cuadros de herramientas y buscamos algo que diga skin le damos 2 clik y se nos agregara
+7.luego damos clic derecho a el skin y damos propiedades bucamos un apartado que dice serial number y agregamos el seria que tenemos abajo de este contenido.
+8.de ultimo buscamos algo que diga skinfile y buscamos el diceño que queremos
+
+
+
+CLASE VE SKIN VISUAL NET:
+U4N2UjLguUZs33UR+Vy47JAZ81t2fjIFvut28vc5oHiVeivGb/NZMA==
