@@ -55,7 +55,6 @@
             this.lblhora = new System.Windows.Forms.Label();
             this.lblfecha = new System.Windows.Forms.Label();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
-            this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine(((System.ComponentModel.Component)(this)));
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -271,7 +270,7 @@
             this.lblhora.Image = ((System.Drawing.Image)(resources.GetObject("lblhora.Image")));
             this.lblhora.Location = new System.Drawing.Point(6, 509);
             this.lblhora.Name = "lblhora";
-            this.lblhora.Size = new System.Drawing.Size(139, 52);
+            this.lblhora.Size = new System.Drawing.Size(138, 51);
             this.lblhora.TabIndex = 6;
             this.lblhora.Text = "label1";
             // 
@@ -293,13 +292,6 @@
             // 
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
-            // 
-            // skinEngine1
-            // 
-            this.skinEngine1.SerialNumber = "U4N2UjLguUZs33UR+Vy47JAZ81t2fjIFvut28vc5oHiVeivGb/NZMA==";
-            this.skinEngine1.SkinFile = "C:\\Users\\gerard\\Desktop\\todos mis archivos\\Componentes Graficos Vb2\\Componentes G" +
-    "raficos Vb2\\SKIN NET 2010 WIN 7\\SkinVS.NET\\Wave\\Wave.ssk";
-            this.skinEngine1.SkinStreamMain = ((System.IO.Stream)(resources.GetObject("skinEngine1.SkinStreamMain")));
             // 
             // Principal
             // 
@@ -356,7 +348,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton btnPedidos;
         private System.Windows.Forms.ToolStripStatusLabel lblRol;
-        private Sunisoft.IrisSkin.SkinEngine skinEngine1;
     }
 }
 
