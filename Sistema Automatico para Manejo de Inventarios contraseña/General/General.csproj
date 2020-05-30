@@ -149,6 +149,12 @@
     <Compile Include="GUI\Pendientes.Designer.cs">
       <DependentUpon>Pendientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\PrincipalEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PrincipalEntrada.Designer.cs">
+      <DependentUpon>PrincipalEntrada.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\RetirarEnBodega.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Pendientes.resx">
       <DependentUpon>Pendientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PrincipalEntrada.resx">
+      <DependentUpon>PrincipalEntrada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\RetirarEnBodega.resx">
       <DependentUpon>RetirarEnBodega.cs</DependentUpon>

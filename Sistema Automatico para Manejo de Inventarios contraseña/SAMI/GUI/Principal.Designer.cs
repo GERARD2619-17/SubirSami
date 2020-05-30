@@ -179,6 +179,7 @@
             this.btnPrincipal.Text = "Principal";
             this.btnPrincipal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPrincipal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPrincipal.Click += new System.EventHandler(this.btnPrincipal_Click_1);
             // 
             // toolStripSeparator1
             // 

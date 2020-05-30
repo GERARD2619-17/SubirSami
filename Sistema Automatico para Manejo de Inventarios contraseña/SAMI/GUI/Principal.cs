@@ -59,9 +59,8 @@ namespace SAMI.GUI
         private void Cargar_Principal() {
             try
             {
-                General.GUI.GestionProductos f = new General.GUI.GestionProductos();
+                General.GUI.PrincipalEntrada f = new General.GUI.PrincipalEntrada();
                 f.MdiParent = this;
-               
                 f.Show();
             }
             catch
@@ -171,6 +170,12 @@ namespace SAMI.GUI
                 Cerrar_Todo();
                 Cargar_Usuarios();
             }
+        }
+
+        private void btnPrincipal_Click_1(object sender, EventArgs e)
+        {
+            Cerrar_Todo();
+            Cargar_Principal();
         }
     }
 }
