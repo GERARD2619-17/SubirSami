@@ -201,5 +201,25 @@ namespace CacheManager.CLS
             }
             return Resultado;
         }
+        public static DataTable ASIGNACIONES_DE_PERMISOS_SEGUN_IDROL(String pIDRol)
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta;
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @"SELECT IDOpcion, Opcion, a.IDClasificacion, b.Clasificacion,
+                IFNULL((SELECT IDPermiso FROM Permisos c WHERE c.IDRol = "+ pIDRol + @" AND c.IDOpcion = a.IDOpcion), 0) as 'IDPermiso',
+                IF(IFNULL((SELECT IDPermiso FROM Permisos c WHERE c.IDRol = "+ pIDRol + @" AND c.IDOpcion = a.IDOpcion), 0)>0,1,0) as 'Asignado'
+                FROM Opciones a, ClasificacionesSAMI b
+                WHERE a.IDClasificacion = b.IDClasificacion;";
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
     }
 }

@@ -329,5 +329,12 @@ namespace General.GUI
             }
             Cargar();
         }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            Permisos f = new Permisos();
+            f.Show();
+            
+        }
     }
 }

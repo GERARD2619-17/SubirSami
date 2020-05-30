@@ -168,6 +168,7 @@
             this.btnRoles.Name = "btnRoles";
             this.btnRoles.Size = new System.Drawing.Size(117, 24);
             this.btnRoles.Text = "Roles de acceso";
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
             // 
             // toolStrip2
             // 

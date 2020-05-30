@@ -48,6 +48,7 @@
     <Compile Include="CLS\Empleado.cs" />
     <Compile Include="CLS\Herramientas.cs" />
     <Compile Include="CLS\Pedidos.cs" />
+    <Compile Include="CLS\Permisos.cs" />
     <Compile Include="CLS\Producto.cs" />
     <Compile Include="CLS\Proveedores.cs" />
     <Compile Include="CLS\Registros.cs" />
@@ -99,6 +100,12 @@
     </Compile>
     <Compile Include="GUI\EdicionUsuario.Designer.cs">
       <DependentUpon>EdicionUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Permisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Permisos.Designer.cs">
+      <DependentUpon>Permisos.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\InsercionUsuario.cs">
       <SubType>Form</SubType>
@@ -179,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EdicionUsuario.resx">
       <DependentUpon>EdicionUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Permisos.resx">
+      <DependentUpon>Permisos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\InsercionUsuario.resx">
       <DependentUpon>InsercionUsuario.cs</DependentUpon>
