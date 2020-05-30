@@ -13,6 +13,10 @@ namespace General.GUI
     public partial class GestionUsuarios : Form
     {
         BindingSource _DATOS = new BindingSource();
+        SessionManager.CLS.Sesion _SESION = SessionManager.CLS.Sesion.Instancia;
+
+
+
         private void Cargar()
         {
             try
@@ -30,6 +34,27 @@ namespace General.GUI
             Cargar();
         }
 
+       
+
+        
+
+
+        private void GestionUsuarios_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.Dock = DockStyle.Fill;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            EdicionUsuario f = new EdicionUsuario();
+            f.txbID.Text = dtgDatos.CurrentRow.Cells["IDUsuario"].Value.ToString();
+            f.txbUsuarios.Text = dtgDatos.CurrentRow.Cells["Usuario"].Value.ToString();
+            f.cbRol.Text = dtgDatos.CurrentRow.Cells["Rol"].Value.ToString();
+            f.ShowDialog();
+            Cargar();
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
@@ -41,14 +66,35 @@ namespace General.GUI
             catch { }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            EdicionUsuario f = new EdicionUsuario();
-            f.txbID.Text = dtgDatos.CurrentRow.Cells["IDUsuario"].Value.ToString();
-            f.txbUsuarios.Text = dtgDatos.CurrentRow.Cells["Usuario"].Value.ToString();
-            f.cbRol.Text = dtgDatos.CurrentRow.Cells["Rol"].Value.ToString();
-            f.ShowDialog();
-            Cargar();
+            try
+            {
+                if (MessageBox.Show("¿Realmente desea ELIMINAR el registro seleccionado? esta accion no se podra deshacer", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (_SESION.Informacion.Usuario == dtgDatos.CurrentRow.Cells["Usuario"].Value.ToString())
+                    {
+                        MessageBox.Show("No se puede eliminar este usario porque esta en uso", "Pregunta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                    }
+                    else
+                    {
+                        CLS.Usuarios oUsuario = new CLS.Usuarios();
+                        //SINCRONIZAR
+                        oUsuario.IDUsuario = dtgDatos.CurrentRow.Cells["IDUsuario"].Value.ToString();
+
+                        if (oUsuario.Eliminar())
+                        {
+                            Cargar();
+                        }
+                    }
+
+                   
+                }
+            }
+            catch
+            {
+            }
         }
     }
 

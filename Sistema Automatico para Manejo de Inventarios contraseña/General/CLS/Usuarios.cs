@@ -125,14 +125,14 @@ namespace General.CLS
         }
 
             public Boolean Eliminar()
-        {
+            {
             Boolean Eliminado = false;
             String Sentencia;
             DataManager.CLS.DBOperacion Operacion = new DataManager.CLS.DBOperacion();
             try
             {
-                Sentencia = "DELETE FROM Usuario";
-                Sentencia += "WHERE IDUsuario =" + _IDUsuario + ";";
+                Sentencia = "DELETE FROM Usuarios";
+                Sentencia += " WHERE IDUsuario =" + _IDUsuario + ";";
                 if (Operacion.Eliminar(Sentencia) > 0)
                 {
                     Eliminado = true;
@@ -150,6 +150,9 @@ namespace General.CLS
                 MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return Eliminado;
-        }
+
+
+
+            }
     }
 }
