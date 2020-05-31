@@ -16,5 +16,11 @@ namespace General.GUI
         {
             InitializeComponent();
         }
+
+        private void PrincipalEntrada_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.Dock = DockStyle.Fill;
+        }
     }
 }
