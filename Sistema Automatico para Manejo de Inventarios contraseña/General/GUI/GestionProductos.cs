@@ -115,7 +115,9 @@ namespace General.GUI
                 }
 
             }
-            catch { }
+            catch {
+                MessageBox.Show("No se encontraron productos registrados", "NOTA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -139,6 +141,7 @@ namespace General.GUI
             }
             catch
             {
+                MessageBox.Show("No se encontraron productos registrados", "NOTA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         //Pantalla Maximizada

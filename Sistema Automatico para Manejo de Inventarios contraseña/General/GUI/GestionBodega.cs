@@ -14,7 +14,7 @@ namespace General.GUI
     {
         BindingSource _DATOS = new BindingSource();
 
-        private void LlenarComboBox()
+        private void CargarClasificaciones()
         {
             //Se llena el ComboBox con una lista de las clasificaciones
             List<string> listaClasificacion = new List<string>();
@@ -82,15 +82,15 @@ namespace General.GUI
         public GestionBodega()
         {
             InitializeComponent();
-            LlenarComboBox();
+            CargarClasificaciones();
             Cargar();
         }
 
         private void btnRetirar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Se retirara el producto, a continuación seleccione la cantidad", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                try
+                if (MessageBox.Show("Se retirara el producto, a continuación seleccione la cantidad", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     RetirarEnBodega f = new RetirarEnBodega();
                     f.txbNombre.Text = dtgDatos.CurrentRow.Cells["NombreProducto"].Value.ToString();
@@ -98,15 +98,17 @@ namespace General.GUI
                     f.ShowDialog();
                     Cargar();
                 }
-                catch { }
+            }
+            catch {
+                MessageBox.Show("No se encontraron productos en bodega", "NOTA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void btnDevolver_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Se devolvera un producto, a continuación seleccione la cantidad", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                try
+                if (MessageBox.Show("Se devolvera un producto, a continuación seleccione la cantidad", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     RetirarEnBodega f = new RetirarEnBodega();
                     f.lblProducto.Text = "Devolución";
@@ -115,7 +117,9 @@ namespace General.GUI
                     f.ShowDialog();
                     Cargar();
                 }
-                catch { }
+            }
+            catch {
+                MessageBox.Show("No se encontraron productos en bodega", "NOTA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

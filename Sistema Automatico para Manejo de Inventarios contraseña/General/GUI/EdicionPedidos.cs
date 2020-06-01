@@ -13,37 +13,23 @@ namespace General.GUI
     public partial class EdicionPedidos : Form
     {
         BindingSource _DATOS = new BindingSource();
-        private void LlenarComboBox()
+        
+        private void CargarPedidos()
         {
-            List<string> listaProveedor = new List<string>();
-            try
-            {
-                String Consulta = "SELECT NombreProveedor FROM Proveedores;";
-                DataTable Datos = new DataTable();
-                DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
-                Datos = Consultor.Consultar(Consulta);
-                for (int i = 0; i < Datos.Rows.Count; i++)
-                {
-                    listaProveedor.Add(Datos.Rows[i]["NombreProveedor"].ToString());
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Ha ocurrido un error al llenar la lista de proveedores", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            cbProveedor.DataSource = listaProveedor;
+            DataTable Proveedores = new DataTable();
+            Proveedores = CacheManager.CLS.Cache.TODOS_LOS_PROVEEDORES();
+            cbProveedor.DataSource = Proveedores;
+            cbProveedor.DisplayMember = "NombreProveedor";
+            cbProveedor.ValueMember = "IDProveedor";
         }
         private void Cargar()
         {
             try
             {
                 DataTable Resultado = new DataTable();
-                String Consulta;
-                DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
                 try
                 {
-                Consulta = "SELECT NombreProducto, Estado, Cantidad FROM Productos";
-                Resultado = oConsulta.Consultar(Consulta);
+                    Resultado = CacheManager.CLS.Cache.TODOS_LOS_PRODUCTOS();
                 }
                 catch
                 {
@@ -75,7 +61,7 @@ namespace General.GUI
         {
             InitializeComponent();
             Cargar();
-            LlenarComboBox();
+            CargarPedidos();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -88,11 +74,6 @@ namespace General.GUI
             FiltrarLocalmente();
         }
 
-        private void btnSeleccionar_Click(object sender, EventArgs e)
-        {
-            txbProducto.Text = dtgDatos.CurrentRow.Cells["NombreProducto"].Value.ToString();
-            txbEstado.Text = dtgDatos.CurrentRow.Cells["Estado"].Value.ToString();
-        }
         private Boolean Validar()
         {
             Boolean verificado = true;
@@ -129,21 +110,13 @@ namespace General.GUI
                     DataTable Datos = new DataTable();
                     DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
                     Datos = Consultor.Consultar(Consulta);
-
-                    String Consulta2 = "SELECT * FROM Proveedores WHERE NombreProveedor ='"+cbProveedor.Text+"'";
-                    DataTable Datos2 = new DataTable();
-                    DataManager.CLS.DBOperacion Consultor2 = new DataManager.CLS.DBOperacion();
-                    Datos2 = Consultor2.Consultar(Consulta2);
-
                     CLS.Pedidos oPedido = new CLS.Pedidos();
                     oPedido.IDProducto = Datos.Rows[0]["IDProducto"].ToString();
                     oPedido.Cantidad = nudCantidad.Text;
-                    oPedido.IDProveedor = Datos2.Rows[0]["IDProveedor"].ToString();
+                    oPedido.IDProveedor = cbProveedor.SelectedValue.ToString();
                     oPedido.Fecha_de_pedido = DateTime.Now.ToString("yyy/MM/dd") + " " + DateTime.Now.ToString("hh:mm:ss");
                     oPedido.TiempoPromedio = nudDias.Text;
                     oPedido.Estado = "Pedido";
-
-                    //GUARDAR
                     if (oPedido.Guardar())
                     {
                         Close();
@@ -159,6 +132,12 @@ namespace General.GUI
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             Procesar();
+        }
+
+        private void dtgDatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txbProducto.Text = dtgDatos.CurrentRow.Cells["NombreProducto"].Value.ToString();
+            txbEstado.Text = dtgDatos.CurrentRow.Cells["Estado"].Value.ToString();
         }
     }
 }

@@ -27,8 +27,6 @@ namespace General.GUI
                 Notificador.SetError(txbCredencial, "Este campo no puede quedar vacío");
                 verificado = false;
             }
-
-            //Verificacion para que no se repita un dato
             String Consulta = "SELECT Usuario From Usuarios WHERE usuario = '" + txbUsuarios.Text + "';";
             DataTable Datos = new DataTable();
             DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
@@ -38,62 +36,30 @@ namespace General.GUI
                 verificado = false;
                MessageBox.Show("Este Usuario ya se encuentra registrado", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-
-
             return verificado;
         }
-
-        //LLENA LOS COMBOBOX DE CLASIFICACIONES Y LUGAR DE ALMACENAMIENTO
-        private void LlenarComboBox()
+        private void CargarRoles()
         {
-            //Se llena el ComboBox con una lista de las clasificaciones
-            List<string> listaRoles = new List<string>();
-            try
-            {
-                String Consulta1 = "SELECT * FROM Roles;";
-                DataTable Datos = new DataTable();
-                DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
-                Datos = Consultor.Consultar(Consulta1);
-                for (int i = 0; i < Datos.Rows.Count; i++)
-                {
-                    listaRoles.Add(Datos.Rows[i]["Rol"].ToString());
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Ha ocurrido un error al llenar la lista de clasificaciones", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            cbRol.DataSource = listaRoles;
-
-            //Se llena el ComboBox con una lista de los empleados
-            List<string> listaEmpleados = new List<string>();
-            try
-            {
-                String Consulta2 = "SELECT * FROM empleados;";
-                DataTable Datos2 = new DataTable();
-                DataManager.CLS.DBOperacion Consultor2 = new DataManager.CLS.DBOperacion();
-                Datos2 = Consultor2.Consultar(Consulta2);
-                for (int i = 0; i < Datos2.Rows.Count; i++)
-                {
-                    listaEmpleados.Add(Datos2.Rows[i]["Nombres"].ToString());
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Ha ocurrido un error al llenar la lista de clasificaciones", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            cbEmpleados.DataSource = listaEmpleados;
-
-
+            DataTable Roles = new DataTable();
+            Roles = CacheManager.CLS.Cache.TODOS_LOS_ROLES();
+            cbRol.DataSource = Roles;
+            cbRol.DisplayMember = "Rol";
+            cbRol.ValueMember = "IDRol";
         }
-
-
-
+        private void CargarEmpleados()
+        {
+            DataTable Empleados = new DataTable();
+            Empleados = CacheManager.CLS.Cache.TODOS_LOS_EMPLEADOS();
+            cbEmpleados.DataSource = Empleados;
+            cbEmpleados.DisplayMember = "Nombre";
+            cbEmpleados.ValueMember = "ID";
+        }
+        
         public InsercionUsuario()
         {
             InitializeComponent();
-            LlenarComboBox();
+            CargarRoles();
+            CargarEmpleados();
         }
 
 
@@ -106,24 +72,11 @@ namespace General.GUI
         {
             if (Validar())
             {
-                String Consulta1 = "select IDRol  from Roles where Rol = '" + cbRol.Text + "';";
-                DataTable Datos = new DataTable();
-                DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
-                Datos = Consultor.Consultar(Consulta1);
-
-                String Consulta2 = "select IDEmpleado  from empleados where nombres = '" + cbEmpleados.Text + "';";
-                DataTable Datos2 = new DataTable();
-                DataManager.CLS.DBOperacion Consultor2 = new DataManager.CLS.DBOperacion();
-                Datos2 = Consultor2.Consultar(Consulta2);
-
-
                 CLS.Usuarios oUsuarios = new CLS.Usuarios();
                 oUsuarios.Usuario = txbUsuarios.Text;
                 oUsuarios.Credencial = txbCredencial.Text;
-                oUsuarios.IDRol = Datos.Rows[0]["IDRol"].ToString();
-                oUsuarios.IDEmpleado = Datos2.Rows[0]["IDEmpleado"].ToString();
-
-
+                oUsuarios.IDRol = cbRol.SelectedValue.ToString();
+                oUsuarios.IDEmpleado = cbEmpleados.SelectedValue.ToString();
                 try
                 {
                     if (oUsuarios.Guardar())

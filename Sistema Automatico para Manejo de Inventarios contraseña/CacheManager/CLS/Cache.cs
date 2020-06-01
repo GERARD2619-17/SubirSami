@@ -140,7 +140,7 @@ namespace CacheManager.CLS
             DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
             try
             {
-                Consulta = "SELECT * FROM Almacenamientos";
+                Consulta = "SELECT IDAlmacenamiento, LugarAlmacenamiento FROM Almacenamientos;";
                 Resultado = oConsulta.Consultar(Consulta);
             }
             catch
@@ -157,7 +157,7 @@ namespace CacheManager.CLS
             try
             {
                 Consulta = @"SELECT 
-                a.IdPedido, b.NombreProducto, a.Cantidad, a.Estado, c.NombreProveedor, a.Fecha_de_pedido, a.TiempoPromedio 
+                a.IdPedido, b.NombreProducto, b.Estado as Estado_Prod, a.Cantidad, a.Estado as Estado_Ped, c.NombreProveedor, a.Fecha_de_pedido, a.TiempoPromedio 
                 FROM 
                 pedidos a, productos b, proveedores c 
                 WHERE a.IDProducto = b.IDProducto AND a.IDProveedor = c.IDProveedor;";
@@ -176,7 +176,7 @@ namespace CacheManager.CLS
             DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
             try
             {
-                Consulta = "SELECT * FROM Proveedores";
+                Consulta = "SELECT IDProveedor, NombreProveedor FROM Proveedores;";
                 Resultado = oConsulta.Consultar(Consulta);
             }
             catch

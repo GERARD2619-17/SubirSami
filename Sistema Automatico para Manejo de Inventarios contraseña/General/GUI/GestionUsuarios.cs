@@ -27,16 +27,16 @@ namespace General.GUI
             }
             catch { }
         }
-        
+
         public GestionUsuarios()
         {
             InitializeComponent();
             Cargar();
         }
 
-       
 
-        
+
+
 
 
         private void GestionUsuarios_Load(object sender, EventArgs e)
@@ -47,12 +47,21 @@ namespace General.GUI
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            EdicionUsuario f = new EdicionUsuario();
-            f.txbID.Text = dtgDatos.CurrentRow.Cells["IDUsuario"].Value.ToString();
-            f.txbUsuarios.Text = dtgDatos.CurrentRow.Cells["Usuario"].Value.ToString();
-            f.cbRol.Text = dtgDatos.CurrentRow.Cells["Rol"].Value.ToString();
-            f.ShowDialog();
-            Cargar();
+            try
+            {
+                if (MessageBox.Show("¿Realmente desea EDITAR el registro seleccionado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    EdicionUsuario f = new EdicionUsuario();
+                    f.txbID.Text = dtgDatos.CurrentRow.Cells["IDUsuario"].Value.ToString();
+                    f.txbUsuarios.Text = dtgDatos.CurrentRow.Cells["Usuario"].Value.ToString();
+                    f.cbRol.Text = dtgDatos.CurrentRow.Cells["Rol"].Value.ToString();
+                    f.ShowDialog();
+                    Cargar();
+                }
+            }
+            catch {
+                MessageBox.Show("Ocurrio un error inesperado", "NOTA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -94,6 +103,7 @@ namespace General.GUI
             }
             catch
             {
+                MessageBox.Show("No se puede eliminar este usuario", "NOTA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

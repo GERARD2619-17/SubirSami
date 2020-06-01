@@ -38,15 +38,16 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnProductosPendientes = new System.Windows.Forms.ToolStripButton();
             this.dtgDatos = new System.Windows.Forms.DataGridView();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
             this.IdPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado_Prod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado_Ped = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_de_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TiempoPromedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lblRegistros = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -120,8 +121,9 @@
             this.dtgDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdPedido,
             this.NombreProducto,
+            this.Estado_Prod,
             this.Cantidad,
-            this.Estado,
+            this.Estado_Ped,
             this.NombreProveedor,
             this.Fecha_de_pedido,
             this.TiempoPromedio});
@@ -144,6 +146,23 @@
             this.dtgDatos.Size = new System.Drawing.Size(949, 484);
             this.dtgDatos.TabIndex = 5;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblRegistros});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 496);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(949, 25);
+            this.statusStrip1.TabIndex = 6;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblRegistros
+            // 
+            this.lblRegistros.Name = "lblRegistros";
+            this.lblRegistros.Size = new System.Drawing.Size(168, 20);
+            this.lblRegistros.Text = "0 Registros Encontrados";
+            // 
             // IdPedido
             // 
             this.IdPedido.DataPropertyName = "IdPedido";
@@ -158,6 +177,13 @@
             this.NombreProducto.Name = "NombreProducto";
             this.NombreProducto.ReadOnly = true;
             // 
+            // Estado_Prod
+            // 
+            this.Estado_Prod.DataPropertyName = "Estado_Prod";
+            this.Estado_Prod.HeaderText = "Estado Producto";
+            this.Estado_Prod.Name = "Estado_Prod";
+            this.Estado_Prod.ReadOnly = true;
+            // 
             // Cantidad
             // 
             this.Cantidad.DataPropertyName = "Cantidad";
@@ -165,12 +191,12 @@
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
             // 
-            // Estado
+            // Estado_Ped
             // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
+            this.Estado_Ped.DataPropertyName = "Estado_Ped";
+            this.Estado_Ped.HeaderText = "Estado Pedido";
+            this.Estado_Ped.Name = "Estado_Ped";
+            this.Estado_Ped.ReadOnly = true;
             // 
             // NombreProveedor
             // 
@@ -192,23 +218,6 @@
             this.TiempoPromedio.HeaderText = "Tiempo promedio dias";
             this.TiempoPromedio.Name = "TiempoPromedio";
             this.TiempoPromedio.ReadOnly = true;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblRegistros});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 496);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(949, 25);
-            this.statusStrip1.TabIndex = 6;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // lblRegistros
-            // 
-            this.lblRegistros.Name = "lblRegistros";
-            this.lblRegistros.Size = new System.Drawing.Size(168, 20);
-            this.lblRegistros.Text = "0 Registros Encontrados";
             // 
             // GestionPedidos
             // 
@@ -244,8 +253,9 @@
         private System.Windows.Forms.ToolStripButton btnProductosPendientes;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado_Prod;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado_Ped;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_de_pedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn TiempoPromedio;

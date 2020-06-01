@@ -30,21 +30,16 @@ namespace General.GUI
         {
             try
             {
+                //Consulta para obtener Id del producto de los pedidos ya que solo se muestra el nombre del producto
                 String Consulta1 = "SELECT * from Pedidos where IdPedido = " + dtgDatos.CurrentRow.Cells["IdPedido"].Value.ToString() + ";";
                 DataTable Datos1 = new DataTable();
                 DataManager.CLS.DBOperacion Consultor1 = new DataManager.CLS.DBOperacion();
                 Datos1 = Consultor1.Consultar(Consulta1);
                 String idprod = Datos1.Rows[0]["IDProducto"].ToString();
-                /////////////////////////////////////////////////////////
 
-                String Consulta2 = "SELECT * from Usuarios where Usuario = '" + _SESION.Informacion.Usuario + "';";
-                DataTable Datos2 = new DataTable();
-                DataManager.CLS.DBOperacion Consultor2 = new DataManager.CLS.DBOperacion();
-                Datos2 = Consultor2.Consultar(Consulta2);
-                String id2 = Datos2.Rows[0]["IDUsuario"].ToString();
-
+                //REGISTRA EN EL HISTORIAL LOS DATOS DEL PEDIDO
                 CLS.Registros oRegistros = new CLS.Registros();
-                oRegistros.IDUsuario = id2;
+                oRegistros.IDUsuario = _SESION.Informacion.IDUsuario;
                 oRegistros.IDProducto = idprod;
                 oRegistros.Accion = "Inserción";
                 oRegistros.Cantidad = dtgDatos.CurrentRow.Cells["Cantidad"].Value.ToString();
@@ -52,20 +47,24 @@ namespace General.GUI
 
                 oRegistros.Guardar();
 
+                //Consulta para obtener el producto a actualizar luego del ingreso del pedido
                 String Consulta3 = "SELECT * from Productos where IDProducto = '" + idprod + "';";
                 DataTable Datos3 = new DataTable();
                 DataManager.CLS.DBOperacion Consultor3 = new DataManager.CLS.DBOperacion();
                 Datos3 = Consultor3.Consultar(Consulta3);
 
+                //REGISTRA EN BODEGA LOS DATOS DEL PEDIDO
                 CLS.Producto oProducto = new CLS.Producto();
+                oProducto.IDProducto = Datos3.Rows[0]["IDProducto"].ToString();
                 oProducto.NombreProducto = Datos3.Rows[0]["NombreProducto"].ToString();
                 oProducto.Estado = Datos3.Rows[0]["Estado"].ToString();
                 oProducto.IdClasificacion = Datos3.Rows[0]["IdClasificacion"].ToString();
                 oProducto.Descripcion = Datos3.Rows[0]["Descripcion"].ToString();
-                oProducto.Cantidad = (Int32.Parse(Datos3.Rows[0]["Cantidad"].ToString()) + Int32.Parse(dtgDatos.CurrentRow.Cells["Cantidad"].Value.ToString())).ToString();
+                oProducto.Cantidad = Convert.ToString(Int32.Parse(Datos3.Rows[0]["Cantidad"].ToString()) + Int32.Parse(dtgDatos.CurrentRow.Cells["Cantidad"].Value.ToString()));
                 oProducto.IDAlmacenamiento = Datos3.Rows[0]["IDAlmacenamiento"].ToString();
                 oProducto.Existencia = "Existente";
-                oProducto.Guardar();
+
+                oProducto.Actualizar();
             }
             catch { }
 
@@ -86,19 +85,20 @@ namespace General.GUI
 
         private void btnMarcarRecibido_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Marcar como recibido? se registrara en bodega", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                try
+            try {
+                if (MessageBox.Show("¿Marcar como recibido? se registrara en bodega", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    String Consulta = "SELECT * FROM Pedidos WHERE IdPedido ="+ dtgDatos.CurrentRow.Cells["IdPedido"].Value.ToString() + ";";
+
+                    String Consulta = "SELECT * FROM Pedidos WHERE IdPedido =" + dtgDatos.CurrentRow.Cells["IdPedido"].Value.ToString() + ";";
                     DataTable Datos = new DataTable();
                     DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
                     Datos = Consultor.Consultar(Consulta);
-                    if (Datos.Rows[0]["Estado"].ToString() == "Pedido") {
+                    if (Datos.Rows[0]["Estado"].ToString() == "Pedido")
+                    {
                         CLS.Pedidos oPedidos = new CLS.Pedidos();
                         oPedidos.IdPedido = Datos.Rows[0]["IDPedido"].ToString();
                         oPedidos.IDProducto = Datos.Rows[0]["IDProducto"].ToString();
-                        oPedidos.Cantidad= Datos.Rows[0]["Cantidad"].ToString();
+                        oPedidos.Cantidad = Datos.Rows[0]["Cantidad"].ToString();
                         oPedidos.IDProveedor = Datos.Rows[0]["IDProveedor"].ToString();
                         oPedidos.Fecha_de_pedido = dtgDatos.CurrentRow.Cells["Fecha_de_pedido"].Value.ToString();
                         oPedidos.TiempoPromedio = Datos.Rows[0]["TiempoPromedio"].ToString();
@@ -107,9 +107,13 @@ namespace General.GUI
                         Registro();
                     }
                     Cargar();
+
                 }
-                catch { }
             }
+            catch {
+                MessageBox.Show("No se a hecho ningun pedido", "NOTA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
         public GestionPedidos()
         {

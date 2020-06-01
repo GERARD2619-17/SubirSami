@@ -153,13 +153,6 @@
             // 
             this.cbClasificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbClasificacion.FormattingEnabled = true;
-            this.cbClasificacion.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
             this.cbClasificacion.Location = new System.Drawing.Point(187, 189);
             this.cbClasificacion.Name = "cbClasificacion";
             this.cbClasificacion.Size = new System.Drawing.Size(234, 24);
@@ -171,17 +164,12 @@
             this.nudCantidad.Name = "nudCantidad";
             this.nudCantidad.Size = new System.Drawing.Size(234, 22);
             this.nudCantidad.TabIndex = 32;
+            this.nudCantidad.ValueChanged += new System.EventHandler(this.nudCantidad_ValueChanged);
             // 
             // cbAlmacenamiento
             // 
             this.cbAlmacenamiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAlmacenamiento.FormattingEnabled = true;
-            this.cbAlmacenamiento.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
             this.cbAlmacenamiento.Location = new System.Drawing.Point(187, 270);
             this.cbAlmacenamiento.Name = "cbAlmacenamiento";
             this.cbAlmacenamiento.Size = new System.Drawing.Size(234, 24);
@@ -272,10 +260,6 @@
             // 
             this.cbExistencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbExistencia.FormattingEnabled = true;
-            this.cbExistencia.Items.AddRange(new object[] {
-            "En envio",
-            "Faltante",
-            "Existente"});
             this.cbExistencia.Location = new System.Drawing.Point(187, 309);
             this.cbExistencia.Name = "cbExistencia";
             this.cbExistencia.Size = new System.Drawing.Size(234, 24);
