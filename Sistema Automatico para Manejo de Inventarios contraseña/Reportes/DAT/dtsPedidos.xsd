@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dtsPedidos" targetNamespace="http://tempuri.org/dtsPedidos.xsd" xmlns:mstns="http://tempuri.org/dtsPedidos.xsd" xmlns="http://tempuri.org/dtsPedidos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dtsPedidos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtsPedidos" msprop:Generator_UserDSName="dtsPedidos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Pedidos" msprop:Generator_TableClassName="PedidosDataTable" msprop:Generator_TableVarName="tablePedidos" msprop:Generator_TablePropName="Pedidos" msprop:Generator_RowDeletingName="PedidosRowDeleting" msprop:Generator_RowChangingName="PedidosRowChanging" msprop:Generator_RowEvHandlerName="PedidosRowChangeEventHandler" msprop:Generator_RowDeletedName="PedidosRowDeleted" msprop:Generator_UserTableName="Pedidos" msprop:Generator_RowChangedName="PedidosRowChanged" msprop:Generator_RowEvArgName="PedidosRowChangeEvent" msprop:Generator_RowClassName="PedidosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPedido" msprop:Generator_ColumnVarNameInTable="columnIdPedido" msprop:Generator_ColumnPropNameInRow="IdPedido" msprop:Generator_ColumnPropNameInTable="IdPedidoColumn" msprop:Generator_UserColumnName="IdPedido" type="xs:int" minOccurs="0" />
+              <xs:element name="IDProducto" msprop:Generator_ColumnVarNameInTable="columnIDProducto" msprop:Generator_ColumnPropNameInRow="IDProducto" msprop:Generator_ColumnPropNameInTable="IDProductoColumn" msprop:Generator_UserColumnName="IDProducto" type="xs:int" minOccurs="0" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
+              <xs:element name="IDProveedor" msprop:Generator_ColumnVarNameInTable="columnIDProveedor" msprop:Generator_ColumnPropNameInRow="IDProveedor" msprop:Generator_ColumnPropNameInTable="IDProveedorColumn" msprop:Generator_UserColumnName="IDProveedor" type="xs:int" minOccurs="0" />
+              <xs:element name="Fecha_de_pedido" msprop:Generator_ColumnVarNameInTable="columnFecha_de_pedido" msprop:Generator_ColumnPropNameInRow="Fecha_de_pedido" msprop:Generator_ColumnPropNameInTable="Fecha_de_pedidoColumn" msprop:Generator_UserColumnName="Fecha_de_pedido" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TiempoPromedio" msprop:Generator_ColumnVarNameInTable="columnTiempoPromedio" msprop:Generator_ColumnPropNameInRow="TiempoPromedio" msprop:Generator_ColumnPropNameInTable="TiempoPromedioColumn" msprop:Generator_UserColumnName="TiempoPromedio" type="xs:int" minOccurs="0" />
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

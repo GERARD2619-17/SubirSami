@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheManager", "CacheManage
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "General", "General\General.csproj", "{50DDD76F-EFC5-4133-9810-4B3C39C47E66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reportes", "Reportes\Reportes.csproj", "{6D8E5D78-B29E-46EE-ADB7-9BD6103C2B20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{50DDD76F-EFC5-4133-9810-4B3C39C47E66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50DDD76F-EFC5-4133-9810-4B3C39C47E66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50DDD76F-EFC5-4133-9810-4B3C39C47E66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D8E5D78-B29E-46EE-ADB7-9BD6103C2B20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D8E5D78-B29E-46EE-ADB7-9BD6103C2B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D8E5D78-B29E-46EE-ADB7-9BD6103C2B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D8E5D78-B29E-46EE-ADB7-9BD6103C2B20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -36,6 +36,8 @@
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnConfiguracion = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesEInformacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
@@ -55,6 +57,7 @@
             this.lblhora = new System.Windows.Forms.Label();
             this.lblfecha = new System.Windows.Forms.Label();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
+            this.reporteDePedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -66,7 +69,8 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.opcionesToolStripMenuItem,
-            this.ayudaToolStripMenuItem});
+            this.ayudaToolStripMenuItem,
+            this.reportesEInformacionesToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -109,6 +113,22 @@
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
+            // reportesEInformacionesToolStripMenuItem
+            // 
+            this.reportesEInformacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteDeProductosToolStripMenuItem,
+            this.reporteDePedidosToolStripMenuItem});
+            this.reportesEInformacionesToolStripMenuItem.Name = "reportesEInformacionesToolStripMenuItem";
+            this.reportesEInformacionesToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
+            this.reportesEInformacionesToolStripMenuItem.Text = "Reportes e Informaciones";
+            // 
+            // reporteDeProductosToolStripMenuItem
+            // 
+            this.reporteDeProductosToolStripMenuItem.Name = "reporteDeProductosToolStripMenuItem";
+            this.reporteDeProductosToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.reporteDeProductosToolStripMenuItem.Text = "Reporte de Productos";
+            this.reporteDeProductosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeProductosToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -268,7 +288,6 @@
             this.lblhora.BackColor = System.Drawing.SystemColors.Control;
             this.lblhora.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhora.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblhora.Image = ((System.Drawing.Image)(resources.GetObject("lblhora.Image")));
             this.lblhora.Location = new System.Drawing.Point(6, 509);
             this.lblhora.Name = "lblhora";
             this.lblhora.Size = new System.Drawing.Size(138, 51);
@@ -282,7 +301,6 @@
             this.lblfecha.BackColor = System.Drawing.SystemColors.Control;
             this.lblfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfecha.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblfecha.Image = ((System.Drawing.Image)(resources.GetObject("lblfecha.Image")));
             this.lblfecha.Location = new System.Drawing.Point(7, 561);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(126, 46);
@@ -293,6 +311,13 @@
             // 
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
+            // 
+            // reporteDePedidosToolStripMenuItem
+            // 
+            this.reporteDePedidosToolStripMenuItem.Name = "reporteDePedidosToolStripMenuItem";
+            this.reporteDePedidosToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.reporteDePedidosToolStripMenuItem.Text = "Reporte de Pedidos";
+            this.reporteDePedidosToolStripMenuItem.Click += new System.EventHandler(this.reporteDePedidosToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -349,6 +374,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton btnPedidos;
         private System.Windows.Forms.ToolStripStatusLabel lblRol;
+        private System.Windows.Forms.ToolStripMenuItem reportesEInformacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDePedidosToolStripMenuItem;
     }
 }
 

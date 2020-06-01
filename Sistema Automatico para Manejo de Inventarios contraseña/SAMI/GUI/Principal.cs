@@ -177,5 +177,23 @@ namespace SAMI.GUI
             Cerrar_Todo();
             Cargar_Principal();
         }
+
+        private void reporteDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_SESION.Informacion.VerificarPermiso(6))
+            {
+                Reportes.GUI.VisorReportesProductos f = new Reportes.GUI.VisorReportesProductos();
+                f.Show();
+            }
+        }
+
+        private void reporteDePedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_SESION.Informacion.VerificarPermiso(6))
+            {
+                Reportes.GUI.VisorReportesPedidos f = new Reportes.GUI.VisorReportesPedidos();
+                f.Show();
+            }
+        }
     }
 }

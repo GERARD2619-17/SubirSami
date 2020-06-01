@@ -131,5 +131,11 @@ namespace General.GUI
             }
             catch { }
         }
+
+        private void GestionPedidos_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.Dock = DockStyle.Fill;
+        }
     }
 }

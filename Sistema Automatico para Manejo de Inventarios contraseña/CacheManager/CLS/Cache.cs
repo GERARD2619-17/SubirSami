@@ -117,6 +117,27 @@ namespace CacheManager.CLS
             }
             return Resultado;
         }
+
+        public static DataTable REPORTES_PRODUCTOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta;
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @"SELECT IDProducto, NombreProducto, 
+                Estado, IdClasificacion, 
+                Descripcion, Cantidad, 
+                IDAlmacenamiento, Existencia 
+                FROM productos ORDER BY NombreProducto ;";
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
         public static DataTable TODAS_LAS_CLASIFICACIONES()
         {
             DataTable Resultado = new DataTable();
@@ -169,6 +190,29 @@ namespace CacheManager.CLS
             }
             return Resultado;
         }
+
+        public static DataTable REPORTES_PEDIDOS()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta;
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @" SELECT IdPedido, IDProducto,
+                Cantidad, IDProveedor,
+                Fecha_de_pedido, TiempoPromedio, Estado
+                FROM pedidos ORDER BY Fecha_de_pedido;";
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+       
+
         public static DataTable TODOS_LOS_PROVEEDORES()
         {
             DataTable Resultado = new DataTable();
