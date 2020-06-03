@@ -42,5 +42,16 @@ namespace General.GUI
             }
             catch { }
         }
+
+        private void btnInformacion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                InformacionPedido f = new InformacionPedido(dtgDatos.CurrentRow.Cells["IdPedido"].Value.ToString());
+                f.ShowDialog();
+                Cargar();
+            }
+            catch { }
+        }
     }
 }

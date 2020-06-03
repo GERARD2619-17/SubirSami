@@ -228,6 +228,24 @@ namespace CacheManager.CLS
             }
             return Resultado;
         }
+
+        public static DataTable TODOS_LOS_PEDIDOS_PRODUCTOS(String ID)
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta;
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = "SELECT b.NombreProducto, b.Estado, a.Cantidad FROM Pedidos_Productos a, Productos b WHERE a.IdProducto = b.IdProducto AND IdPedido = "+ID+";";
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
         public static DataTable PERMISOS_DE_UN_ROL(String pIDRol)
         {
             DataTable Resultado = new DataTable();
@@ -244,6 +262,7 @@ namespace CacheManager.CLS
             }
             return Resultado;
         }
+
         public static DataTable ASIGNACIONES_DE_PERMISOS_SEGUN_IDROL(String pIDRol)
         {
             DataTable Resultado = new DataTable();

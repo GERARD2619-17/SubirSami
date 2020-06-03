@@ -113,6 +113,12 @@
     <Compile Include="GUI\GestionPedidos.Designer.cs">
       <DependentUpon>GestionPedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\InformacionPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\InformacionPedido.Designer.cs">
+      <DependentUpon>InformacionPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Permisos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GestionPedidos.resx">
       <DependentUpon>GestionPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\InformacionPedido.resx">
+      <DependentUpon>InformacionPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Permisos.resx">
       <DependentUpon>Permisos.cs</DependentUpon>

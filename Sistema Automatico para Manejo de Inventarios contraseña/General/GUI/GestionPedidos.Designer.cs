@@ -98,6 +98,7 @@
             this.btnInformacion.Name = "btnInformacion";
             this.btnInformacion.Size = new System.Drawing.Size(196, 34);
             this.btnInformacion.Text = "Información de pedido";
+            this.btnInformacion.Click += new System.EventHandler(this.btnInformacion_Click);
             // 
             // dtgDatos
             // 

@@ -14,9 +14,7 @@ namespace General.GUI
     {
         BindingSource _DATOS = new BindingSource();
         SessionManager.CLS.Sesion _SESION = SessionManager.CLS.Sesion.Instancia;
-
-
-
+        
         private void Cargar()
         {
             try
@@ -33,12 +31,7 @@ namespace General.GUI
             InitializeComponent();
             Cargar();
         }
-
-
-
-
-
-
+        
         private void GestionUsuarios_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
