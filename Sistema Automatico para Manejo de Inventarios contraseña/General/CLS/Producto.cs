@@ -19,6 +19,7 @@ namespace General.CLS
         String _Cantidad;
         String _IDAlmacenamiento;
         String _Existencia;
+        String _Precio;
 
         //PROPIEDADES
 
@@ -30,6 +31,7 @@ namespace General.CLS
         public string Cantidad { get => _Cantidad; set => _Cantidad = value; }
         public string IDAlmacenamiento { get => _IDAlmacenamiento; set => _IDAlmacenamiento = value; }
         public string Existencia { get => _Existencia; set => _Existencia = value; }
+        public string Precio { get => _Precio; set => _Precio = value; }
 
         //METODOS
 
@@ -39,14 +41,15 @@ namespace General.CLS
             DataManager.CLS.DBOperacion Operacion = new DataManager.CLS.DBOperacion();
             try
             {
-                Sentencia = "INSERT INTO Productos(NombreProducto, Estado, IdClasificacion, Descripcion, Cantidad, IDAlmacenamiento, Existencia) VALUES(";
+                Sentencia = "INSERT INTO Productos(NombreProducto, Estado, IdClasificacion, Descripcion, Cantidad, IDAlmacenamiento, Existencia, Precio) VALUES(";
                 Sentencia += "'" + _NombreProducto + "',";
                 Sentencia += "'" + _Estado + "',";
                 Sentencia += _IdClasificacion + ",";
                 Sentencia += "'" + _Descripcion + "',";
                 Sentencia += _Cantidad + ",";
                 Sentencia += _IDAlmacenamiento + ",";
-                Sentencia += "'" + _Existencia + "');";
+                Sentencia += "'" + _Existencia + "',";
+                Sentencia += _Precio + ");";
                 if (Operacion.Insertar(Sentencia) > 0)
                 {
                     Guardado = true;
@@ -79,8 +82,9 @@ namespace General.CLS
                 Sentencia += "Descripcion ='" + _Descripcion + "',";
                 Sentencia += "Cantidad =" + _Cantidad + ",";
                 Sentencia += "IDAlmacenamiento =" + _IDAlmacenamiento + ",";
-                Sentencia += "Existencia ='" + _Existencia + "'";
-                Sentencia += "WHERE IDProducto =" + _IDProducto + ";";
+                Sentencia += "Existencia ='" + _Existencia + "',";
+                Sentencia += "Precio = "+_Precio;
+                Sentencia += " WHERE IDProducto =" + _IDProducto + ";";
                 String dato = Sentencia;
                 if (Operacion.Actualizar(Sentencia) > 0)
                 {

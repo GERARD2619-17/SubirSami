@@ -51,6 +51,7 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LugarAlmacenamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
@@ -184,7 +185,8 @@
             this.Clasificacion,
             this.Cantidad,
             this.LugarAlmacenamiento,
-            this.Existencia});
+            this.Existencia,
+            this.Precio});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -246,6 +248,13 @@
             this.Existencia.Name = "Existencia";
             this.Existencia.ReadOnly = true;
             // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "Precio";
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
             // GestionBodega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -285,14 +294,15 @@
         private System.Windows.Forms.ToolStripStatusLabel lblRegistros;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridView dtgDatos;
+        public System.Windows.Forms.ToolStripComboBox cbClasificaciones;
+        private System.Windows.Forms.ToolStripButton btnSi;
+        private System.Windows.Forms.ToolStripButton btnNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clasificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn LugarAlmacenamiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Existencia;
-        public System.Windows.Forms.ToolStripComboBox cbClasificaciones;
-        private System.Windows.Forms.ToolStripButton btnSi;
-        private System.Windows.Forms.ToolStripButton btnNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
     }
 }

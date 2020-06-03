@@ -145,6 +145,7 @@ namespace General.GUI
                     oProducto.Cantidad = nudCantidad.Text;
                     oProducto.IDAlmacenamiento = cbAlmacenamiento.SelectedValue.ToString();
                     oProducto.Existencia = cbExistencia.Text;
+                    oProducto.Precio = nudPrecio.Text.Replace(",", ".");
                     oProducto.Descripcion = txbDescripcion.Text;
                     if (rbNuevo.Checked) { oProducto.Estado = "Nuevo"; }
                     else { oProducto.Estado = "Usado"; }

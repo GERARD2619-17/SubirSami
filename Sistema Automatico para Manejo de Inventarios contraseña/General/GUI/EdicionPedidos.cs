@@ -13,15 +13,8 @@ namespace General.GUI
     public partial class EdicionPedidos : Form
     {
         BindingSource _DATOS = new BindingSource();
-        
-        private void CargarPedidos()
-        {
-            DataTable Proveedores = new DataTable();
-            Proveedores = CacheManager.CLS.Cache.TODOS_LOS_PROVEEDORES();
-            cbProveedor.DataSource = Proveedores;
-            cbProveedor.DisplayMember = "NombreProveedor";
-            cbProveedor.ValueMember = "IDProveedor";
-        }
+        DataTable _DATOS2 = new DataTable();
+
         private void Cargar()
         {
             try
@@ -57,87 +50,68 @@ namespace General.GUI
             }
             catch { }
         }
+        private void Configurar()
+        {
+            _DATOS2.Columns.Add("NombreProducto");
+            _DATOS2.Columns.Add("Estado");
+            _DATOS2.Columns.Add("Cantidad");
+            dtgDatos2.AutoGenerateColumns = false;
+            dtgDatos2.DataSource = _DATOS2;
+        }
         public EdicionPedidos()
         {
             InitializeComponent();
+            Configurar();
             Cargar();
-            CargarPedidos();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
         }
-
-        private void txbBuscar_TextChanged(object sender, EventArgs e)
+        private void txbBuscar_TextChanged_1(object sender, EventArgs e)
         {
             FiltrarLocalmente();
         }
-
-        private Boolean Validar()
+        
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Boolean verificado = true;
-            Notificador.Clear();
-            if (txbProducto.TextLength == 0)
-            {
-                Notificador.SetError(txbProducto, "Este campo no puede quedar vacío");
-                verificado = false;
-            }
-            if (txbEstado.TextLength == 0)
-            {
-                Notificador.SetError(txbEstado, "Este campo no puede quedar vacío");
-                verificado = false;
-            }
-            if (Int32.Parse(nudCantidad.Text) <= 0)
-            {
-                Notificador.SetError(nudCantidad, "Este campo debe ser mayor a cero");
-                verificado = false;
-            }
-            if (Int32.Parse(nudDias.Text) <= 0)
-            {
-                Notificador.SetError(nudDias, "Este campo debe ser mayor a cero");
-                verificado = false;
-            }
-            return verificado;
-        }
-        private void Procesar()
-        {
-            try
-            {
-                if (Validar())
+            
+                AgregarAlPedido f = new AgregarAlPedido();
+                f.txbProducto.Text = dtgDatos.CurrentRow.Cells["NombreProducto2"].Value.ToString();
+                f.txbEstado.Text = dtgDatos.CurrentRow.Cells["Estado2"].Value.ToString();
+                List<string> listaProductos = new List<string>();
+                List<string> listaEstado = new List<string>();
+                List<string> listaCantidad = new List<string>();
+                for (int i = 0; i < dtgDatos2.Rows.Count; i++)
                 {
-                    String Consulta = "SELECT * FROM Productos WHERE NombreProducto ='" + dtgDatos.CurrentRow.Cells["NombreProducto"].Value.ToString() + "' AND Estado ='"+ dtgDatos.CurrentRow.Cells["Estado"].Value.ToString() + "';";
-                    DataTable Datos = new DataTable();
-                    DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
-                    Datos = Consultor.Consultar(Consulta);
-                    CLS.Pedidos oPedido = new CLS.Pedidos();
-                    oPedido.IDProducto = Datos.Rows[0]["IDProducto"].ToString();
-                    oPedido.Cantidad = nudCantidad.Text;
-                    oPedido.IDProveedor = cbProveedor.SelectedValue.ToString();
-                    oPedido.Fecha_de_pedido = DateTime.Now.ToString("yyy/MM/dd") + " " + DateTime.Now.ToString("hh:mm:ss");
-                    oPedido.TiempoPromedio = nudDias.Text;
-                    oPedido.Estado = "Pedido";
-                    if (oPedido.Guardar())
-                    {
-                        Close();
-                    }
-                    
+                    listaProductos.Add(dtgDatos2.Rows[i].Cells["NombreProducto"].Value.ToString());
+                    listaEstado.Add(dtgDatos2.Rows[i].Cells["Estado"].Value.ToString());
+                    listaCantidad.Add(dtgDatos2.Rows[i].Cells["Cantidad"].Value.ToString());
                 }
-            }
-            catch
-            {
-
-            }
+                f.LProductos = listaProductos;
+                f.LEstado = listaEstado;
+                f.LCantidad = listaCantidad;
+                f.ShowDialog();
+                if (f.PROCESAR) {
+                    DataRow NuevaFila = _DATOS2.NewRow();
+                    NuevaFila["NombreProducto"] = f.LProductos[f.LProductos.Count-1];
+                    NuevaFila["Estado"] = f.LEstado[f.LProductos.Count-1];
+                    NuevaFila["Cantidad"] = f.LCantidad[f.LProductos.Count-1];
+                    _DATOS2.Rows.Add(NuevaFila);
+                }
+                Cargar();
+            
         }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Procesar();
+
         }
 
-        private void dtgDatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
-            txbProducto.Text = dtgDatos.CurrentRow.Cells["NombreProducto"].Value.ToString();
-            txbEstado.Text = dtgDatos.CurrentRow.Cells["Estado"].Value.ToString();
+            Close();
         }
     }
 }

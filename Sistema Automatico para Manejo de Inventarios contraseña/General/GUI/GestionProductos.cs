@@ -21,7 +21,7 @@ namespace General.GUI
             try
             {
                 String Consulta = @"SELECT 
-                a.IDProducto, a.NombreProducto, a.Estado, b.Clasificacion, a.Descripcion, a.Cantidad, c.LugarAlmacenamiento, a.Existencia 
+                a.IDProducto, a.NombreProducto, a.Estado, b.Clasificacion, a.Descripcion, a.Cantidad, c.LugarAlmacenamiento, a.Existencia , a.Precio
                 FROM Productos a, Clasificaciones b, Almacenamientos c 
                 WHERE a.IdClasificacion = b.IdClasificacion AND a.IDAlmacenamiento = c.IDAlmacenamiento AND a.NombreProducto = '" + Nombre + "' AND a.Estado = '" + Estado + "';";
                 DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
@@ -99,6 +99,7 @@ namespace General.GUI
                     f.nudCantidad.Text = Datos.Rows[0]["Cantidad"].ToString();
                     f.cbAlmacenamiento.Text = Datos.Rows[0]["LugarAlmacenamiento"].ToString();
                     f.cbExistencia.Text = Datos.Rows[0]["Existencia"].ToString();
+                    f.nudPrecio.Text = Datos.Rows[0]["Precio"].ToString();
                     f.txbDescripcion.Text = Datos.Rows[0]["Descripcion"].ToString();
                     if (Datos.Rows[0]["Estado"].ToString() == "Nuevo")
                     {

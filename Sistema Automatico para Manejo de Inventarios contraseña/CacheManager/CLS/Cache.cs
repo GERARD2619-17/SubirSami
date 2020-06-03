@@ -61,7 +61,7 @@ namespace CacheManager.CLS
             DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
             try
             {
-                Consulta = "SELECT * FROM ROLES";
+                Consulta = "SELECT IDRol, Rol FROM ROLES";
                 Resultado = oConsulta.Consultar(Consulta);
             }
             catch
@@ -100,7 +100,7 @@ namespace CacheManager.CLS
             try
             {
                 Consulta = @"SELECT  
-                a.NombreProducto, a.Estado, b.Clasificacion, a.Cantidad, c.LugarAlmacenamiento, a.Existencia 
+                a.NombreProducto, a.Estado, b.Clasificacion, a.Cantidad, c.LugarAlmacenamiento, a.Existencia, a.Precio 
                 FROM 
                 Productos a, Clasificaciones b, Almacenamientos c 
                 WHERE 
@@ -177,11 +177,10 @@ namespace CacheManager.CLS
             DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
             try
             {
-                Consulta = @"SELECT 
-                a.IdPedido, b.NombreProducto, b.Estado as Estado_Prod, a.Cantidad, a.Estado as Estado_Ped, c.NombreProveedor, a.Fecha_de_pedido, a.TiempoPromedio 
-                FROM 
-                pedidos a, productos b, proveedores c 
-                WHERE a.IDProducto = b.IDProducto AND a.IDProveedor = c.IDProveedor;";
+                Consulta = @"SELECT  a.IdPedido, b.NombreProveedor as Proveedor, a.Fecha_de_pedido as Fecha, a.TiempoPromedio as Tiempo, a.Costo, a.Estado
+				FROM 
+                pedidos a, proveedores b 
+                WHERE a.IDProveedor = b.IDProveedor;";
                 Resultado = oConsulta.Consultar(Consulta);
             }
             catch

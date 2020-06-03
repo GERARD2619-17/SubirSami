@@ -52,9 +52,12 @@
             this.txbId = new System.Windows.Forms.TextBox();
             this.cbExistencia = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.nudPrecio = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Notificador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -129,7 +132,7 @@
             this.rbNuevo.AutoSize = true;
             this.rbNuevo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbNuevo.Checked = true;
-            this.rbNuevo.Location = new System.Drawing.Point(184, 452);
+            this.rbNuevo.Location = new System.Drawing.Point(184, 513);
             this.rbNuevo.Name = "rbNuevo";
             this.rbNuevo.Size = new System.Drawing.Size(70, 21);
             this.rbNuevo.TabIndex = 28;
@@ -142,7 +145,7 @@
             // 
             this.rbUsado.AutoSize = true;
             this.rbUsado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rbUsado.Location = new System.Drawing.Point(286, 451);
+            this.rbUsado.Location = new System.Drawing.Point(286, 512);
             this.rbUsado.Name = "rbUsado";
             this.rbUsado.Size = new System.Drawing.Size(70, 21);
             this.rbUsado.TabIndex = 29;
@@ -179,7 +182,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(30, 350);
+            this.label9.Location = new System.Drawing.Point(30, 411);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(104, 20);
             this.label9.TabIndex = 27;
@@ -187,7 +190,7 @@
             // 
             // txbDescripcion
             // 
-            this.txbDescripcion.Location = new System.Drawing.Point(187, 350);
+            this.txbDescripcion.Location = new System.Drawing.Point(187, 411);
             this.txbDescripcion.Multiline = true;
             this.txbDescripcion.Name = "txbDescripcion";
             this.txbDescripcion.Size = new System.Drawing.Size(234, 81);
@@ -197,7 +200,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(36, 452);
+            this.label10.Location = new System.Drawing.Point(36, 513);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(66, 20);
             this.label10.TabIndex = 35;
@@ -208,7 +211,7 @@
             this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(87, 512);
+            this.button2.Location = new System.Drawing.Point(87, 573);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(5);
             this.button2.Size = new System.Drawing.Size(132, 55);
@@ -223,7 +226,7 @@
             this.button3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(248, 512);
+            this.button3.Location = new System.Drawing.Point(248, 573);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(5);
             this.button3.Size = new System.Drawing.Size(132, 55);
@@ -275,12 +278,32 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // nudPrecio
+            // 
+            this.nudPrecio.DecimalPlaces = 2;
+            this.nudPrecio.Location = new System.Drawing.Point(187, 358);
+            this.nudPrecio.Name = "nudPrecio";
+            this.nudPrecio.Size = new System.Drawing.Size(234, 22);
+            this.nudPrecio.TabIndex = 45;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(30, 357);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 20);
+            this.label7.TabIndex = 44;
+            this.label7.Text = "Precio:";
+            // 
             // EdicionProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(468, 603);
+            this.ClientSize = new System.Drawing.Size(468, 653);
+            this.Controls.Add(this.nudPrecio);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txbId);
             this.Controls.Add(this.labelId);
             this.Controls.Add(this.button3);
@@ -310,6 +333,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Notificador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,5 +363,7 @@
         public System.Windows.Forms.TextBox txbId;
         public System.Windows.Forms.ComboBox cbExistencia;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.NumericUpDown nudPrecio;
+        private System.Windows.Forms.Label label7;
     }
 }

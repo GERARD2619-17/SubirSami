@@ -83,6 +83,7 @@ namespace General.GUI
                     oProducto.NombreProducto = Datos.Rows[0]["NombreProducto"].ToString();
                     oProducto.Estado = Datos.Rows[0]["Estado"].ToString();
                     oProducto.IdClasificacion = Datos.Rows[0]["IdClasificacion"].ToString();
+                    oProducto.Precio = Datos.Rows[0]["Precio"].ToString().Replace(",", ".");
                     oProducto.Descripcion = Datos.Rows[0]["Descripcion"].ToString();
                     if (lblProducto.Text == "Retiro") {
                         oProducto.Cantidad = cant1;
