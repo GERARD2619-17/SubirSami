@@ -27,7 +27,6 @@ namespace General.GUI
                 Notificador.SetError(txbProveedor, "Este campo no puede quedar vacío");
                 verificado = false;
             }
-
             //Verificacion para que no se repita un dato
             String Consulta = "SELECT NombreProveedor From Proveedores WHERE NombreProveedor = '" + txbProveedor.Text + "';";
             DataTable Datos = new DataTable();
@@ -38,9 +37,6 @@ namespace General.GUI
                 verificado = false;
                 MessageBox.Show("Este proveedor ya se encuentra registrado", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-
-
             return verificado;
         }
         private void btnGuardar_Click(object sender, EventArgs e)

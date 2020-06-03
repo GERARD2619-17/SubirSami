@@ -10,20 +10,18 @@ namespace General.CLS
     class Pedidos
     {
         String _IdPedido;
-        String _IDProducto;
-        String _Cantidad;
         String _IDProveedor;
         String _Fecha_de_pedido;
         String _TiempoPromedio;
+        String _Costo;
         String _Estado;
 
         public string IdPedido { get => _IdPedido; set => _IdPedido = value; }
-        public string IDProducto { get => _IDProducto; set => _IDProducto = value; }
         public string IDProveedor { get => _IDProveedor; set => _IDProveedor = value; }
         public string Fecha_de_pedido { get => _Fecha_de_pedido; set => _Fecha_de_pedido = value; }
         public string TiempoPromedio { get => _TiempoPromedio; set => _TiempoPromedio = value; }
+        public string Costo { get => _Costo; set => _Costo = value; }
         public string Estado { get => _Estado; set => _Estado = value; }
-        public string Cantidad { get => _Cantidad; set => _Cantidad = value; }
 
         public Boolean Guardar()
         {
@@ -32,13 +30,12 @@ namespace General.CLS
             DataManager.CLS.DBOperacion Operacion = new DataManager.CLS.DBOperacion();
             try
             {
-                Sentencia = "INSERT INTO pedidos (IDProducto, Cantidad, IDProveedor, Fecha_de_pedido, TiempoPromedio, Estado) VALUES(";
-                Sentencia += _IDProducto;
-                Sentencia += "," + _Cantidad;
-                Sentencia += "," + _IDProveedor;
-                Sentencia += ",'" + _Fecha_de_pedido;
-                Sentencia += "'," + TiempoPromedio;
-                Sentencia +=",'"+_Estado+"');";
+                Sentencia = "INSERT INTO Pedidos (IDProveedor, Fecha_de_pedido, TiempoPromedio, Costo, Estado) VALUES (";
+                Sentencia += _IDProveedor + ",'";
+                Sentencia += _Fecha_de_pedido + "',";
+                Sentencia += _TiempoPromedio + ",";
+                Sentencia += _Costo + ",'";
+                Sentencia += _Estado + "');";
                 if (Operacion.Insertar(Sentencia) > 0)
                 {
                     Guardado = true;
@@ -56,39 +53,6 @@ namespace General.CLS
                 MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return Guardado;
-        }
-        public Boolean Actualizar()
-        {
-            Boolean Actualizado = false;
-            String Sentencia;
-            DataManager.CLS.DBOperacion Operacion = new DataManager.CLS.DBOperacion();
-            try
-            {
-                Sentencia = "UPDATE pedidos SET ";
-                Sentencia += "IDProducto = " + _IDProducto + ", ";
-                Sentencia += "Cantidad = " + _Cantidad + ", ";
-                Sentencia += "IDProveedor = " + _IDProveedor + ", ";
-                Sentencia += "TiempoPromedio = " + _TiempoPromedio + ", ";
-                Sentencia += "Estado = '" + _Estado + "' ";
-                Sentencia += "WHERE IdPedido = "+_IdPedido+";";
-
-                if (Operacion.Actualizar(Sentencia) > 0)
-                {
-                    Actualizado = true;
-                    MessageBox.Show("Registro actualizado correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    Actualizado = false;
-                    MessageBox.Show("Registro no fue actualizado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch
-            {
-                Actualizado = false;
-                MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return Actualizado;
         }
         public Boolean Eliminar()
         {

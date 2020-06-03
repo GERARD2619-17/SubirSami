@@ -58,11 +58,48 @@ namespace General.GUI
             dtgDatos2.AutoGenerateColumns = false;
             dtgDatos2.DataSource = _DATOS2;
         }
+        private Boolean Validar(String p1, String p2) {
+            Boolean resultado=true;
+            for (int i=0; i< dtgDatos2.Rows.Count; i++) {
+                if (dtgDatos2.Rows[i].Cells["NombreProducto"].Value.ToString()==p1) {
+                    if (dtgDatos2.Rows[i].Cells["Estado"].Value.ToString() == p2) {
+                        resultado = false;
+                    }
+                }
+            }
+            return resultado;
+        }
+        private Boolean Validar()
+        {
+            Boolean verificado = true;
+            Notificador.Clear();
+            if (Int32.Parse(nudTiempo.Text) < 1)
+            {
+                Notificador.SetError(nudTiempo, "Este campo no puede ser cero");
+                verificado = false;
+            }
+            if (nudCosto.Text == "0,00")
+            {
+                Notificador.SetError(nudCosto, "Este campo no puede ser cero");
+                verificado = false;
+            }
+            return verificado;
+        }
+        private void CargarProveedores()
+        {
+            DataTable Proveedor = new DataTable();
+            Proveedor = CacheManager.CLS.Cache.TODOS_LOS_PROVEEDORES();
+            cbProveedor.DataSource = Proveedor;
+            cbProveedor.DisplayMember = "NombreProveedor";
+            cbProveedor.ValueMember = "IDProveedor";
+        }
+
         public EdicionPedidos()
         {
             InitializeComponent();
             Configurar();
             Cargar();
+            CargarProveedores();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -76,7 +113,8 @@ namespace General.GUI
         
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            
+            if (Validar(dtgDatos.CurrentRow.Cells["NombreProducto2"].Value.ToString(), dtgDatos.CurrentRow.Cells["Estado2"].Value.ToString()))
+            {
                 AgregarAlPedido f = new AgregarAlPedido();
                 f.txbProducto.Text = dtgDatos.CurrentRow.Cells["NombreProducto2"].Value.ToString();
                 f.txbEstado.Text = dtgDatos.CurrentRow.Cells["Estado2"].Value.ToString();
@@ -93,25 +131,46 @@ namespace General.GUI
                 f.LEstado = listaEstado;
                 f.LCantidad = listaCantidad;
                 f.ShowDialog();
-                if (f.PROCESAR) {
+                if (f.PROCESAR)
+                {
                     DataRow NuevaFila = _DATOS2.NewRow();
-                    NuevaFila["NombreProducto"] = f.LProductos[f.LProductos.Count-1];
-                    NuevaFila["Estado"] = f.LEstado[f.LProductos.Count-1];
-                    NuevaFila["Cantidad"] = f.LCantidad[f.LProductos.Count-1];
+                    NuevaFila["NombreProducto"] = f.LProductos[f.LProductos.Count - 1];
+                    NuevaFila["Estado"] = f.LEstado[f.LProductos.Count - 1];
+                    NuevaFila["Cantidad"] = f.LCantidad[f.LProductos.Count - 1];
                     _DATOS2.Rows.Add(NuevaFila);
                 }
                 Cargar();
-            
+            }
+            else {
+                MessageBox.Show("El rpoducto ya se encuentra en el pedido", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
+            if (Validar())
+            {
+                CLS.Pedidos oPedidos = new CLS.Pedidos();
+                oPedidos.IDProveedor = cbProveedor.SelectedValue.ToString();
+                oPedidos.Fecha_de_pedido = DateTime.Now.ToString("yyy/MM/dd") + " " + DateTime.Now.ToString("hh:mm:ss");
+                oPedidos.TiempoPromedio = nudTiempo.Text;
+                oPedidos.Costo = nudCosto.Text.Replace(",", ".");
+                oPedidos.Estado = "Pedido";
+                if (oPedidos.Guardar())
+                {
+                    Close();
+                }
+            }
         }
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            dtgDatos2.Rows.RemoveAt(dtgDatos2.CurrentRow.Index);
         }
     }
 }
