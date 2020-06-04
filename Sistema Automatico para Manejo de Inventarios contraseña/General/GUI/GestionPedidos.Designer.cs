@@ -85,6 +85,7 @@
             this.btnRecibido.Name = "btnRecibido";
             this.btnRecibido.Size = new System.Drawing.Size(190, 34);
             this.btnRecibido.Text = "Marcar como recibido";
+            this.btnRecibido.Click += new System.EventHandler(this.btnRecibido_Click);
             // 
             // toolStripSeparator2
             // 

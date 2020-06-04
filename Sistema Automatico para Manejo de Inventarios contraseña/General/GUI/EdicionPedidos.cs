@@ -110,7 +110,6 @@ namespace General.GUI
         {
             FiltrarLocalmente();
         }
-        
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (Validar(dtgDatos.CurrentRow.Cells["NombreProducto2"].Value.ToString(), dtgDatos.CurrentRow.Cells["Estado2"].Value.ToString()))
@@ -145,20 +144,47 @@ namespace General.GUI
                 MessageBox.Show("El rpoducto ya se encuentra en el pedido", "MENSAJE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        private String GetIdProducto(String nombre, String estado)
+        {
+            String Consulta = "SELECT * from Productos where NombreProducto = '" + nombre + "' AND Estado = '" + estado + "';";
+            DataTable Datos = new DataTable();
+            DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
+            Datos = Consultor.Consultar(Consulta);
+            return Datos.Rows[0]["IDProducto"].ToString();
+        }
+
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (Validar())
+            if (dtgDatos2.Rows.Count < 1)
             {
-                CLS.Pedidos oPedidos = new CLS.Pedidos();
-                oPedidos.IDProveedor = cbProveedor.SelectedValue.ToString();
-                oPedidos.Fecha_de_pedido = DateTime.Now.ToString("yyy/MM/dd") + " " + DateTime.Now.ToString("hh:mm:ss");
-                oPedidos.TiempoPromedio = nudTiempo.Text;
-                oPedidos.Costo = nudCosto.Text.Replace(",", ".");
-                oPedidos.Estado = "Pedido";
-                if (oPedidos.Guardar())
+                MessageBox.Show("No hay ningun producto en el pedido", "NOTA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (Validar())
                 {
-                    Close();
+                    CLS.Pedidos oPedidos = new CLS.Pedidos();
+                    oPedidos.IDProveedor = cbProveedor.SelectedValue.ToString();
+                    oPedidos.Fecha_de_pedido = DateTime.Now.ToString("yyy/MM/dd") + " " + DateTime.Now.ToString("hh:mm:ss");
+                    oPedidos.TiempoPromedio = nudTiempo.Text;
+                    oPedidos.Costo = nudCosto.Text.Replace(",", ".");
+                    oPedidos.Estado = "Pedido";
+                    CLS.Pedidos_Productos oPedidos_Productos = new CLS.Pedidos_Productos();
+                    DataTable table = new DataTable();
+                    if (oPedidos.Guardar())
+                    {
+                        table = CacheManager.CLS.Cache.TODOS_LOS_PEDIDOS();
+                        for (int i = 0; i < dtgDatos2.Rows.Count; i++)
+                        {
+                            int numero = table.Rows.Count;
+                            oPedidos_Productos.IdPedido = table.Rows[table.Rows.Count - 1]["IDPedido"].ToString();
+                            oPedidos_Productos.IdProducto = GetIdProducto(dtgDatos2.Rows[i].Cells["NombreProducto"].Value.ToString(), dtgDatos2.Rows[i].Cells["Estado"].Value.ToString());
+                            oPedidos_Productos.Cantidad = dtgDatos2.Rows[i].Cells["Cantidad"].Value.ToString();
+                            oPedidos_Productos.Guardar();
+                        }
+                        Close();
+                    }
                 }
             }
         }
@@ -170,7 +196,12 @@ namespace General.GUI
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
-            dtgDatos2.Rows.RemoveAt(dtgDatos2.CurrentRow.Index);
+            try
+            {
+                dtgDatos2.Rows.RemoveAt(dtgDatos2.CurrentRow.Index);
+            }
+            catch { }
+            
         }
     }
 }

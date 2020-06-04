@@ -104,6 +104,24 @@ namespace General.CLS
             }
             return Actualizado;
         }
+        public Boolean Insertar(String Numero)
+        {
+            Boolean Actualizado = false;
+            String Sentencia;
+            DataManager.CLS.DBOperacion Operacion = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Sentencia = "UPDATE Productos SET Cantidad = "+Numero+ " WHERE IDProducto =" + _IDProducto + ";"; ;
+                String dato = Sentencia;
+                Operacion.Actualizar(Sentencia);
+            }
+            catch
+            {
+                Actualizado = false;
+                MessageBox.Show("Ha ocurrido un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return Actualizado;
+        }
 
         public Boolean Eliminar()
         {

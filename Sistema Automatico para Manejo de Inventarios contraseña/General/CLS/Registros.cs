@@ -37,15 +37,8 @@ namespace General.CLS
                 Sentencia += "'" + _Accion + "',";
                 Sentencia += _Cantidad + ",";
                 Sentencia += "'"+ _TiempoAccion + "');";
-                if (Operacion.Insertar(Sentencia) > 0)
-                {
-                    Guardado = true;
-                }
-                else
-                {
-                    Guardado = false;
-                    MessageBox.Show("Registro no fue insertado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                Operacion.Insertar(Sentencia);
+                Guardado = true;
             }
             catch
             {
