@@ -14,9 +14,22 @@ namespace Reportes.GUI
     {
         private void Generar()
         {
-            REP.ReporteProductos oReporte = new REP.ReporteProductos();
-            oReporte.SetDataSource(CacheManager.CLS.Cache.REPORTES_PRODUCTOS());
-            crvVisor.ReportSource = oReporte;
+            try
+            {
+             
+
+                REP.ReporteProductos oReporte = new REP.ReporteProductos();
+                oReporte.SetDataSource(CacheManager.CLS.Cache.REPORTE_PRODUCTO());
+                
+                cvrVisor.ReportSource = oReporte;
+
+               
+            }
+            catch
+            {
+
+            }
+
         }
         public VisorReportesProductos()
         {

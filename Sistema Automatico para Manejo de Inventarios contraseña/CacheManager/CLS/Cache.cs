@@ -118,18 +118,46 @@ namespace CacheManager.CLS
             return Resultado;
         }
 
-        public static DataTable REPORTES_PRODUCTOS()
+        public static DataTable REPORTE_PRODUCTO()
         {
             DataTable Resultado = new DataTable();
             String Consulta;
             DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
             try
             {
-                Consulta = @"SELECT IDProducto, NombreProducto, 
-                Estado, IdClasificacion, 
-                Descripcion, Cantidad, 
-                IDAlmacenamiento, Existencia 
-                FROM productos ORDER BY NombreProducto ;";
+                Consulta = @"SELECT  
+                 CONCAT(a.NombreProducto,' ',a.Estado) as Producto, b.Clasificacion, a.Cantidad, c.LugarAlmacenamiento, a.Existencia, a.Precio 
+                FROM 
+                Productos a, Clasificaciones b, Almacenamientos c 
+                WHERE 
+                a.IdClasificacion = b.IdClasificacion 
+                AND 
+                a.IDAlmacenamiento = c.IDAlmacenamiento 
+                ORDER BY 
+                a.NombreProducto;";
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
+
+        public static DataTable REPORTES_HISTORIAL()
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta;
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @"SELECT 
+                a.IdRegistro, b.Usuario, c.NombreProducto, a.Accion, a.Cantidad, a.TiempoAccion 
+                FROM 
+                Registros a, usuarios b, Productos c 
+                WHERE 
+                a.IDUsuario = b.IDUsuario 
+                AND a.IDProducto = c.IDProducto order by TiempoAccion;";
                 Resultado = oConsulta.Consultar(Consulta);
             }
             catch
@@ -197,10 +225,10 @@ namespace CacheManager.CLS
             DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
             try
             {
-                Consulta = @" SELECT IdPedido, IDProducto,
-                Cantidad, IDProveedor,
-                Fecha_de_pedido, TiempoPromedio, Estado
-                FROM pedidos ORDER BY Fecha_de_pedido;";
+                Consulta = @"SELECT a.IdPedido, b.NombreProveedor as Proveedor, a.Fecha_de_pedido as Fecha, a.TiempoPromedio as Tiempo, a.Costo, a.Estado
+				FROM 
+                pedidos a, proveedores b 
+                WHERE a.IDProveedor = b.IDProveedor order by IdPedido;";
                 Resultado = oConsulta.Consultar(Consulta);
             }
             catch

@@ -50,15 +50,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAT\dtsHistorial.cs">
+      <DependentUpon>dtsHistorial.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\dtsHistorial.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsHistorial.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAT\dtsPedidos.cs">
+      <DependentUpon>dtsPedidos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAT\dtsPedidos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsPedidos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DAT\dtsProductos.cs">
+      <DependentUpon>dtsProductos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DAT\dtsProductos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dtsProductos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\VisorReportesHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\VisorReportesHistorial.Designer.cs">
+      <DependentUpon>VisorReportesHistorial.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\VisorReportesPedidos.cs">
       <SubType>Form</SubType>
@@ -73,6 +93,12 @@
       <DependentUpon>VisorReportesProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REP\ReporteHistorial.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteHistorial.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="REP\ReportePedidos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -87,6 +113,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DAT\dtsHistorial.xsc">
+      <DependentUpon>dtsHistorial.xsd</DependentUpon>
+    </None>
+    <None Include="DAT\dtsHistorial.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsHistorial.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAT\dtsHistorial.xss">
+      <DependentUpon>dtsHistorial.xsd</DependentUpon>
+    </None>
     <None Include="DAT\dtsPedidos.xsc">
       <DependentUpon>dtsPedidos.xsd</DependentUpon>
     </None>
@@ -121,11 +158,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\VisorReportesHistorial.resx">
+      <DependentUpon>VisorReportesHistorial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\VisorReportesPedidos.resx">
       <DependentUpon>VisorReportesPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\VisorReportesProductos.resx">
       <DependentUpon>VisorReportesProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REP\ReporteHistorial.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteHistorial.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REP\ReportePedidos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

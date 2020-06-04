@@ -281,15 +281,13 @@ namespace Reportes.DAT {
             
             private global::System.Data.DataColumn columnIdPedido;
             
-            private global::System.Data.DataColumn columnIDProducto;
+            private global::System.Data.DataColumn columnProveedor;
             
-            private global::System.Data.DataColumn columnCantidad;
+            private global::System.Data.DataColumn columnFecha;
             
-            private global::System.Data.DataColumn columnIDProveedor;
+            private global::System.Data.DataColumn columnTiempo;
             
-            private global::System.Data.DataColumn columnFecha_de_pedido;
-            
-            private global::System.Data.DataColumn columnTiempoPromedio;
+            private global::System.Data.DataColumn columnCosto;
             
             private global::System.Data.DataColumn columnEstado;
             
@@ -336,41 +334,33 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IDProductoColumn {
+            public global::System.Data.DataColumn ProveedorColumn {
                 get {
-                    return this.columnIDProducto;
+                    return this.columnProveedor;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn CantidadColumn {
+            public global::System.Data.DataColumn FechaColumn {
                 get {
-                    return this.columnCantidad;
+                    return this.columnFecha;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IDProveedorColumn {
+            public global::System.Data.DataColumn TiempoColumn {
                 get {
-                    return this.columnIDProveedor;
+                    return this.columnTiempo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Fecha_de_pedidoColumn {
+            public global::System.Data.DataColumn CostoColumn {
                 get {
-                    return this.columnFecha_de_pedido;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn TiempoPromedioColumn {
-                get {
-                    return this.columnTiempoPromedio;
+                    return this.columnCosto;
                 }
             }
             
@@ -419,15 +409,14 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PedidosRow AddPedidosRow(int IdPedido, int IDProducto, int Cantidad, int IDProveedor, System.DateTime Fecha_de_pedido, int TiempoPromedio, string Estado) {
+            public PedidosRow AddPedidosRow(long IdPedido, string Proveedor, string Fecha, string Tiempo, string Costo, string Estado) {
                 PedidosRow rowPedidosRow = ((PedidosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IdPedido,
-                        IDProducto,
-                        Cantidad,
-                        IDProveedor,
-                        Fecha_de_pedido,
-                        TiempoPromedio,
+                        Proveedor,
+                        Fecha,
+                        Tiempo,
+                        Costo,
                         Estado};
                 rowPedidosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPedidosRow);
@@ -452,29 +441,26 @@ namespace Reportes.DAT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columnIdPedido = base.Columns["IdPedido"];
-                this.columnIDProducto = base.Columns["IDProducto"];
-                this.columnCantidad = base.Columns["Cantidad"];
-                this.columnIDProveedor = base.Columns["IDProveedor"];
-                this.columnFecha_de_pedido = base.Columns["Fecha_de_pedido"];
-                this.columnTiempoPromedio = base.Columns["TiempoPromedio"];
+                this.columnProveedor = base.Columns["Proveedor"];
+                this.columnFecha = base.Columns["Fecha"];
+                this.columnTiempo = base.Columns["Tiempo"];
+                this.columnCosto = base.Columns["Costo"];
                 this.columnEstado = base.Columns["Estado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnIdPedido = new global::System.Data.DataColumn("IdPedido", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnIdPedido = new global::System.Data.DataColumn("IdPedido", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdPedido);
-                this.columnIDProducto = new global::System.Data.DataColumn("IDProducto", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIDProducto);
-                this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCantidad);
-                this.columnIDProveedor = new global::System.Data.DataColumn("IDProveedor", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIDProveedor);
-                this.columnFecha_de_pedido = new global::System.Data.DataColumn("Fecha_de_pedido", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFecha_de_pedido);
-                this.columnTiempoPromedio = new global::System.Data.DataColumn("TiempoPromedio", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTiempoPromedio);
+                this.columnProveedor = new global::System.Data.DataColumn("Proveedor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProveedor);
+                this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha);
+                this.columnTiempo = new global::System.Data.DataColumn("Tiempo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTiempo);
+                this.columnCosto = new global::System.Data.DataColumn("Costo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCosto);
                 this.columnEstado = new global::System.Data.DataColumn("Estado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstado);
             }
@@ -619,10 +605,10 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int IdPedido {
+            public long IdPedido {
                 get {
                     try {
-                        return ((int)(this[this.tablePedidos.IdPedidoColumn]));
+                        return ((long)(this[this.tablePedidos.IdPedidoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'IdPedido\' de la tabla \'Pedidos\' es DBNull.", e);
@@ -635,81 +621,65 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int IDProducto {
+            public string Proveedor {
                 get {
                     try {
-                        return ((int)(this[this.tablePedidos.IDProductoColumn]));
+                        return ((string)(this[this.tablePedidos.ProveedorColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IDProducto\' de la tabla \'Pedidos\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Proveedor\' de la tabla \'Pedidos\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePedidos.IDProductoColumn] = value;
+                    this[this.tablePedidos.ProveedorColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Cantidad {
+            public string Fecha {
                 get {
                     try {
-                        return ((int)(this[this.tablePedidos.CantidadColumn]));
+                        return ((string)(this[this.tablePedidos.FechaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad\' de la tabla \'Pedidos\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha\' de la tabla \'Pedidos\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePedidos.CantidadColumn] = value;
+                    this[this.tablePedidos.FechaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int IDProveedor {
+            public string Tiempo {
                 get {
                     try {
-                        return ((int)(this[this.tablePedidos.IDProveedorColumn]));
+                        return ((string)(this[this.tablePedidos.TiempoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IDProveedor\' de la tabla \'Pedidos\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Tiempo\' de la tabla \'Pedidos\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePedidos.IDProveedorColumn] = value;
+                    this[this.tablePedidos.TiempoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime Fecha_de_pedido {
+            public string Costo {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablePedidos.Fecha_de_pedidoColumn]));
+                        return ((string)(this[this.tablePedidos.CostoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Fecha_de_pedido\' de la tabla \'Pedidos\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Costo\' de la tabla \'Pedidos\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePedidos.Fecha_de_pedidoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int TiempoPromedio {
-                get {
-                    try {
-                        return ((int)(this[this.tablePedidos.TiempoPromedioColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TiempoPromedio\' de la tabla \'Pedidos\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePedidos.TiempoPromedioColumn] = value;
+                    this[this.tablePedidos.CostoColumn] = value;
                 }
             }
             
@@ -743,62 +713,50 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsIDProductoNull() {
-                return this.IsNull(this.tablePedidos.IDProductoColumn);
+            public bool IsProveedorNull() {
+                return this.IsNull(this.tablePedidos.ProveedorColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetIDProductoNull() {
-                this[this.tablePedidos.IDProductoColumn] = global::System.Convert.DBNull;
+            public void SetProveedorNull() {
+                this[this.tablePedidos.ProveedorColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsCantidadNull() {
-                return this.IsNull(this.tablePedidos.CantidadColumn);
+            public bool IsFechaNull() {
+                return this.IsNull(this.tablePedidos.FechaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetCantidadNull() {
-                this[this.tablePedidos.CantidadColumn] = global::System.Convert.DBNull;
+            public void SetFechaNull() {
+                this[this.tablePedidos.FechaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsIDProveedorNull() {
-                return this.IsNull(this.tablePedidos.IDProveedorColumn);
+            public bool IsTiempoNull() {
+                return this.IsNull(this.tablePedidos.TiempoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetIDProveedorNull() {
-                this[this.tablePedidos.IDProveedorColumn] = global::System.Convert.DBNull;
+            public void SetTiempoNull() {
+                this[this.tablePedidos.TiempoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsFecha_de_pedidoNull() {
-                return this.IsNull(this.tablePedidos.Fecha_de_pedidoColumn);
+            public bool IsCostoNull() {
+                return this.IsNull(this.tablePedidos.CostoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetFecha_de_pedidoNull() {
-                this[this.tablePedidos.Fecha_de_pedidoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsTiempoPromedioNull() {
-                return this.IsNull(this.tablePedidos.TiempoPromedioColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetTiempoPromedioNull() {
-                this[this.tablePedidos.TiempoPromedioColumn] = global::System.Convert.DBNull;
+            public void SetCostoNull() {
+                this[this.tablePedidos.CostoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
