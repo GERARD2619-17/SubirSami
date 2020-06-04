@@ -36,6 +36,8 @@
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnConfiguracion = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.instruccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informaciónDelSoftwareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesEInformacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDePedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,8 +60,6 @@
             this.lblhora = new System.Windows.Forms.Label();
             this.lblfecha = new System.Windows.Forms.Label();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
-            this.instruccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.informaciónDelSoftwareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -118,6 +118,18 @@
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
+            // instruccionesToolStripMenuItem
+            // 
+            this.instruccionesToolStripMenuItem.Name = "instruccionesToolStripMenuItem";
+            this.instruccionesToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
+            this.instruccionesToolStripMenuItem.Text = "Instrucciones";
+            // 
+            // informaciónDelSoftwareToolStripMenuItem
+            // 
+            this.informaciónDelSoftwareToolStripMenuItem.Name = "informaciónDelSoftwareToolStripMenuItem";
+            this.informaciónDelSoftwareToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
+            this.informaciónDelSoftwareToolStripMenuItem.Text = "Información del Software";
             // 
             // reportesEInformacionesToolStripMenuItem
             // 
@@ -323,18 +335,6 @@
             // 
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
-            // 
-            // instruccionesToolStripMenuItem
-            // 
-            this.instruccionesToolStripMenuItem.Name = "instruccionesToolStripMenuItem";
-            this.instruccionesToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
-            this.instruccionesToolStripMenuItem.Text = "Instrucciones";
-            // 
-            // informaciónDelSoftwareToolStripMenuItem
-            // 
-            this.informaciónDelSoftwareToolStripMenuItem.Name = "informaciónDelSoftwareToolStripMenuItem";
-            this.informaciónDelSoftwareToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
-            this.informaciónDelSoftwareToolStripMenuItem.Text = "Información del Software";
             // 
             // Principal
             // 
