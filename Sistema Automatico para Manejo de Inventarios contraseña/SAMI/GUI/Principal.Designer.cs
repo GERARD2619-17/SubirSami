@@ -60,6 +60,7 @@
             this.lblhora = new System.Windows.Forms.Label();
             this.lblfecha = new System.Windows.Forms.Label();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
+            this.reporteHistorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -135,7 +136,8 @@
             // 
             this.reportesEInformacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteDeProductosToolStripMenuItem,
-            this.reporteDePedidosToolStripMenuItem});
+            this.reporteDePedidosToolStripMenuItem,
+            this.reporteHistorialToolStripMenuItem});
             this.reportesEInformacionesToolStripMenuItem.Name = "reportesEInformacionesToolStripMenuItem";
             this.reportesEInformacionesToolStripMenuItem.Size = new System.Drawing.Size(190, 24);
             this.reportesEInformacionesToolStripMenuItem.Text = "Reportes e Informaciones";
@@ -336,6 +338,13 @@
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
             // 
+            // reporteHistorialToolStripMenuItem
+            // 
+            this.reporteHistorialToolStripMenuItem.Name = "reporteHistorialToolStripMenuItem";
+            this.reporteHistorialToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.reporteHistorialToolStripMenuItem.Text = "Reporte Historial";
+            this.reporteHistorialToolStripMenuItem.Click += new System.EventHandler(this.reporteHistorialToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -396,6 +405,7 @@
         private System.Windows.Forms.ToolStripMenuItem reporteDePedidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem instruccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informaciónDelSoftwareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteHistorialToolStripMenuItem;
     }
 }
 

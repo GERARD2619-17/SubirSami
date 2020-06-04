@@ -18,7 +18,7 @@ namespace Reportes.GUI
             {
                 REP.ReportePedidos oReporte = new REP.ReportePedidos();
                 oReporte.SetDataSource(CacheManager.CLS.Cache.REPORTES_PEDIDOS());
-                crvVisor.ReportSource = oReporte;
+                crvVisorP.ReportSource = oReporte;
             }
             catch
             {

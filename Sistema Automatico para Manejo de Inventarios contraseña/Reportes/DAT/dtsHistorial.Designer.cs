@@ -20,17 +20,17 @@ namespace Reportes.DAT {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dtsProductos")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dtsHistorial")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dtsProductos : global::System.Data.DataSet {
+    public partial class dtsHistorial : global::System.Data.DataSet {
         
-        private ProductosDataTable tableProductos;
+        private HistorialDataTable tableHistorial;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public dtsProductos() {
+        public dtsHistorial() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Reportes.DAT {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected dtsProductos(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dtsHistorial(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Reportes.DAT {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Productos"] != null)) {
-                    base.Tables.Add(new ProductosDataTable(ds.Tables["Productos"]));
+                if ((ds.Tables["Historial"] != null)) {
+                    base.Tables.Add(new HistorialDataTable(ds.Tables["Historial"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Reportes.DAT {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ProductosDataTable Productos {
+        public HistorialDataTable Historial {
             get {
-                return this.tableProductos;
+                return this.tableHistorial;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Reportes.DAT {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dtsProductos cln = ((dtsProductos)(base.Clone()));
+            dtsHistorial cln = ((dtsHistorial)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Reportes.DAT {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Productos"] != null)) {
-                    base.Tables.Add(new ProductosDataTable(ds.Tables["Productos"]));
+                if ((ds.Tables["Historial"] != null)) {
+                    base.Tables.Add(new HistorialDataTable(ds.Tables["Historial"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Reportes.DAT {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableProductos = ((ProductosDataTable)(base.Tables["Productos"]));
+            this.tableHistorial = ((HistorialDataTable)(base.Tables["Historial"]));
             if ((initTable == true)) {
-                if ((this.tableProductos != null)) {
-                    this.tableProductos.InitVars();
+                if ((this.tableHistorial != null)) {
+                    this.tableHistorial.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Reportes.DAT {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dtsProductos";
+            this.DataSetName = "dtsHistorial";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dtsProductos.xsd";
+            this.Namespace = "http://tempuri.org/dtsHistorial.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableProductos = new ProductosDataTable();
-            base.Tables.Add(this.tableProductos);
+            this.tableHistorial = new HistorialDataTable();
+            base.Tables.Add(this.tableHistorial);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeProductos() {
+        private bool ShouldSerializeHistorial() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Reportes.DAT {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dtsProductos ds = new dtsProductos();
+            dtsHistorial ds = new dtsHistorial();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,31 +270,29 @@ namespace Reportes.DAT {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void ProductosRowChangeEventHandler(object sender, ProductosRowChangeEvent e);
+        public delegate void HistorialRowChangeEventHandler(object sender, HistorialRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ProductosDataTable : global::System.Data.TypedTableBase<ProductosRow> {
+        public partial class HistorialDataTable : global::System.Data.TypedTableBase<HistorialRow> {
             
-            private global::System.Data.DataColumn columnClasificacion;
+            private global::System.Data.DataColumn columnUsuario;
+            
+            private global::System.Data.DataColumn columnNombreProducto;
+            
+            private global::System.Data.DataColumn columnAccion;
             
             private global::System.Data.DataColumn columnCantidad;
             
-            private global::System.Data.DataColumn columnLugarAlmacenamiento;
-            
-            private global::System.Data.DataColumn columnExistencia;
-            
-            private global::System.Data.DataColumn columnPrecio;
-            
-            private global::System.Data.DataColumn columnProducto;
+            private global::System.Data.DataColumn columnTiempoAccion;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ProductosDataTable() {
-                this.TableName = "Productos";
+            public HistorialDataTable() {
+                this.TableName = "Historial";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -302,7 +300,7 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal ProductosDataTable(global::System.Data.DataTable table) {
+            internal HistorialDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -319,16 +317,32 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected ProductosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected HistorialDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ClasificacionColumn {
+            public global::System.Data.DataColumn UsuarioColumn {
                 get {
-                    return this.columnClasificacion;
+                    return this.columnUsuario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn NombreProductoColumn {
+                get {
+                    return this.columnNombreProducto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn AccionColumn {
+                get {
+                    return this.columnAccion;
                 }
             }
             
@@ -342,33 +356,9 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn LugarAlmacenamientoColumn {
+            public global::System.Data.DataColumn TiempoAccionColumn {
                 get {
-                    return this.columnLugarAlmacenamiento;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ExistenciaColumn {
-                get {
-                    return this.columnExistencia;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PrecioColumn {
-                get {
-                    return this.columnPrecio;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ProductoColumn {
-                get {
-                    return this.columnProducto;
+                    return this.columnTiempoAccion;
                 }
             }
             
@@ -383,50 +373,49 @@ namespace Reportes.DAT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ProductosRow this[int index] {
+            public HistorialRow this[int index] {
                 get {
-                    return ((ProductosRow)(this.Rows[index]));
+                    return ((HistorialRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ProductosRowChangeEventHandler ProductosRowChanging;
+            public event HistorialRowChangeEventHandler HistorialRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ProductosRowChangeEventHandler ProductosRowChanged;
+            public event HistorialRowChangeEventHandler HistorialRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ProductosRowChangeEventHandler ProductosRowDeleting;
+            public event HistorialRowChangeEventHandler HistorialRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ProductosRowChangeEventHandler ProductosRowDeleted;
+            public event HistorialRowChangeEventHandler HistorialRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddProductosRow(ProductosRow row) {
+            public void AddHistorialRow(HistorialRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ProductosRow AddProductosRow(string Clasificacion, string Cantidad, string LugarAlmacenamiento, string Existencia, string Precio, string Producto) {
-                ProductosRow rowProductosRow = ((ProductosRow)(this.NewRow()));
+            public HistorialRow AddHistorialRow(string Usuario, string NombreProducto, string Accion, string Cantidad, string TiempoAccion) {
+                HistorialRow rowHistorialRow = ((HistorialRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Clasificacion,
+                        Usuario,
+                        NombreProducto,
+                        Accion,
                         Cantidad,
-                        LugarAlmacenamiento,
-                        Existencia,
-                        Precio,
-                        Producto};
-                rowProductosRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowProductosRow);
-                return rowProductosRow;
+                        TiempoAccion};
+                rowHistorialRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowHistorialRow);
+                return rowHistorialRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ProductosDataTable cln = ((ProductosDataTable)(base.Clone()));
+                HistorialDataTable cln = ((HistorialDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -434,61 +423,58 @@ namespace Reportes.DAT {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ProductosDataTable();
+                return new HistorialDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnClasificacion = base.Columns["Clasificacion"];
+                this.columnUsuario = base.Columns["Usuario"];
+                this.columnNombreProducto = base.Columns["NombreProducto"];
+                this.columnAccion = base.Columns["Accion"];
                 this.columnCantidad = base.Columns["Cantidad"];
-                this.columnLugarAlmacenamiento = base.Columns["LugarAlmacenamiento"];
-                this.columnExistencia = base.Columns["Existencia"];
-                this.columnPrecio = base.Columns["Precio"];
-                this.columnProducto = base.Columns["Producto"];
+                this.columnTiempoAccion = base.Columns["TiempoAccion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnClasificacion = new global::System.Data.DataColumn("Clasificacion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClasificacion);
+                this.columnUsuario = new global::System.Data.DataColumn("Usuario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUsuario);
+                this.columnNombreProducto = new global::System.Data.DataColumn("NombreProducto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreProducto);
+                this.columnAccion = new global::System.Data.DataColumn("Accion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAccion);
                 this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCantidad);
-                this.columnLugarAlmacenamiento = new global::System.Data.DataColumn("LugarAlmacenamiento", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLugarAlmacenamiento);
-                this.columnExistencia = new global::System.Data.DataColumn("Existencia", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExistencia);
-                this.columnPrecio = new global::System.Data.DataColumn("Precio", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrecio);
-                this.columnProducto = new global::System.Data.DataColumn("Producto", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProducto);
+                this.columnTiempoAccion = new global::System.Data.DataColumn("TiempoAccion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTiempoAccion);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ProductosRow NewProductosRow() {
-                return ((ProductosRow)(this.NewRow()));
+            public HistorialRow NewHistorialRow() {
+                return ((HistorialRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ProductosRow(builder);
+                return new HistorialRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ProductosRow);
+                return typeof(HistorialRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ProductosRowChanged != null)) {
-                    this.ProductosRowChanged(this, new ProductosRowChangeEvent(((ProductosRow)(e.Row)), e.Action));
+                if ((this.HistorialRowChanged != null)) {
+                    this.HistorialRowChanged(this, new HistorialRowChangeEvent(((HistorialRow)(e.Row)), e.Action));
                 }
             }
             
@@ -496,8 +482,8 @@ namespace Reportes.DAT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ProductosRowChanging != null)) {
-                    this.ProductosRowChanging(this, new ProductosRowChangeEvent(((ProductosRow)(e.Row)), e.Action));
+                if ((this.HistorialRowChanging != null)) {
+                    this.HistorialRowChanging(this, new HistorialRowChangeEvent(((HistorialRow)(e.Row)), e.Action));
                 }
             }
             
@@ -505,8 +491,8 @@ namespace Reportes.DAT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ProductosRowDeleted != null)) {
-                    this.ProductosRowDeleted(this, new ProductosRowChangeEvent(((ProductosRow)(e.Row)), e.Action));
+                if ((this.HistorialRowDeleted != null)) {
+                    this.HistorialRowDeleted(this, new HistorialRowChangeEvent(((HistorialRow)(e.Row)), e.Action));
                 }
             }
             
@@ -514,14 +500,14 @@ namespace Reportes.DAT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ProductosRowDeleting != null)) {
-                    this.ProductosRowDeleting(this, new ProductosRowChangeEvent(((ProductosRow)(e.Row)), e.Action));
+                if ((this.HistorialRowDeleting != null)) {
+                    this.HistorialRowDeleting(this, new HistorialRowChangeEvent(((HistorialRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveProductosRow(ProductosRow row) {
+            public void RemoveHistorialRow(HistorialRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -530,7 +516,7 @@ namespace Reportes.DAT {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dtsProductos ds = new dtsProductos();
+                dtsHistorial ds = new dtsHistorial();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -548,7 +534,7 @@ namespace Reportes.DAT {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ProductosDataTable";
+                attribute2.FixedValue = "HistorialDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -592,30 +578,62 @@ namespace Reportes.DAT {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ProductosRow : global::System.Data.DataRow {
+        public partial class HistorialRow : global::System.Data.DataRow {
             
-            private ProductosDataTable tableProductos;
+            private HistorialDataTable tableHistorial;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal ProductosRow(global::System.Data.DataRowBuilder rb) : 
+            internal HistorialRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableProductos = ((ProductosDataTable)(this.Table));
+                this.tableHistorial = ((HistorialDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Clasificacion {
+            public string Usuario {
                 get {
                     try {
-                        return ((string)(this[this.tableProductos.ClasificacionColumn]));
+                        return ((string)(this[this.tableHistorial.UsuarioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Clasificacion\' de la tabla \'Productos\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Usuario\' de la tabla \'Historial\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableProductos.ClasificacionColumn] = value;
+                    this[this.tableHistorial.UsuarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string NombreProducto {
+                get {
+                    try {
+                        return ((string)(this[this.tableHistorial.NombreProductoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombreProducto\' de la tabla \'Historial\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHistorial.NombreProductoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Accion {
+                get {
+                    try {
+                        return ((string)(this[this.tableHistorial.AccionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Accion\' de la tabla \'Historial\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHistorial.AccionColumn] = value;
                 }
             }
             
@@ -624,151 +642,91 @@ namespace Reportes.DAT {
             public string Cantidad {
                 get {
                     try {
-                        return ((string)(this[this.tableProductos.CantidadColumn]));
+                        return ((string)(this[this.tableHistorial.CantidadColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad\' de la tabla \'Productos\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Cantidad\' de la tabla \'Historial\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableProductos.CantidadColumn] = value;
+                    this[this.tableHistorial.CantidadColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string LugarAlmacenamiento {
+            public string TiempoAccion {
                 get {
                     try {
-                        return ((string)(this[this.tableProductos.LugarAlmacenamientoColumn]));
+                        return ((string)(this[this.tableHistorial.TiempoAccionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'LugarAlmacenamiento\' de la tabla \'Productos\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TiempoAccion\' de la tabla \'Historial\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableProductos.LugarAlmacenamientoColumn] = value;
+                    this[this.tableHistorial.TiempoAccionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Existencia {
-                get {
-                    try {
-                        return ((string)(this[this.tableProductos.ExistenciaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Existencia\' de la tabla \'Productos\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableProductos.ExistenciaColumn] = value;
-                }
+            public bool IsUsuarioNull() {
+                return this.IsNull(this.tableHistorial.UsuarioColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Precio {
-                get {
-                    try {
-                        return ((string)(this[this.tableProductos.PrecioColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Precio\' de la tabla \'Productos\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableProductos.PrecioColumn] = value;
-                }
+            public void SetUsuarioNull() {
+                this[this.tableHistorial.UsuarioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Producto {
-                get {
-                    try {
-                        return ((string)(this[this.tableProductos.ProductoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Producto\' de la tabla \'Productos\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableProductos.ProductoColumn] = value;
-                }
+            public bool IsNombreProductoNull() {
+                return this.IsNull(this.tableHistorial.NombreProductoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsClasificacionNull() {
-                return this.IsNull(this.tableProductos.ClasificacionColumn);
+            public void SetNombreProductoNull() {
+                this[this.tableHistorial.NombreProductoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetClasificacionNull() {
-                this[this.tableProductos.ClasificacionColumn] = global::System.Convert.DBNull;
+            public bool IsAccionNull() {
+                return this.IsNull(this.tableHistorial.AccionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetAccionNull() {
+                this[this.tableHistorial.AccionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsCantidadNull() {
-                return this.IsNull(this.tableProductos.CantidadColumn);
+                return this.IsNull(this.tableHistorial.CantidadColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCantidadNull() {
-                this[this.tableProductos.CantidadColumn] = global::System.Convert.DBNull;
+                this[this.tableHistorial.CantidadColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsLugarAlmacenamientoNull() {
-                return this.IsNull(this.tableProductos.LugarAlmacenamientoColumn);
+            public bool IsTiempoAccionNull() {
+                return this.IsNull(this.tableHistorial.TiempoAccionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetLugarAlmacenamientoNull() {
-                this[this.tableProductos.LugarAlmacenamientoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsExistenciaNull() {
-                return this.IsNull(this.tableProductos.ExistenciaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetExistenciaNull() {
-                this[this.tableProductos.ExistenciaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsPrecioNull() {
-                return this.IsNull(this.tableProductos.PrecioColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetPrecioNull() {
-                this[this.tableProductos.PrecioColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsProductoNull() {
-                return this.IsNull(this.tableProductos.ProductoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetProductoNull() {
-                this[this.tableProductos.ProductoColumn] = global::System.Convert.DBNull;
+            public void SetTiempoAccionNull() {
+                this[this.tableHistorial.TiempoAccionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -776,22 +734,22 @@ namespace Reportes.DAT {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class ProductosRowChangeEvent : global::System.EventArgs {
+        public class HistorialRowChangeEvent : global::System.EventArgs {
             
-            private ProductosRow eventRow;
+            private HistorialRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ProductosRowChangeEvent(ProductosRow row, global::System.Data.DataRowAction action) {
+            public HistorialRowChangeEvent(HistorialRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ProductosRow Row {
+            public HistorialRow Row {
                 get {
                     return this.eventRow;
                 }

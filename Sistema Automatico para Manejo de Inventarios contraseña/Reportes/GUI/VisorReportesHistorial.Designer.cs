@@ -1,6 +1,6 @@
 ﻿namespace Reportes.GUI
 {
-    partial class VisorReportesPedidos
+    partial class VisorReportesHistorial
     {
         /// <summary>
         /// Required designer variable.
@@ -28,38 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crvVisorP = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crvVisorH = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // crvVisorP
+            // crvVisorH
             // 
-            this.crvVisorP.ActiveViewIndex = -1;
-            this.crvVisorP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crvVisorP.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crvVisorP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crvVisorP.Location = new System.Drawing.Point(0, 0);
-            this.crvVisorP.Name = "crvVisorP";
-            this.crvVisorP.Size = new System.Drawing.Size(800, 450);
-            this.crvVisorP.TabIndex = 0;
-            this.crvVisorP.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crvVisorH.ActiveViewIndex = -1;
+            this.crvVisorH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crvVisorH.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crvVisorH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crvVisorH.Location = new System.Drawing.Point(0, 0);
+            this.crvVisorH.Name = "crvVisorH";
+            this.crvVisorH.Size = new System.Drawing.Size(800, 450);
+            this.crvVisorH.TabIndex = 0;
+            this.crvVisorH.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
-            // VisorReportesPedidos
+            // VisorReportesHistorial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.crvVisorP);
-            this.Name = "VisorReportesPedidos";
+            this.Controls.Add(this.crvVisorH);
+            this.Name = "VisorReportesHistorial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VisorReportesPedidos";
+            this.Text = "Visor Reportes - Historial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.VisorReportesPedidos_Load);
+            this.Load += new System.EventHandler(this.VisorReportesHistorial_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crvVisorP;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crvVisorH;
     }
 }

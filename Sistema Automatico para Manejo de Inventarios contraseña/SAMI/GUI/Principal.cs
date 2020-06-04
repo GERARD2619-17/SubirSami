@@ -195,5 +195,14 @@ namespace SAMI.GUI
                 f.Show();
             }
         }
+
+        private void reporteHistorialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_SESION.Informacion.VerificarPermiso(6))
+            {
+                Reportes.GUI.VisorReportesHistorial f = new Reportes.GUI.VisorReportesHistorial();
+                f.Show();
+            }
+        }
     }
 }
