@@ -112,5 +112,11 @@ namespace General.GUI
                 MessageBox.Show("No se encontraron pedidos registrados", "NOTA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void GestionPedidos_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            this.Dock = DockStyle.Fill;
+        }
     }
 }

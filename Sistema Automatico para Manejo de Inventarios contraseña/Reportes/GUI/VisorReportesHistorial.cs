@@ -12,13 +12,29 @@ namespace Reportes.GUI
 {
     public partial class VisorReportesHistorial : Form
     {
+        String _Fecha1;
+        String _Fecha2;
+        Boolean _Validar = false;
+
+        public string Fecha1 { get => _Fecha1; set => _Fecha1 = value; }
+        public string Fecha2 { get => _Fecha2; set => _Fecha2 = value; }
+        public bool Validar { get => _Validar; set => _Validar = value; }
 
         private void Generar2()
         {
             try
             {
                 REP.ReporteHistorial oReporte = new REP.ReporteHistorial();
-                oReporte.SetDataSource(CacheManager.CLS.Cache.REPORTES_HISTORIAL());
+                if (_Validar)
+                {
+                    oReporte.SetDataSource(CacheManager.CLS.Cache.REPORTES_HISTORIAL(_Fecha1, _Fecha2));
+                    
+                }
+                else
+                {
+                    oReporte.SetDataSource(CacheManager.CLS.Cache.REPORTES_HISTORIAL());
+                }
+               
                 crvVisorH.ReportSource = oReporte;
             }
             catch

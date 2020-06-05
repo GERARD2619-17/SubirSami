@@ -12,12 +12,30 @@ namespace Reportes.GUI
 {
     public partial class VisorReportesPedidos : Form
     {
+        String _Fecha1;
+        String _Fecha2;
+        Boolean _Validar = false;
+
+        public string Fecha1 { get => _Fecha1; set => _Fecha1 = value; }
+        public string Fecha2 { get => _Fecha2; set => _Fecha2 = value; }
+        public bool Validar { get => _Validar; set => _Validar = value; }
+
         private void Generar1()
         {
             try
             {
                 REP.ReportePedidos oReporte = new REP.ReportePedidos();
-                oReporte.SetDataSource(CacheManager.CLS.Cache.REPORTES_PEDIDOS());
+                if (_Validar)
+                {
+                    oReporte.SetDataSource(CacheManager.CLS.Cache.REPORTES_PEDIDOS( _Fecha1, _Fecha2));
+
+                }
+                else
+                {
+                    oReporte.SetDataSource(CacheManager.CLS.Cache.REPORTES_PEDIDOS());
+                }
+                
+                
                 crvVisorP.ReportSource = oReporte;
             }
             catch

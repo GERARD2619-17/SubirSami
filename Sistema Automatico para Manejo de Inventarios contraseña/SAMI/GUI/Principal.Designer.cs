@@ -41,6 +41,9 @@
             this.reportesEInformacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDePedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteHistorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportePorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblRol = new System.Windows.Forms.ToolStripStatusLabel();
@@ -60,7 +63,8 @@
             this.lblhora = new System.Windows.Forms.Label();
             this.lblfecha = new System.Windows.Forms.Label();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
-            this.reporteHistorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteGeneralToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportePorFechaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -151,10 +155,37 @@
             // 
             // reporteDePedidosToolStripMenuItem
             // 
+            this.reporteDePedidosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteGeneralToolStripMenuItem1,
+            this.reportePorFechaToolStripMenuItem1});
             this.reporteDePedidosToolStripMenuItem.Name = "reporteDePedidosToolStripMenuItem";
             this.reporteDePedidosToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
             this.reporteDePedidosToolStripMenuItem.Text = "Reporte de Pedidos";
             this.reporteDePedidosToolStripMenuItem.Click += new System.EventHandler(this.reporteDePedidosToolStripMenuItem_Click);
+            // 
+            // reporteHistorialToolStripMenuItem
+            // 
+            this.reporteHistorialToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteGeneralToolStripMenuItem,
+            this.reportePorFechaToolStripMenuItem});
+            this.reporteHistorialToolStripMenuItem.Name = "reporteHistorialToolStripMenuItem";
+            this.reporteHistorialToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
+            this.reporteHistorialToolStripMenuItem.Text = "Reporte Historial";
+            this.reporteHistorialToolStripMenuItem.Click += new System.EventHandler(this.reporteHistorialToolStripMenuItem_Click);
+            // 
+            // reporteGeneralToolStripMenuItem
+            // 
+            this.reporteGeneralToolStripMenuItem.Name = "reporteGeneralToolStripMenuItem";
+            this.reporteGeneralToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.reporteGeneralToolStripMenuItem.Text = "Reporte General";
+            this.reporteGeneralToolStripMenuItem.Click += new System.EventHandler(this.reporteGeneralToolStripMenuItem_Click);
+            // 
+            // reportePorFechaToolStripMenuItem
+            // 
+            this.reportePorFechaToolStripMenuItem.Name = "reportePorFechaToolStripMenuItem";
+            this.reportePorFechaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.reportePorFechaToolStripMenuItem.Text = "Reporte Por Fecha";
+            this.reportePorFechaToolStripMenuItem.Click += new System.EventHandler(this.reportePorFechaToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -314,7 +345,7 @@
             this.lblhora.BackColor = System.Drawing.SystemColors.Control;
             this.lblhora.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhora.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblhora.Location = new System.Drawing.Point(6, 509);
+            this.lblhora.Location = new System.Drawing.Point(5, 510);
             this.lblhora.Name = "lblhora";
             this.lblhora.Size = new System.Drawing.Size(138, 51);
             this.lblhora.TabIndex = 6;
@@ -338,12 +369,19 @@
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
             // 
-            // reporteHistorialToolStripMenuItem
+            // reporteGeneralToolStripMenuItem1
             // 
-            this.reporteHistorialToolStripMenuItem.Name = "reporteHistorialToolStripMenuItem";
-            this.reporteHistorialToolStripMenuItem.Size = new System.Drawing.Size(228, 26);
-            this.reporteHistorialToolStripMenuItem.Text = "Reporte Historial";
-            this.reporteHistorialToolStripMenuItem.Click += new System.EventHandler(this.reporteHistorialToolStripMenuItem_Click);
+            this.reporteGeneralToolStripMenuItem1.Name = "reporteGeneralToolStripMenuItem1";
+            this.reporteGeneralToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.reporteGeneralToolStripMenuItem1.Text = "Reporte General";
+            this.reporteGeneralToolStripMenuItem1.Click += new System.EventHandler(this.reporteGeneralToolStripMenuItem1_Click);
+            // 
+            // reportePorFechaToolStripMenuItem1
+            // 
+            this.reportePorFechaToolStripMenuItem1.Name = "reportePorFechaToolStripMenuItem1";
+            this.reportePorFechaToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.reportePorFechaToolStripMenuItem1.Text = "Reporte Por Fecha";
+            this.reportePorFechaToolStripMenuItem1.Click += new System.EventHandler(this.reportePorFechaToolStripMenuItem1_Click);
             // 
             // Principal
             // 
@@ -357,7 +395,7 @@
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Principal";
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -406,6 +444,10 @@
         private System.Windows.Forms.ToolStripMenuItem instruccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informaciónDelSoftwareToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteHistorialToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteGeneralToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportePorFechaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteGeneralToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem reportePorFechaToolStripMenuItem1;
     }
 }
 

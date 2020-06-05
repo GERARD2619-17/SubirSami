@@ -166,6 +166,30 @@ namespace CacheManager.CLS
             }
             return Resultado;
         }
+
+        public static DataTable REPORTES_HISTORIAL(String Fecha1, String Fecha2)
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta;
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @"SELECT
+                a.IdRegistro, b.Usuario, c.NombreProducto, a.Accion, a.Cantidad, a.TiempoAccion
+                FROM
+                Registros a, usuarios b, Productos c
+                WHERE
+                a.IDUsuario = b.IDUsuario
+                AND a.IDProducto = c.IDProducto
+                AND TiempoAccion BETWEEN '"+ Fecha1 +" 00:00:00' AND '"+ Fecha2 +" 23:59:59';";
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
         public static DataTable TODAS_LAS_CLASIFICACIONES()
         {
             DataTable Resultado = new DataTable();
@@ -238,7 +262,27 @@ namespace CacheManager.CLS
             return Resultado;
         }
 
-       
+        public static DataTable REPORTES_PEDIDOS(String Fecha1 , String Fecha2 )
+        {
+            DataTable Resultado = new DataTable();
+            String Consulta;
+            DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
+            try
+            {
+                Consulta = @" SELECT a.IdPedido, b.NombreProveedor as Proveedor, a.Fecha_de_pedido as Fecha, a.TiempoPromedio as Tiempo, a.Costo, a.Estado
+                FROM
+                pedidos a, proveedores b
+                WHERE a.IDProveedor = b.IDProveedor
+                AND Fecha_de_pedido BETWEEN '"+Fecha1+"' AND '"+Fecha2+@"'
+                order by IdPedido;";
+                Resultado = oConsulta.Consultar(Consulta);
+            }
+            catch
+            {
+                Resultado = new DataTable();
+            }
+            return Resultado;
+        }
 
         public static DataTable TODOS_LOS_PROVEEDORES()
         {

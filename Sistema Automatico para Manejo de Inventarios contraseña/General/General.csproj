@@ -60,6 +60,12 @@
     <Compile Include="GUI\AgregarAlPedido.Designer.cs">
       <DependentUpon>AgregarAlPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Ayuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Ayuda.Designer.cs">
+      <DependentUpon>Ayuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Configuracion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,12 @@
     </Compile>
     <Compile Include="GUI\EdicionUsuario.Designer.cs">
       <DependentUpon>EdicionUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Fecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Fecha.Designer.cs">
+      <DependentUpon>Fecha.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\GestionPedidos.cs">
       <SubType>Form</SubType>
@@ -185,6 +197,9 @@
     <EmbeddedResource Include="GUI\AgregarAlPedido.resx">
       <DependentUpon>AgregarAlPedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Ayuda.resx">
+      <DependentUpon>Ayuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EdicionUsuario.resx">
       <DependentUpon>EdicionUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Fecha.resx">
+      <DependentUpon>Fecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\GestionPedidos.resx">
       <DependentUpon>GestionPedidos.cs</DependentUpon>
@@ -256,6 +274,10 @@
     <ProjectReference Include="..\DataManager\DataManager.csproj">
       <Project>{e3c3c84f-e8d5-4f1d-9cea-87bd0bbcb983}</Project>
       <Name>DataManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reportes\Reportes.csproj">
+      <Project>{6d8e5d78-b29e-46ee-adb7-9bd6103c2b20}</Project>
+      <Name>Reportes</Name>
     </ProjectReference>
     <ProjectReference Include="..\SessionManager\SessionManager.csproj">
       <Project>{70e1720d-bc03-411f-8c11-459cc44ae419}</Project>
