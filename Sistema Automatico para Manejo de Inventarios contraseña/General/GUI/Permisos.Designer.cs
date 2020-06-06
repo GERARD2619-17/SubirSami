@@ -49,14 +49,14 @@
             this.cbRoles.FormattingEnabled = true;
             this.cbRoles.Location = new System.Drawing.Point(35, 108);
             this.cbRoles.Name = "cbRoles";
-            this.cbRoles.Size = new System.Drawing.Size(423, 24);
+            this.cbRoles.Size = new System.Drawing.Size(492, 24);
             this.cbRoles.TabIndex = 57;
             this.cbRoles.SelectedValueChanged += new System.EventHandler(this.cbRoles_SelectedValueChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(144, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(181, 32);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(53, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -67,7 +67,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(221, 46);
+            this.label2.Location = new System.Drawing.Point(258, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 32);
             this.label2.TabIndex = 59;
@@ -104,7 +104,7 @@
             this.dtgOpciones.RowHeadersVisible = false;
             this.dtgOpciones.RowTemplate.Height = 24;
             this.dtgOpciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgOpciones.Size = new System.Drawing.Size(423, 335);
+            this.dtgOpciones.Size = new System.Drawing.Size(492, 335);
             this.dtgOpciones.TabIndex = 62;
             this.dtgOpciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgOpciones_CellContentClick);
             // 
@@ -148,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 531);
+            this.ClientSize = new System.Drawing.Size(565, 531);
             this.Controls.Add(this.dtgOpciones);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);

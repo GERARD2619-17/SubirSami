@@ -180,7 +180,7 @@ namespace SAMI.GUI
 
         private void reporteDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (_SESION.Informacion.VerificarPermiso(6))
+            if (_SESION.Informacion.VerificarPermiso(7))
             {
                 Reportes.GUI.VisorReportesProductos f = new Reportes.GUI.VisorReportesProductos();
                 f.Show();
@@ -199,7 +199,7 @@ namespace SAMI.GUI
 
         private void reporteGeneralToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             if (_SESION.Informacion.VerificarPermiso(6))
+             if (_SESION.Informacion.VerificarPermiso(7))
             {
                 Reportes.GUI.VisorReportesHistorial f = new Reportes.GUI.VisorReportesHistorial();
                 f.Validar = false;
@@ -209,7 +209,7 @@ namespace SAMI.GUI
 
         private void reportePorFechaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (_SESION.Informacion.VerificarPermiso(6))
+            if (_SESION.Informacion.VerificarPermiso(7))
             {
                 General.GUI.Fecha f = new General.GUI.Fecha();
                 f.Opcion = 2;
@@ -219,7 +219,7 @@ namespace SAMI.GUI
 
         private void reporteGeneralToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (_SESION.Informacion.VerificarPermiso(6))
+            if (_SESION.Informacion.VerificarPermiso(7))
             {
                 Reportes.GUI.VisorReportesPedidos f = new Reportes.GUI.VisorReportesPedidos();
                 f.Validar = false;
@@ -229,7 +229,7 @@ namespace SAMI.GUI
 
         private void reportePorFechaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (_SESION.Informacion.VerificarPermiso(6))
+            if (_SESION.Informacion.VerificarPermiso(7))
             {
 
                 General.GUI.Fecha f = new General.GUI.Fecha();

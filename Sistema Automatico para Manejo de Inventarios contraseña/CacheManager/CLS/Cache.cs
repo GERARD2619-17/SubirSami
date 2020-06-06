@@ -249,7 +249,7 @@ namespace CacheManager.CLS
             DataManager.CLS.DBOperacion oConsulta = new DataManager.CLS.DBOperacion();
             try
             {
-                Consulta = @"SELECT a.IdPedido, b.NombreProveedor as Proveedor, a.Fecha_de_pedido as Fecha, a.TiempoPromedio as Tiempo, a.Costo, a.Estado
+                Consulta = @"SELECT a.IdPedido, b.NombreProveedor as Proveedor, DATE_FORMAT(a.Fecha_de_pedido,'%Y-%m-%d') as Fecha, a.TiempoPromedio as Tiempo, a.Costo, a.Estado
 				FROM 
                 pedidos a, proveedores b 
                 WHERE a.IDProveedor = b.IDProveedor order by IdPedido;";
