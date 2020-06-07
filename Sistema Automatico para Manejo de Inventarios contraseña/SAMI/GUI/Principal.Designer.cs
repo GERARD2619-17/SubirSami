@@ -41,6 +41,8 @@
             this.reportesEInformacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDePedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteGeneralToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportePorFechaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteHistorialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportePorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,8 +65,6 @@
             this.lblhora = new System.Windows.Forms.Label();
             this.lblfecha = new System.Windows.Forms.Label();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
-            this.reporteGeneralToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportePorFechaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -111,7 +111,7 @@
             // btnConfiguracion
             // 
             this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(177, 26);
+            this.btnConfiguracion.Size = new System.Drawing.Size(216, 26);
             this.btnConfiguracion.Text = "Configuración";
             this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
@@ -129,6 +129,7 @@
             this.instruccionesToolStripMenuItem.Name = "instruccionesToolStripMenuItem";
             this.instruccionesToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
             this.instruccionesToolStripMenuItem.Text = "Instrucciones";
+            this.instruccionesToolStripMenuItem.Click += new System.EventHandler(this.instruccionesToolStripMenuItem_Click);
             // 
             // informaciónDelSoftwareToolStripMenuItem
             // 
@@ -163,6 +164,20 @@
             this.reporteDePedidosToolStripMenuItem.Text = "Reporte de Pedidos";
             this.reporteDePedidosToolStripMenuItem.Click += new System.EventHandler(this.reporteDePedidosToolStripMenuItem_Click);
             // 
+            // reporteGeneralToolStripMenuItem1
+            // 
+            this.reporteGeneralToolStripMenuItem1.Name = "reporteGeneralToolStripMenuItem1";
+            this.reporteGeneralToolStripMenuItem1.Size = new System.Drawing.Size(204, 26);
+            this.reporteGeneralToolStripMenuItem1.Text = "Reporte General";
+            this.reporteGeneralToolStripMenuItem1.Click += new System.EventHandler(this.reporteGeneralToolStripMenuItem1_Click);
+            // 
+            // reportePorFechaToolStripMenuItem1
+            // 
+            this.reportePorFechaToolStripMenuItem1.Name = "reportePorFechaToolStripMenuItem1";
+            this.reportePorFechaToolStripMenuItem1.Size = new System.Drawing.Size(204, 26);
+            this.reportePorFechaToolStripMenuItem1.Text = "Reporte Por Fecha";
+            this.reportePorFechaToolStripMenuItem1.Click += new System.EventHandler(this.reportePorFechaToolStripMenuItem1_Click);
+            // 
             // reporteHistorialToolStripMenuItem
             // 
             this.reporteHistorialToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -176,14 +191,14 @@
             // reporteGeneralToolStripMenuItem
             // 
             this.reporteGeneralToolStripMenuItem.Name = "reporteGeneralToolStripMenuItem";
-            this.reporteGeneralToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.reporteGeneralToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.reporteGeneralToolStripMenuItem.Text = "Reporte General";
             this.reporteGeneralToolStripMenuItem.Click += new System.EventHandler(this.reporteGeneralToolStripMenuItem_Click);
             // 
             // reportePorFechaToolStripMenuItem
             // 
             this.reportePorFechaToolStripMenuItem.Name = "reportePorFechaToolStripMenuItem";
-            this.reportePorFechaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.reportePorFechaToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
             this.reportePorFechaToolStripMenuItem.Text = "Reporte Por Fecha";
             this.reportePorFechaToolStripMenuItem.Click += new System.EventHandler(this.reportePorFechaToolStripMenuItem_Click);
             // 
@@ -369,20 +384,6 @@
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
             // 
-            // reporteGeneralToolStripMenuItem1
-            // 
-            this.reporteGeneralToolStripMenuItem1.Name = "reporteGeneralToolStripMenuItem1";
-            this.reporteGeneralToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
-            this.reporteGeneralToolStripMenuItem1.Text = "Reporte General";
-            this.reporteGeneralToolStripMenuItem1.Click += new System.EventHandler(this.reporteGeneralToolStripMenuItem1_Click);
-            // 
-            // reportePorFechaToolStripMenuItem1
-            // 
-            this.reportePorFechaToolStripMenuItem1.Name = "reportePorFechaToolStripMenuItem1";
-            this.reportePorFechaToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
-            this.reportePorFechaToolStripMenuItem1.Text = "Reporte Por Fecha";
-            this.reportePorFechaToolStripMenuItem1.Click += new System.EventHandler(this.reportePorFechaToolStripMenuItem1_Click);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -395,7 +396,7 @@
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Principal";
             this.Text = "Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
