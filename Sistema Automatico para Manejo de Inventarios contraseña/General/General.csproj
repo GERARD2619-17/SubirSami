@@ -60,12 +60,6 @@
     <Compile Include="GUI\AgregarAlPedido.Designer.cs">
       <DependentUpon>AgregarAlPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Ayuda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Ayuda.Designer.cs">
-      <DependentUpon>Ayuda.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\Configuracion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,9 +197,6 @@
     <EmbeddedResource Include="GUI\AgregarAlPedido.resx">
       <DependentUpon>AgregarAlPedido.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Ayuda.resx">
-      <DependentUpon>Ayuda.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,9 +263,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\CacheManager\CacheManager.csproj">
       <Project>{c5a67db5-6151-430d-b107-01257164449e}</Project>
