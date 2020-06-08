@@ -36,7 +36,6 @@
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnConfiguracion = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.instruccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informaciónDelSoftwareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesEInformacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -111,25 +110,17 @@
             // btnConfiguracion
             // 
             this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(216, 26);
+            this.btnConfiguracion.Size = new System.Drawing.Size(177, 26);
             this.btnConfiguracion.Text = "Configuración";
             this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.instruccionesToolStripMenuItem,
             this.informaciónDelSoftwareToolStripMenuItem});
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
-            // 
-            // instruccionesToolStripMenuItem
-            // 
-            this.instruccionesToolStripMenuItem.Name = "instruccionesToolStripMenuItem";
-            this.instruccionesToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
-            this.instruccionesToolStripMenuItem.Text = "Instrucciones";
-            this.instruccionesToolStripMenuItem.Click += new System.EventHandler(this.instruccionesToolStripMenuItem_Click);
             // 
             // informaciónDelSoftwareToolStripMenuItem
             // 
@@ -442,7 +433,6 @@
         private System.Windows.Forms.ToolStripMenuItem reportesEInformacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDePedidosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem instruccionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informaciónDelSoftwareToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteHistorialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteGeneralToolStripMenuItem;

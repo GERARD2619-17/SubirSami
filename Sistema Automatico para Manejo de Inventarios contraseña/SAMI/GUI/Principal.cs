@@ -239,18 +239,5 @@ namespace SAMI.GUI
             }
         }
 
-        private void instruccionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Cerrar_Todo();
-            try
-            {
-                General.GUI.Instrucciones f = new General.GUI.Instrucciones();
-                f.Indice = 1;
-                f.MdiParent = this;
-                f.Show();
-            }
-            catch
-            { }
-        }
     }
 }
