@@ -34,6 +34,10 @@ namespace General.GUI
         {
             this.WindowState = FormWindowState.Maximized;
             this.Dock = DockStyle.Fill;
+            this.ControlBox = false;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = FormBorderStyle.None;
         }
     }
 }
