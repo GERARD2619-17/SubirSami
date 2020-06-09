@@ -66,6 +66,12 @@
     <Compile Include="GUI\Configuracion.Designer.cs">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DevolverProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DevolverProducto.Designer.cs">
+      <DependentUpon>DevolverProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\EdicionAlmacenamientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DevolverProducto.resx">
+      <DependentUpon>DevolverProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\EdicionAlmacenamientos.resx">
       <DependentUpon>EdicionAlmacenamientos.cs</DependentUpon>

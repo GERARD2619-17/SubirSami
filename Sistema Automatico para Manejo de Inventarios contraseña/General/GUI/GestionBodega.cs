@@ -106,7 +106,7 @@ namespace General.GUI
 
         private void btnDevolver_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 if (MessageBox.Show("Se devolvera un producto, a continuación seleccione la cantidad", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -120,6 +120,13 @@ namespace General.GUI
             }
             catch {
                 MessageBox.Show("No se encontraron productos en bodega", "NOTA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }*/
+            try {
+                DevolverProducto f = new DevolverProducto();
+                f.ShowDialog();
+                Cargar();
+            }
+            catch {
             }
         }
 
