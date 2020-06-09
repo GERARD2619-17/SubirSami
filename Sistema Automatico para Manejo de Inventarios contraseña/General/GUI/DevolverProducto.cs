@@ -41,9 +41,6 @@ namespace General.GUI
                 Notificador.SetError(nudCantidad, "No se pueden devolver 0 Productos");
                 verificado = false;
             }
-            if (txbId.TextLength < 1) {
-                MessageBox.Show("Por favor selecciona el producto a devolver", "NOTA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             return verificado;
         }
         private void Registro()
@@ -73,6 +70,10 @@ namespace General.GUI
         {
             try
             {
+                if (txbId.TextLength < 1)
+                {
+                    MessageBox.Show("Por favor selecciona el producto a devolver", "NOTA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
                 String Consulta = "SELECT * from Productos where IDProducto="+ txbId.Text + ";";
                 DataTable Datos = new DataTable();
                 DataManager.CLS.DBOperacion Consultor = new DataManager.CLS.DBOperacion();
@@ -107,6 +108,11 @@ namespace General.GUI
             txbId.Text = dtgDatos.CurrentRow.Cells["IDProducto"].Value.ToString();
             txbNombre.Text = dtgDatos.CurrentRow.Cells["NombreProducto"].Value.ToString();
             txbEstado.Text = dtgDatos.CurrentRow.Cells["Estado"].Value.ToString();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

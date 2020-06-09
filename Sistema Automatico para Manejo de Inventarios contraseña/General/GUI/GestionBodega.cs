@@ -106,21 +106,6 @@ namespace General.GUI
 
         private void btnDevolver_Click(object sender, EventArgs e)
         {
-            /*try
-            {
-                if (MessageBox.Show("Se devolvera un producto, a continuación seleccione la cantidad", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    RetirarEnBodega f = new RetirarEnBodega();
-                    f.lblProducto.Text = "Devolución";
-                    f.txbNombre.Text = dtgDatos.CurrentRow.Cells["NombreProducto"].Value.ToString();
-                    f.txbEstado.Text = dtgDatos.CurrentRow.Cells["Estado"].Value.ToString();
-                    f.ShowDialog();
-                    Cargar();
-                }
-            }
-            catch {
-                MessageBox.Show("No se encontraron productos en bodega", "NOTA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }*/
             try {
                 DevolverProducto f = new DevolverProducto();
                 f.ShowDialog();
