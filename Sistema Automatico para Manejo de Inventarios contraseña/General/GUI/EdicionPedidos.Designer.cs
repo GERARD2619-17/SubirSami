@@ -310,8 +310,8 @@
             this.nudCosto.DecimalPlaces = 2;
             this.nudCosto.Location = new System.Drawing.Point(216, 285);
             this.nudCosto.Maximum = new decimal(new int[] {
-            100000,
-            0,
+            1410065408,
+            2,
             0,
             0});
             this.nudCosto.Name = "nudCosto";
