@@ -45,22 +45,31 @@ namespace General.GUI
         {
             try
             {
-                if (e.ColumnIndex == 0 && e.RowIndex >= 0) {
-                    Int32 Valor = 0;
-                    CLS.Permisos oPermiso = new CLS.Permisos();
-                    oPermiso.IDRol = cbRoles.SelectedValue.ToString();
-                    Valor = Convert.ToInt32(dtgOpciones.CurrentRow.Cells["IDPermiso"].Value.ToString());
-                    if (Valor > 0)
-                    {
-                        oPermiso.IDPermiso = Valor.ToString();
-                        oPermiso.Revocar();
-                    }
-                    else {
-                        oPermiso.IDOpcion = dtgOpciones.CurrentRow.Cells["IDOpcion"].Value.ToString();
-                        oPermiso.Conceder();
-                    }
-                    CargarAsignaciones();
+                if (dtgOpciones.CurrentRow.Cells["IDOpcion"].Value.ToString() == "6" && cbRoles.SelectedValue.ToString() == "1")
+                {
+                    MessageBox.Show("No puedes revocar este permiso", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else {
+                    if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+                    {
+                        Int32 Valor = 0;
+                        CLS.Permisos oPermiso = new CLS.Permisos();
+                        oPermiso.IDRol = cbRoles.SelectedValue.ToString();
+                        Valor = Convert.ToInt32(dtgOpciones.CurrentRow.Cells["IDPermiso"].Value.ToString());
+                        if (Valor > 0)
+                        {
+                            oPermiso.IDPermiso = Valor.ToString();
+                            oPermiso.Revocar();
+                        }
+                        else
+                        {
+                            oPermiso.IDOpcion = dtgOpciones.CurrentRow.Cells["IDOpcion"].Value.ToString();
+                            oPermiso.Conceder();
+                        }
+                        CargarAsignaciones();
+                    }
+                }
+                
             }
             catch {
             }

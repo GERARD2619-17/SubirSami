@@ -49,17 +49,17 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnQuitar = new System.Windows.Forms.ToolStripButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nudCosto = new System.Windows.Forms.NumericUpDown();
+            this.nudTiempo = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbProveedor = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Notificador = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbProveedor = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.nudTiempo = new System.Windows.Forms.NumericUpDown();
-            this.nudCosto = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -72,10 +72,10 @@
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos2)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTiempo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Notificador)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTiempo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -295,6 +295,65 @@
             this.btnQuitar.Text = "Quitar";
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(21, 287);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(139, 20);
+            this.label4.TabIndex = 80;
+            this.label4.Text = "Costo del pedido:";
+            // 
+            // nudCosto
+            // 
+            this.nudCosto.DecimalPlaces = 2;
+            this.nudCosto.Location = new System.Drawing.Point(216, 285);
+            this.nudCosto.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudCosto.Name = "nudCosto";
+            this.nudCosto.Size = new System.Drawing.Size(128, 22);
+            this.nudCosto.TabIndex = 79;
+            // 
+            // nudTiempo
+            // 
+            this.nudTiempo.Location = new System.Drawing.Point(216, 216);
+            this.nudTiempo.Name = "nudTiempo";
+            this.nudTiempo.Size = new System.Drawing.Size(128, 22);
+            this.nudTiempo.TabIndex = 78;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 218);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 20);
+            this.label1.TabIndex = 77;
+            this.label1.Text = "Tiempo estimado dias:";
+            // 
+            // cbProveedor
+            // 
+            this.cbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProveedor.FormattingEnabled = true;
+            this.cbProveedor.Location = new System.Drawing.Point(127, 146);
+            this.cbProveedor.Name = "cbProveedor";
+            this.cbProveedor.Size = new System.Drawing.Size(217, 24);
+            this.cbProveedor.TabIndex = 75;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(21, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 20);
+            this.label3.TabIndex = 74;
+            this.label3.Text = "Proveedor:";
+            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -348,60 +407,6 @@
             this.Notificador.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.Notificador.ContainerControl = this;
             // 
-            // cbProveedor
-            // 
-            this.cbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProveedor.FormattingEnabled = true;
-            this.cbProveedor.Location = new System.Drawing.Point(127, 146);
-            this.cbProveedor.Name = "cbProveedor";
-            this.cbProveedor.Size = new System.Drawing.Size(217, 24);
-            this.cbProveedor.TabIndex = 75;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 146);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 20);
-            this.label3.TabIndex = 74;
-            this.label3.Text = "Proveedor:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 218);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 20);
-            this.label1.TabIndex = 77;
-            this.label1.Text = "Tiempo estimado dias:";
-            // 
-            // nudTiempo
-            // 
-            this.nudTiempo.Location = new System.Drawing.Point(216, 216);
-            this.nudTiempo.Name = "nudTiempo";
-            this.nudTiempo.Size = new System.Drawing.Size(128, 22);
-            this.nudTiempo.TabIndex = 78;
-            // 
-            // nudCosto
-            // 
-            this.nudCosto.DecimalPlaces = 2;
-            this.nudCosto.Location = new System.Drawing.Point(216, 285);
-            this.nudCosto.Name = "nudCosto";
-            this.nudCosto.Size = new System.Drawing.Size(128, 22);
-            this.nudCosto.TabIndex = 79;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 287);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 20);
-            this.label4.TabIndex = 80;
-            this.label4.Text = "Costo del pedido:";
-            // 
             // EdicionPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -428,10 +433,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos2)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTiempo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Notificador)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTiempo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCosto)).EndInit();
             this.ResumeLayout(false);
 
         }
