@@ -83,7 +83,7 @@ namespace CacheManager.CLS
                 Registros a, usuarios b, Productos c 
                 WHERE 
                 a.IDUsuario = b.IDUsuario 
-                AND a.IDProducto = c.IDProducto;";
+                AND a.IDProducto = c.IDProducto order by a.IdRegistro;";
                 Resultado = oConsulta.Consultar(Consulta);
             }
             catch
