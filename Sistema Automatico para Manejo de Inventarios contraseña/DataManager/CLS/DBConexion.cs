@@ -10,7 +10,7 @@ namespace DataManager.CLS
     {
         protected MySqlConnection _CONEXION;
         static String User = "root";
-        static String password = "admin123";
+        static String password = "admin";
         String _Cadena = "Server=localhost;Port=3306;Database=samibd;Uid="+ User + ";Pwd="+password+";SslMode=None;";
         protected Boolean Conectar()
         {

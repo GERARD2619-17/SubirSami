@@ -124,6 +124,7 @@
             this.IDPermiso.HeaderText = "IDPermiso";
             this.IDPermiso.Name = "IDPermiso";
             this.IDPermiso.ReadOnly = true;
+            this.IDPermiso.Visible = false;
             this.IDPermiso.Width = 104;
             // 
             // IDOpcion
