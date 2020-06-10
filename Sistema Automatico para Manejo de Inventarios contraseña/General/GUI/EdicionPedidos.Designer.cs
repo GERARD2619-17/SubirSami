@@ -321,6 +321,11 @@
             // nudTiempo
             // 
             this.nudTiempo.Location = new System.Drawing.Point(216, 216);
+            this.nudTiempo.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.nudTiempo.Name = "nudTiempo";
             this.nudTiempo.Size = new System.Drawing.Size(128, 22);
             this.nudTiempo.TabIndex = 78;
