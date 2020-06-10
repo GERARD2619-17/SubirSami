@@ -12,6 +12,7 @@ namespace General.GUI
 {
     public partial class EdicionUsuario : Form
     {
+        SessionManager.CLS.Sesion _SESION = SessionManager.CLS.Sesion.Instancia;
         private void CargarRoles()
         {
             DataTable Roles = new DataTable();
@@ -37,6 +38,10 @@ namespace General.GUI
 
             if (oUsuarios.Actualizar2())
             {
+                _SESION.Informacion.IDUsuario = txbID.Text;
+                _SESION.Informacion.Usuario = txbUsuarios.Text;
+                _SESION.Informacion.IDRol = cbRol.SelectedValue.ToString();
+                _SESION.Informacion.Rol = cbRol.Text;
                 Close();
             }     
         }

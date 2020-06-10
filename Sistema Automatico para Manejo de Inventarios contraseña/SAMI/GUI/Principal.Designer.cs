@@ -429,7 +429,6 @@
         private System.Windows.Forms.Timer horafecha;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton btnPedidos;
-        private System.Windows.Forms.ToolStripStatusLabel lblRol;
         private System.Windows.Forms.ToolStripMenuItem reportesEInformacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDePedidosToolStripMenuItem;
@@ -439,6 +438,7 @@
         private System.Windows.Forms.ToolStripMenuItem reportePorFechaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteGeneralToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem reportePorFechaToolStripMenuItem1;
+        public System.Windows.Forms.ToolStripStatusLabel lblRol;
     }
 }
 

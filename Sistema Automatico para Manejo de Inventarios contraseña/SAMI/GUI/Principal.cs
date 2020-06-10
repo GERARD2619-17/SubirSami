@@ -13,6 +13,7 @@ namespace SAMI.GUI
     public partial class Principal : Form
     {
         SessionManager.CLS.Sesion _SESION = SessionManager.CLS.Sesion.Instancia;
+
         public Principal()
         {
             InitializeComponent();
@@ -238,6 +239,6 @@ namespace SAMI.GUI
                 f.Show();
             }
         }
-
+        public string ActializarRol { get => lblRol.Text; set => lblRol.Text = value; }
     }
 }
