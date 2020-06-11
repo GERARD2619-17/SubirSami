@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data;
 namespace DataManager.CLS
 {
     public class DBConexion
     {
         protected MySqlConnection _CONEXION;
-        static String User = "root";
-        static String password = "admin";
-        String _Cadena = "Server=localhost;Port=3306;Database=samibd;Uid="+ User + ";Pwd="+password+";SslMode=None;";
+        public static String _User;
+        public static String _password;
+        String _Cadena = "Server=localhost;Port=3306;Database=samibd;Uid="+ _User + ";Pwd="+ _password + ";SslMode=None;";
         protected Boolean Conectar()
         {
             Boolean _Conectado = false;

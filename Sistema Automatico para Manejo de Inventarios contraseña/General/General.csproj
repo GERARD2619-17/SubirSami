@@ -203,6 +203,9 @@
     <EmbeddedResource Include="GUI\AgregarAlPedido.resx">
       <DependentUpon>AgregarAlPedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Conexión.resx">
+      <DependentUpon>Conexión.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </EmbeddedResource>

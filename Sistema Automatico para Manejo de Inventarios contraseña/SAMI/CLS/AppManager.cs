@@ -27,6 +27,24 @@ namespace SAMI.CLS
             Boolean _Resultado = true;
             GUI.Splash f = new GUI.Splash();
             f.ShowDialog();
+            String U = Local.obtenerUsuario();
+            String P = Local.obtenerContra();
+            DataManager.CLS.DBConexion._User = U;
+            DataManager.CLS.DBConexion._password = P;
+            if (U.Length < 1) {
+                if (MessageBox.Show("Se a detectado que no hay una conexión al servicio de base de datos ¿Configurar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    General.GUI.Conexión g = new General.GUI.Conexión();
+                    g.ShowDialog();
+                    if (g.Validar == false)
+                    {
+                        _Resultado = false;
+                    }
+                }
+                else {
+                    _Resultado = false;
+                }
+            }
             return _Resultado;
         }
         private Boolean Login()
