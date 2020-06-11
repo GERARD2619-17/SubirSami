@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,9 @@ namespace SAMI.CLS
             String P = Local.obtenerContra();
             DataManager.CLS.DBConexion._User = U;
             DataManager.CLS.DBConexion._password = P;
-            if (U.Length < 1) {
+            DataTable provar = new DataTable();
+            provar = CacheManager.CLS.Cache.TODOS_LOS_USUARIOS();
+            if (U.Length < 1 || provar.Rows.Count < 1) {
                 if (MessageBox.Show("Se a detectado que no hay una conexión al servicio de base de datos ¿Configurar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     General.GUI.Conexión g = new General.GUI.Conexión();

@@ -206,9 +206,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnConectar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Label lblConexion;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pbNo;
-        private System.Windows.Forms.PictureBox pbSi;
+        public System.Windows.Forms.Label lblConexion;
+        public System.Windows.Forms.PictureBox pbNo;
+        public System.Windows.Forms.PictureBox pbSi;
     }
 }

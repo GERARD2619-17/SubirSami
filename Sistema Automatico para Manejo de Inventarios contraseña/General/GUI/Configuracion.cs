@@ -339,6 +339,10 @@ namespace General.GUI
         private void btnConexión_Click(object sender, EventArgs e)
         {
             Conexión f = new Conexión();
+            f.lblConexion.Text = "Conectado";
+            f.lblConexion.ForeColor = Color.Green;
+            f.pbSi.Visible = true;
+            f.pbNo.Visible = false;
             f.Show();
         }
     }
