@@ -36,7 +36,8 @@ namespace General.GUI
             oUsuarios.Credencial = txbCredencial.Text;
             oUsuarios.IDRol = cbRol.SelectedValue.ToString();
             oUsuarios.Actualizar2();
-            Close();
+              Close();
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
