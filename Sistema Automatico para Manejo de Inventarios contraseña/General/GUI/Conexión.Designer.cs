@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Conexión));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txbPassword = new System.Windows.Forms.TextBox();
@@ -36,7 +37,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnConectar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblConexion = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pbNo = new System.Windows.Forms.PictureBox();
+            this.pbSi = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSi)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -67,6 +73,7 @@
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.Size = new System.Drawing.Size(289, 22);
             this.txbPassword.TabIndex = 2;
+            this.txbPassword.TextChanged += new System.EventHandler(this.txbPassword_TextChanged);
             // 
             // txbUsuario
             // 
@@ -74,6 +81,7 @@
             this.txbUsuario.Name = "txbUsuario";
             this.txbUsuario.Size = new System.Drawing.Size(289, 22);
             this.txbUsuario.TabIndex = 3;
+            this.txbUsuario.TextChanged += new System.EventHandler(this.txbUsuario_TextChanged);
             // 
             // label3
             // 
@@ -106,6 +114,7 @@
             this.btnConectar.TabIndex = 8;
             this.btnConectar.Text = "Probar conexión";
             this.btnConectar.UseVisualStyleBackColor = false;
+            this.btnConectar.Click += new System.EventHandler(this.btnConectar_Click);
             // 
             // btnCancelar
             // 
@@ -118,15 +127,45 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lblConexion
+            // 
+            this.lblConexion.AutoSize = true;
+            this.lblConexion.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblConexion.Location = new System.Drawing.Point(200, 295);
+            this.lblConexion.Name = "lblConexion";
+            this.lblConexion.Size = new System.Drawing.Size(99, 17);
+            this.lblConexion.TabIndex = 10;
+            this.lblConexion.Text = "Desconectado";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.DarkRed;
-            this.label4.Location = new System.Drawing.Point(53, 297);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(53, 295);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 17);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Desconectado !";
+            this.label4.Size = new System.Drawing.Size(136, 17);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Estado de conexión:";
+            // 
+            // pbNo
+            // 
+            this.pbNo.Image = ((System.Drawing.Image)(resources.GetObject("pbNo.Image")));
+            this.pbNo.Location = new System.Drawing.Point(305, 295);
+            this.pbNo.Name = "pbNo";
+            this.pbNo.Size = new System.Drawing.Size(16, 17);
+            this.pbNo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbNo.TabIndex = 76;
+            this.pbNo.TabStop = false;
+            // 
+            // pbSi
+            // 
+            this.pbSi.Image = ((System.Drawing.Image)(resources.GetObject("pbSi.Image")));
+            this.pbSi.Location = new System.Drawing.Point(283, 295);
+            this.pbSi.Name = "pbSi";
+            this.pbSi.Size = new System.Drawing.Size(16, 17);
+            this.pbSi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSi.TabIndex = 77;
+            this.pbSi.TabStop = false;
             // 
             // Conexión
             // 
@@ -134,7 +173,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(550, 331);
+            this.Controls.Add(this.pbSi);
+            this.Controls.Add(this.pbNo);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblConexion);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConectar);
             this.Controls.Add(this.button2);
@@ -143,8 +185,12 @@
             this.Controls.Add(this.txbPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Conexión";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Conexión";
+            ((System.ComponentModel.ISupportInitialize)(this.pbNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,6 +206,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnConectar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblConexion;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pbNo;
+        private System.Windows.Forms.PictureBox pbSi;
     }
 }
