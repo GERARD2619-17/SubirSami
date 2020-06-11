@@ -334,7 +334,12 @@ namespace General.GUI
         {
             Permisos f = new Permisos();
             f.Show();
-            
+        }
+
+        private void btnConexión_Click(object sender, EventArgs e)
+        {
+            Conexión f = new Conexión();
+            f.Show();
         }
     }
 }

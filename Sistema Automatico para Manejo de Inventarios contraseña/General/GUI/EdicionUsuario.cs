@@ -35,15 +35,9 @@ namespace General.GUI
             oUsuarios.Usuario = txbUsuarios.Text;
             oUsuarios.Credencial = txbCredencial.Text;
             oUsuarios.IDRol = cbRol.SelectedValue.ToString();
-
-            if (oUsuarios.Actualizar2())
-            {
-                _SESION.Informacion.IDUsuario = txbID.Text;
-                _SESION.Informacion.Usuario = txbUsuarios.Text;
-                _SESION.Informacion.IDRol = cbRol.SelectedValue.ToString();
-                _SESION.Informacion.Rol = cbRol.Text;
-                Close();
-            }     
+            oUsuarios.Actualizar2();
+              Close();
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

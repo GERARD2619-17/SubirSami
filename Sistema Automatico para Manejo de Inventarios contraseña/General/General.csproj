@@ -60,6 +60,12 @@
     <Compile Include="GUI\AgregarAlPedido.Designer.cs">
       <DependentUpon>AgregarAlPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Conexión.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Conexión.Designer.cs">
+      <DependentUpon>Conexión.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Configuracion.cs">
       <SubType>Form</SubType>
     </Compile>
